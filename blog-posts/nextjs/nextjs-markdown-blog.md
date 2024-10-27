@@ -240,3 +240,19 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 }
 ```
+
+Since we now call `getBlogPostById()` in both `generateMetadata()` and the `BlogPostPage()` component, it is best to cache the result of that function utilizing React's `cache()` function.
+
+`/app/blog/blog.utils.ts`
+```typescript
+import { cache } from 'react'
+
+export const getBlogPostById = cache(fetchBlogPostById)
+
+export async function fetchBlogPostById(id: string): Promise<BlogPost | undefined> {
+  const allBlogPostFiles = await readAllBlogPostFiles()
+  const blogPostFile = allBlogPostFiles.find(entry => parseFileId(entry) === id)
+  if (!blogPostFile) return undefined
+  return mapFileToBlogPost(blogPostFile)
+}
+```

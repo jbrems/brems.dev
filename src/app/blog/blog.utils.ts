@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from  'gray-matter'
 import { BlogPost } from './blog.types'
+import { cache } from 'react'
 
 
 const blogPostsFolder = path.join(process.cwd(), 'blog-posts')
@@ -21,8 +22,9 @@ export function sortBlogPosts(a: BlogPost, b: BlogPost) {
   return -1
 }
 
-export async function getBlogPostById(id: string): Promise<BlogPost | undefined> {
-  console.log('GETTING BLOG POST BY ID', id)
+export const getBlogPostById = cache(fetchBlogPostById)
+
+export async function fetchBlogPostById(id: string): Promise<BlogPost | undefined> {
   const allBlogPostFiles = await readAllBlogPostFiles()
   const blogPostFile = allBlogPostFiles.find(entry => parseFileId(entry) === id)
   if (!blogPostFile) return undefined
@@ -31,8 +33,6 @@ export async function getBlogPostById(id: string): Promise<BlogPost | undefined>
 
 
 async function mapFileToBlogPost(file: fs.Dirent): Promise<BlogPost> {
-  console.log('MAPPING BLOG POST', parseFileId(file))
-
   const fileContents = await fs.promises.readFile(getFilePath(file), { encoding: 'utf8' })
   const matterData = matter(fileContents)
 
