@@ -1,13 +1,25 @@
 .navigation {
-  display: flex;
-  gap: 3rem;
-
   & ul {
-    display: contents;
+    display: flex;
+    align-items: center;
+    gap: 3em;
     list-style: none;
+    padding: 0 1em;
   }
 
   & li:first-child {
     flex-grow: 1;
+  }
+
+  & a {
+    text-decoration: none;
+    color: #cccccc;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    height: 2px;
+    background: linear-gradient(90deg, transparent, goldenrod, gold, goldenrod, transparent);
   }
 }

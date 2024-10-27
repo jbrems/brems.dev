@@ -1,0 +1,9 @@
+.branding {
+  display: inline;
+  margin: 0;
+  font-size: 2em;
+
+  background: linear-gradient(-10deg, transparent, goldenrod, gold, goldenrod, transparent);
+  background-clip: text;
+  color: transparent;
+}
