@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  gap: 3rem;
+
+  & ul {
+    display: contents;
+    list-style: none;
+  }
+
+  & li:first-child {
+    flex-grow: 1;
+  }
+}
