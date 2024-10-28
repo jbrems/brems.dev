@@ -1,3 +1,15 @@
-export default function HomePage() {
-  return <h2>Nothing to show here yet...</h2>
+import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
+import { getAllBlogPosts, sortBlogPosts } from "./blog/blog.utils"
+
+export default async function HomePage() {
+  const blogPosts = await getAllBlogPosts()
+  blogPosts.sort(sortBlogPosts).reverse()
+  const recentBlogPosts = blogPosts.slice(0, 5)
+
+  return <>
+    <h2>Jonas Brems - Web developer</h2>
+    <p>My very own place on the world wide web.</p>
+    <h3 style={{ marginTop: '2em' }}>Recent blog posts</h3>
+    <BlogPostList blogPosts={recentBlogPosts} />
+  </>
 }

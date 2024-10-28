@@ -1,0 +1,9 @@
+.linkToBlogPost {
+  text-decoration: none;
+
+  &:hover h1 {
+    background: linear-gradient(75deg, goldenrod, gold, goldenrod);
+    background-clip: text;
+    color: transparent;
+  }
+}

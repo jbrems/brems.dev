@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  
+
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -12,4 +12,8 @@
 body {
   background-color: #222222;
   color: #dddddd;
+}
+
+a {
+  color: #bbbbbb;
 }

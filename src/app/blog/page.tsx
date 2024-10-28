@@ -1,4 +1,4 @@
-import { LinkToBlogPost } from "../../components/blog-post/link-to-blog-post/LinkToBlogPost"
+import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
 import { getAllBlogPosts, sortBlogPosts } from "./blog.utils"
 
 export default async function BlogHomePage() {
@@ -7,6 +7,6 @@ export default async function BlogHomePage() {
 
   return <>
     <h2>My Blog</h2>
-    <ul>{blogPosts.map(blogPost => <li key={blogPost.id}><LinkToBlogPost blogPost={blogPost} /></li>)}</ul>
+    <BlogPostList blogPosts={blogPosts} />
   </>
 }

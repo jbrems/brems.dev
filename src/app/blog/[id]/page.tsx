@@ -2,6 +2,7 @@ import { remark } from 'remark'
 import remarkHtml from 'remark-html'
 
 import { getBlogPostById, parseFileId, readAllBlogPostFiles } from "../blog.utils";
+import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
 
 export const dynamicParams = false
 
@@ -41,9 +42,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   const htmlContent = (await remark().use(remarkHtml).process(blogPost.content)).toString()
   
-  return <>
-    <h3>{blogPost.title}</h3>
-    <p>{blogPost.date?.toString()}</p>
-    <p dangerouslySetInnerHTML={{ __html: htmlContent }} />
-  </>
+  return <div style={{ marginTop: '1em' }}>
+    <BlogPostPreview blogPost={blogPost}>
+      <p dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </BlogPostPreview>
+  </div>
 }

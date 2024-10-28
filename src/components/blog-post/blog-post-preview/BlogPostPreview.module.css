@@ -1,0 +1,15 @@
+.blogPostPreview {
+  & h1 {
+    display: inline;
+    color: goldenrod;
+    font-size: 1.25em;
+  }
+
+  & .metadata {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.1em;
+    font-size: 0.9em;
+    font-variant: small-caps;
+  }
+}
