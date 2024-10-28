@@ -1,3 +1,4 @@
+import { BlogPost } from '@/app/blog/blog.types'
 import styles from './BlogPostPreview.module.css'
 
 export function BlogPostPreview({ blogPost, children }: { blogPost: BlogPost, children?: React.ReactNode }) {
