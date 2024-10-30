@@ -3,6 +3,7 @@ import remarkHtml from 'remark-html'
 
 import { getBlogPostById, parseFileId, readAllBlogPostFiles } from "../blog.utils";
 import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
+import styles from './page.module.css'
 
 export const dynamicParams = false
 
@@ -42,9 +43,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   const htmlContent = (await remark().use(remarkHtml).process(blogPost.content)).toString()
   
-  return <div style={{ marginTop: '1em' }}>
+  return <div style={{ marginTop: '1em' }} className={styles.blogPostPage}>
     <BlogPostPreview blogPost={blogPost}>
-      <p dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <p dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content}/>
     </BlogPostPreview>
   </div>
 }

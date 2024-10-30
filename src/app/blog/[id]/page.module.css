@@ -1,0 +1,19 @@
+.blogPostPage {
+  margin-top: 1rem;
+
+  & .content {
+    & code {
+      display: inline-block;
+      background-color: #333333;
+      padding: 0.25em 0.5em;
+      border-radius: 0.5em;
+      margin: 0.25em 0;
+    }
+    
+    & pre code {
+      display: block;
+      padding: 1em;
+      overflow-y: auto;
+    }
+  }
+}
