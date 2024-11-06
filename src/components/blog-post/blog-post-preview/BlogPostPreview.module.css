@@ -11,5 +11,11 @@
     margin-top: 0.1em;
     font-size: 0.9em;
     font-variant: small-caps;
+
+    &:not(:last-child) {
+     padding-bottom: 2em;
+     margin-bottom: 2em;
+     border-bottom: solid 1px #333333; 
+    }
   }
 }

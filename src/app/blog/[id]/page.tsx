@@ -1,5 +1,8 @@
-import { remark } from 'remark'
-import remarkHtml from 'remark-html'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeStringify from 'rehype-stringify'
 
 import { getBlogPostById, parseFileId, readAllBlogPostFiles } from "../blog.utils";
 import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
@@ -41,11 +44,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   if (!blogPost) return
 
-  const htmlContent = (await remark().use(remarkHtml).process(blogPost.content)).toString()
-  
+  const highlightedHtmlContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
+    .process(blogPost.content)
+
   return <div style={{ marginTop: '1em' }} className={styles.blogPostPage}>
     <BlogPostPreview blogPost={blogPost}>
-      <p dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content}/>
+      <p dangerouslySetInnerHTML={{ __html: highlightedHtmlContent.toString() }} className={styles.content}/>
     </BlogPostPreview>
   </div>
 }

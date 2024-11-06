@@ -25,7 +25,7 @@ export default function BlogHomePage() {
 ```
 
 In the `app/blog` folder, create a subfolder `[id]` with a `page.tsx` file.  
-_(This will create a route with a dynamic id in the URL like `/blog/my-first-post` where `my-firs-post` is the id of a blog post.)_
+_(This will create a route with a dynamic id in the URL like `/blog/my-first-post` where `my-first-post` is the id of a blog post.)_
 
 This page will render a single blog post with the `id` from the URL.
 
@@ -44,9 +44,9 @@ In the root of your project _(on the same level as your `package.json`)_, create
 
 For example
 `/blog-posts/my-first-post.md`
-```markdown
+```generic
 ---
-title: My first blog post
+title: 'My first blog post'
 date: 2024-10-26
 ---
 
@@ -54,9 +54,9 @@ This is my very first blog post!
 ```
 
 `/blog-posts/front-matter.md`
-```markdown
+```generic
 ---
-title: YAML Front Matter
+title: 'YAML Front Matter'
 date: 2024-10-26
 ---
 
