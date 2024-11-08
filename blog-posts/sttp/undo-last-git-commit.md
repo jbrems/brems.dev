@@ -1,7 +1,7 @@
 ---
 title: 'How to undo the last git commit'
 description: 'Straight to the point explanation of how to undo the last git commit.'
-date: 2024-11-07
+created: 2024-11-07
 ---
 ```bash
 git reset HEAD~1

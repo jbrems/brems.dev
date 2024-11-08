@@ -1,7 +1,7 @@
 ---
 title: 'Popup vs modal vs overlay'
 description: 'A quick explanation of the different UX/UI overlay elements and how to correctly name them.'
-date: 2024-11-07
+created: 2024-11-07
 ---
 
 ## Overlay

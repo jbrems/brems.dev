@@ -1,7 +1,7 @@
 ---
 title: 'How to add a gradient border to an element'
 description: 'Straight to the point instructions on how to add a gradient border to an element.'
-date: 2024-10-27
+created: 2024-10-27
 ---
 
 ```css

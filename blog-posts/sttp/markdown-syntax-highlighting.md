@@ -1,7 +1,8 @@
 ---
 title: 'How to add code syntax highlighting to a Markdown blog'
 description: 'Straight to the point instructions on how to add code syntax highlighting to a server side rendered Markdown blog.'
-date: 2024-11-06
+created: 2024-11-06
+updated: 2024-11-08
 ---
 
 ```javascript
@@ -11,12 +12,15 @@ import remarkRehype from 'remark-rehype'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeStringify from 'rehype-stringify'
 
-const highlightedHtmlContent = await unified()
-  .use(remarkParse)
-  .use(remarkRehype)
-  .use(rehypeHighlight)
-  .use(rehypeStringify)
-  .process(markdownContent)
+const htmlVFile = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
+    .process(blogPost.content)
+
+const htmlContent = htmlVFile.toString()
+
 ```
 
 

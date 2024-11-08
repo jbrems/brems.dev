@@ -1,7 +1,8 @@
 ---
 title: 'How to create a Markdown blog with Next.js 15'
 description: 'In dept instructions on how to create a Markdown blog website with Next.js 15.'
-date: 2024-10-26
+created: 2024-10-26
+updated: 2024-11-08
 ---
 
 ## 1. Project setup

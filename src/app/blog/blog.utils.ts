@@ -7,7 +7,7 @@ import { cache } from 'react'
 
 const blogPostsFolder = path.join(process.cwd(), 'blog-posts')
 
-export async function readAllBlogPostFiles() {
+async function readAllBlogPostFiles() {
   const dirEntries = await fs.promises.readdir(blogPostsFolder, { recursive: true, withFileTypes: true })
   return dirEntries.filter(entry => entry.isFile())
 }
@@ -18,17 +18,15 @@ export async function getAllBlogPosts() {
 }
 
 export function sortBlogPosts(a: BlogPost, b: BlogPost) {
-  if (a.date > b.date) return 1
+  if (a.updated > b.updated) return 1
   return -1
 }
 
 export const getBlogPostById = cache(fetchBlogPostById)
 
-export async function fetchBlogPostById(id: string): Promise<BlogPost | undefined> {
-  const allBlogPostFiles = await readAllBlogPostFiles()
-  const blogPostFile = allBlogPostFiles.find(entry => parseFileId(entry) === id)
-  if (!blogPostFile) return undefined
-  return mapFileToBlogPost(blogPostFile)
+async function fetchBlogPostById(id: string): Promise<BlogPost | undefined> {
+  const allBlogPosts = await getAllBlogPosts()
+  return allBlogPosts.find(blogPost => blogPost.id === id)
 }
 
 
@@ -37,11 +35,12 @@ async function mapFileToBlogPost(file: fs.Dirent): Promise<BlogPost> {
   const matterData = matter(fileContents)
 
   return {
-    id: parseFileId(file),
+    id: slugify(matterData.data.title),
     topic: parseTopicFromFile(file),
     title: matterData.data.title,
     description: matterData.data.description,
-    date: matterData.data.date,
+    created: matterData.data.created,
+    updated: matterData.data.updated || matterData.data.created,
     content: matterData.content,
   }
 }
@@ -50,13 +49,13 @@ function getFilePath(file: fs.Dirent): string {
   return path.join(file.parentPath, file.name)
 }
 
-export function parseFileId(file: fs.Dirent): string {
-  return file.name.replace(/\.md$/, '') // remove the '.md' file extension
-}
-
 function parseTopicFromFile(file: fs.Dirent): string {
   return getFilePath(file).replace(blogPostsFolder, '') // remove the blogPostsFolder path
     .replace(file.name, '') // remove the filename
     .replace(/^\//, '') // remove the leading '/' if present
     .replace(/\/$/, '') // remove the trailing '/' if present
+}
+
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
 }

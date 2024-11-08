@@ -1,7 +1,7 @@
 ---
 title: 'The `display: contents;` CSS rule'
 description: 'A quick explanation of the "display: contents" CSS rule and when to apply it.'
-date: 2024-10-25
+created: 2024-10-25
 ---
 
 Imagine you want to create a navigation bar for your website and you also want to make it somewhat semantically correct and easily parsable by screen readers.

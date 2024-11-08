@@ -2,7 +2,8 @@ export type BlogPost = {
   id: string
   title: string
   description: string
-  date: Date
+  created: Date
+  updated: Date
   topic: string
   content: string
 }

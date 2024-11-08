@@ -1,7 +1,7 @@
 ---
 title: 'How to read all files in a folder with Node.js'
 description: 'Straight to the point instructions on how to read all files in a folder with Node.js v20.'
-date: 2024-10-26
+created: 2024-10-26
 ---
 
 ```typescript
