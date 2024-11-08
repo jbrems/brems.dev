@@ -5,7 +5,7 @@ export function BlogPostPreview({ blogPost, children }: { blogPost: BlogPost, ch
   return <article className={styles.blogPostPreview}>
     <h1>{blogPost.title}</h1>
     <p className={styles.metadata}>
-      <span>[{blogPost.topic}]</span>
+      {blogPost.topic && <span>[{blogPost.topic}]</span>}
       <span>{blogPost.date?.toISOString().split('T')[0]}</span>
       <span>by Jonas Brems</span>
     </p>
