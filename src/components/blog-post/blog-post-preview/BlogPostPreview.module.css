@@ -1,21 +1,63 @@
 .blogPostPreview {
-  & h1 {
-    display: inline;
-    color: goldenrod;
-    font-size: 1.25em;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+  & .cover {
+    flex-shrink: 0;
+    height: 5em;
+    width: 5em;
+    line-height: 3em;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0.75em;
+    
+    border: solid 1px #333333;
+
+    & span {
+      font-size: 1.5em;
+      font-variant: small-caps;
+      background: linear-gradient(45deg, transparent, goldenrod, gold, goldenrod, transparent);
+      background-clip: text;
+      color: transparent;
+    }
   }
 
-  & .metadata {
-    display: flex;
-    gap: 1em;
-    margin-top: 0.1em;
-    font-size: 0.9em;
-    font-variant: small-caps;
+  & .info {
+    & .title {
+      display: inline;
+      font-size: 1.25em;
 
-    &:not(:last-child) {
-     padding-bottom: 1.5em;
-     margin-bottom: 2em;
-     border-bottom: solid 1px #DAA53020; 
+      background: linear-gradient(45deg, #cccccc, #ffffff, #cccccc);
+      background-clip: text;
+      color: transparent;
+    }
+  
+    & .metadata {
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding-top: 0.25em;
+      font-size: 0.9em;
+      font-variant: small-caps;
+      color: goldenrod;
+    }
+  }
+
+  &:hover {
+    & .cover {
+      background: radial-gradient(ellipse at top left, #222222, transparent),
+            radial-gradient(ellipse at bottom right, #444444, transparent);
+    }
+
+    & .title {
+      background: linear-gradient(45deg, goldenrod, gold, goldenrod);
+      background-clip: text;
+      color: transparent;
+    }
+
+    & .metadata {
+      color: #cccccc;
     }
   }
 }

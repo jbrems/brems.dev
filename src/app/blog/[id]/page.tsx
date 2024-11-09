@@ -55,8 +55,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   const htmlContent = htmlVFile.toString()
 
   return <div style={{ marginTop: '1em' }} className={styles.blogPostPage}>
-    <BlogPostPreview blogPost={blogPost}>
-      <p dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content}/>
-    </BlogPostPreview>
+    <BlogPostPreview blogPost={blogPost} />
+    <p dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content}/>
   </div>
 }
