@@ -11,7 +11,7 @@ An `overlay` is simply an element that is rendered over the main content of the 
 A `popup` is an overlay that does not block interactions with the main content. `Toasts` and `snackbars` are examples of `popups`.
 
 ## Modal
-A `modal` is an overlay that does block interactions with the main content until the `modal` has been closed. Important actions or information that cannot be ignored can be shown in a `modal`. Examples are a login form and a delete confirmation alert.
+A `modal` is an overlay that does block interactions with the main content until the `modal` has been closed. Important actions or information that cannot be ignored can be shown in a `modal`. Examples are a login form and a delete confirmation alert or any other alert.
 
 ## Layover
 A `layover`, sometimes just called `overlay`, is a type of `overlay` that adds a partly transparent layer on top of the UI. Its goal is to draw attention to certain parts of the UI by obscuring the rest. `Layovers` are often used in combination with `modals` or when showing pictures or other content in a `lightbox`.
@@ -21,6 +21,3 @@ A `drawer` is simply an `overlay` that enters the page from the side (left or ri
 
 ## Top/bottom sheet
 A `top sheet` is an overlay that enters the page from the top. A `bottom sheet` is an overlay that enters the page from the bottom. 
-
-## Alert
-An `alert` is a specific type of `modal` that notifies the user about something and has to be dismissed before interaction can continue.
