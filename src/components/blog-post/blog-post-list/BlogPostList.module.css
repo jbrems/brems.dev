@@ -4,7 +4,5 @@
 
   & li + li {
     border-top: solid 1px #333333;
-    margin-top: 0.75em;
-    padding-top: 0.75em;
   }
 }
