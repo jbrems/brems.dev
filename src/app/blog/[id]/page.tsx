@@ -7,7 +7,6 @@ import rehypeStringify from 'rehype-stringify'
 import { getAllBlogPosts, getBlogPostById } from "../blog.utils";
 import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
 import styles from './page.module.css'
-import { BackButton } from '@/components/navigation/back-button/BackButton'
 
 export const dynamicParams = false
 

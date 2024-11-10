@@ -8,4 +8,4 @@
 * (x) Blog posts topic page
 * (x) Highlighted blog posts component
 * (x) Career timeline
-* (x) Torch POC
+* (x) Interactive torch
