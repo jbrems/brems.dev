@@ -9,8 +9,10 @@ export default async function BlogHomePage() {
 
   return <>
     <h2>My Blog</h2>
-    <SttpTag />{' '}
-    <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
+    <p>
+      <SttpTag />{' '}
+      <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
+    </p>
     <h3>UI</h3>
     <BlogPostList blogPosts={ui} />
     <h3>Next.js</h3>
