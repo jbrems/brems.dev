@@ -3,6 +3,7 @@ title: 'How to add syntax highlighting to a Markdown blog'
 description: 'Straight to the point instructions on how to add syntax highlighting to a server side rendered Markdown blog.'
 created: 2024-11-06
 updated: 2024-11-08
+sttp: true
 ---
 
 ```javascript

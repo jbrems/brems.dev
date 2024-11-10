@@ -1,3 +1,8 @@
 .linkToBlogPost {
   text-decoration: none;
+
+  & .blogPost:hover {
+    background: radial-gradient(ellipse at top left, #222222, transparent),
+                radial-gradient(ellipse at bottom right, #444444, transparent);
+  }
 }

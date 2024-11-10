@@ -41,6 +41,7 @@ async function mapFileToBlogPost(file: fs.Dirent): Promise<BlogPost> {
     description: matterData.data.description,
     created: matterData.data.created,
     updated: matterData.data.updated || matterData.data.created,
+    sttp: matterData.data.sttp,
     content: matterData.content,
   }
 }
@@ -58,4 +59,10 @@ function parseTopicFromFile(file: fs.Dirent): string {
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+}
+
+export function groupByTopic(result: Record<string, BlogPost[]>, blogPost: BlogPost): Record<string, BlogPost[]> {
+  if (!result[blogPost.topic]) result[blogPost.topic] = []
+  result[blogPost.topic].push(blogPost)
+  return result
 }

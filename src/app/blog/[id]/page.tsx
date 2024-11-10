@@ -7,6 +7,7 @@ import rehypeStringify from 'rehype-stringify'
 import { getAllBlogPosts, getBlogPostById } from "../blog.utils";
 import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
 import styles from './page.module.css'
+import { BackButton } from '@/components/navigation/back-button/BackButton'
 
 export const dynamicParams = false
 
@@ -56,6 +57,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   return <div style={{ marginTop: '1em' }} className={styles.blogPostPage}>
     <BlogPostPreview blogPost={blogPost} />
-    <p dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content}/>
+    <article dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content} />
   </div>
 }

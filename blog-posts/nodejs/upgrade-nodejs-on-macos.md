@@ -2,6 +2,7 @@
 title: 'How to upgrade Node.js on MacOS'
 description: 'Straight to the point instructions on how to upgrade Node.js on MacOS.'
 created: 2024-10-26
+sttp: true
 ---
 
 ```bash

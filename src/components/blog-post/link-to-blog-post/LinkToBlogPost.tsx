@@ -5,6 +5,6 @@ import styles from './LinkToBlogPost.module.css'
 
 export function LinkToBlogPost({blogPost}: { blogPost: BlogPost }) {
   return <Link href={`/blog/${blogPost.id}`} className={styles.linkToBlogPost}>
-    <BlogPostPreview blogPost={blogPost} />
+    <BlogPostPreview blogPost={blogPost} className={styles.blogPost} />
   </Link>
 }

@@ -4,6 +4,7 @@ export type BlogPost = {
   description: string
   created: Date
   updated: Date
+  sttp: boolean
   topic: string
   content: string
 }
