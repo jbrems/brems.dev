@@ -12,10 +12,6 @@
     & .deLijn {
       height: 130px;
       --lines: 3;
-
-      & .description {
-        -webkit-line-clamp: 3;
-      }
     }
 
     & .thailand {
@@ -25,6 +21,7 @@
 
     & .c4t {
       height: 170px;
+      --lines: 5;
     }
 
     & .cmWeb {

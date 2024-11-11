@@ -23,21 +23,26 @@
   & .period {
     font-size: 0.8em;
     color: #888888;
+    margin-top: 2px;
   }
 
   & .description {
     flex-grow: 1;
-    margin: 6px 0;
-    font-size: 0.9em;
-    line-height: 1.2em;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: var(--lines);
+    
+    & p {
+      margin: 6px 0;
+      font-size: 0.9em;
+      line-height: 1.2em;
+    }
   }
 
   & .technologies {
     font-size: 0.75em;
+    font-weight: normal;
     color: goldenrod;
   }
 }

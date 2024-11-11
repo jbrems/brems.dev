@@ -9,17 +9,26 @@ export default function CareerPage() {
       <Timeline />
       <div className={styles.career}>
         <CareerBlock title="Web developer - De Lijn" period={['November 2023', 'now']} technologies={['Next.js', 'Azure', 'Docusaurus']} className={styles.deLijn}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fugit quos quae enim accusantium nisi? Ab aut delectus corrupti, repellat esse illo aperiam assumenda consequatur nihil quia recusandae ex dolor!
+          <p>At De Lijn I'm currently working as part of the web team, extending and improving the company's website and public facing applications.</p>
         </CareerBlock>
         <article className={styles.thailand}></article>
-        <CareerBlock title="Web developer - Customs4Trade" period={['April 2022', 'October 2023']} technologies={['Angular', 'Cypress', 'Storybook']} className={styles.c4t}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur soluta nostrum, alias ad quaerat ipsum ex commodi ullam eos, laboriosam, hic blanditiis neque exercitationem voluptatibus provident quas voluptates vitae dolores.
+        <CareerBlock title="Web developer - Customs4Trade" period={['April 2022', 'October 2023']} technologies={['Angular', 'Cypress', 'Storybook', 'Azure']} className={styles.c4t}>
+          <p>At Custums4Trade I spearheaded the front end development for the company's SAAS application in a vast team of backend developers.</p>
+          <p>As the only front-end developer my responsibilities included managing the Angular code base and teaching my colleagues some web application development.</p>
         </CareerBlock>
         <CareerBlock title="Web developer - Christelijke Mutualiteiten" period={['May 2017', 'April 2022']} technologies={['Angular', 'Node.js', 'MongoDB', 'OAuth', 'Jest', 'Cypress']} className={styles.cmWeb}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quaerat corrupti hic recusandae aspernatur tempora dolore esse itaque nemo, doloribus molestiae, obcaecati, omnis beatae sequi quae voluptatibus perferendis explicabo voluptate.
+          <p>After 5 years of Java development I joined CM's web team as a junior,
+self-taught Angular and Nodejs
+developer and contributed to making
+web applications to be embedded in the company's website.</p>
+          <p>Through the years I became the most experienced member of the
+team where I supported my colleagues and tackled the most
+challenging tasks as a senior developer and solution architect.</p>
         </CareerBlock>
         <CareerBlock title="Java developer - Christelijke Mutualiteiten" period={['April 2012', 'May 2017']} technologies={['Java EE', 'Struts']} className={styles.cmJava}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat excepturi repellendus perspiciatis ut soluta, nostrum sapiente modi accusamus saepe. Neque dolor, obcaecati voluptatem earum modi ex aut molestias velit? Nemo!
+          <p>At CM I gained my first professional software development
+experience while being part of various experienced teams creating
+Java backends and internal web applications for processes within CM.</p>
         </CareerBlock>
       </div>
     </div>

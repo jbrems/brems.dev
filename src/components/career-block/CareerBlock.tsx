@@ -4,7 +4,7 @@ export function CareerBlock({ title, period, technologies, className, children }
   return <article className={`${styles.careerBlock} ${className}`}>
     <h3 className={styles.title}>{title}</h3>
     <span className={styles.period}>{period.join(' - ')}</span>
-    <p className={styles.description}>{children}</p>
+    <div className={styles.description}>{children}</div>
     <span className={styles.technologies}>{technologies.join(', ')}</span>
   </article>
 }

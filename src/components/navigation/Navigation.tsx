@@ -7,6 +7,7 @@ export function Navigation() {
     <ul>
       <li><Link href="/"><Branding /></Link></li>
       <li><Link href="/">Home</Link></li>
+      <li><Link href="/career">Career</Link></li>
       <li><Link href="/blog">Blog</Link></li>
     </ul>
   </nav>
