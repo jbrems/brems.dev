@@ -1,0 +1,38 @@
+.careerTimeline {
+  display: flex;
+
+  & .career {
+    padding: 8px;
+    flex-grow: 1;
+
+    & article + article {
+      margin-top: 2px;
+    }
+
+    & .deLijn {
+      height: 130px;
+      --lines: 3;
+
+      & .description {
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    & .thailand {
+      height: 4px;
+      border: none;
+    }
+
+    & .c4t {
+      height: 170px;
+    }
+
+    & .cmWeb {
+      height: 590px;
+    }
+
+    & .cmJava {
+      height: 600px;
+    }
+  }
+}

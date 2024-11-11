@@ -4,13 +4,15 @@
 * {
   box-sizing: border-box;
 
-  font-family: "Source Code Pro", monospace;
-  font-optical-sizing: auto;
 }
 
 body {
   background-color: #222222;
   color: #dddddd;
+  
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: lighter;
 }
 
 a {
@@ -22,5 +24,9 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  line-height: 2em;
+  line-height: 1.8em;
+}
+
+pre code {
+  line-height: 1.5em;
 }

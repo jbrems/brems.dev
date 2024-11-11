@@ -14,6 +14,7 @@
     text-align: center;
     border-radius: 15px;
     padding: 0.75em;
+    font-weight: normal;
     
     background: radial-gradient(ellipse at top left, #222222, transparent),
                 radial-gradient(ellipse at bottom right, #2a2a2a, transparent);
@@ -38,6 +39,7 @@
     & .title {
       display: inline;
       font-size: 1.25em;
+      font-weight: lighter;
 
       background: linear-gradient(45deg, #cccccc, #ffffff, #cccccc);
       background-clip: text;
@@ -49,6 +51,7 @@
       gap: 1em;
       margin: 0;
       font-size: 0.9em;
+      font-weight: normal;
       font-variant: small-caps;
       color: goldenrod;
     }

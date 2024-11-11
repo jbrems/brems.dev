@@ -1,0 +1,36 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 5em;
+  flex-shrink: 0;
+
+  & .yearSection {
+    display: contents;
+
+    & .year {
+      flex-shrink: 0;
+      font-size: 16px;
+      color: #dddddd;
+  
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-bottom: -4px;
+        margin-left: 0.5em;
+        border: solid 2px goldenrod;
+        border-radius: 100%;
+      }
+    }
+  
+    & .segment {
+      width: 11px;
+      height: 100px;
+      margin-top: -2px;
+      border-left: solid 2px goldenrod;
+    }
+  }
+
+}
