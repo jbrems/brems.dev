@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin-top: 2em;
 
-  a {
+  & a {
     font-size: 0.9em;
     color: goldenrod;
   }

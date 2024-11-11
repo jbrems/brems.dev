@@ -15,11 +15,6 @@
       margin-top: 2px;
     }
 
-    & .deLijn {
-      height: 130px;
-      --lines: 3;
-    }
-
     & .thailand {
       height: 4px;
       border: none;

@@ -1,8 +1,8 @@
 import styles from './page.module.css'
 import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
 import { getAllBlogPosts, sortBlogPosts } from "./blog/blog.utils"
-import { DeLijnBlock } from "./career/page"
 import Link from 'next/link'
+import { DeLijnBlock } from './career/DeLijnBlock'
 
 export default async function HomePage() {
   const blogPosts = await getAllBlogPosts()
