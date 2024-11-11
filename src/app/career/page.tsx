@@ -9,7 +9,7 @@ export default function CareerPage() {
   return <>
     <div className={styles.title}>
       <h2>My career</h2>
-      <Link href="https://www.linkedin.com/in/jonas-brems-a2022b2a/" target="_blank"><LinkedinIcon /></Link>
+      <Link href="https://www.linkedin.com/in/jonas-brems-a2022b2a/" target="_blank" aria-label="My linkedin profile"><LinkedinIcon /></Link>
     </div>
     <div className={styles.careerTimeline}>
       <Timeline />
