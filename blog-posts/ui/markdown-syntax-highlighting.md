@@ -4,6 +4,7 @@ description: 'Straight to the point instructions on how to add syntax highlighti
 created: 2024-11-06
 updated: 2024-11-08
 sttp: true
+highlight: 3
 ---
 
 ```javascript

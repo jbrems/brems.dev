@@ -7,4 +7,5 @@ export type BlogPost = {
   sttp: boolean
   topic: string
   content: string
+  highlight: number
 }

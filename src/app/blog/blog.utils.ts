@@ -43,6 +43,7 @@ async function mapFileToBlogPost(file: fs.Dirent): Promise<BlogPost> {
     updated: matterData.data.updated || matterData.data.created,
     sttp: matterData.data.sttp,
     content: matterData.content,
+    highlight: matterData.data.highlight || 0,
   }
 }
 
