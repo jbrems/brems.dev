@@ -1,0 +1,11 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2em;
+
+  a {
+    font-size: 0.9em;
+    color: goldenrod;
+  }
+}
