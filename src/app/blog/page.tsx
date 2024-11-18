@@ -13,10 +13,10 @@ export default async function BlogHomePage() {
       <SttpTag />{' '}
       <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
     </p>
-    <h3>Next.js</h3>
-    <BlogPostList blogPosts={nextjs} />
     <h3>UI</h3>
     <BlogPostList blogPosts={ui} />
+    <h3>Next.js</h3>
+    <BlogPostList blogPosts={nextjs} />
     <h3>Node.js</h3>
     <BlogPostList blogPosts={nodejs} />
     {Object.entries(others).map(entry => <section key={entry[0]}>

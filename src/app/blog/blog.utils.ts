@@ -52,8 +52,10 @@ function getFilePath(file: fs.Dirent): string {
 }
 
 function parseTopicFromFile(file: fs.Dirent): string {
-  return getFilePath(file).replace(blogPostsFolder, '') // remove the blogPostsFolder path
+  return getFilePath(file)
+    .replace(blogPostsFolder, '') // remove the blogPostsFolder path
     .replace(file.name, '') // remove the filename
+    .replace(/\\/g, '/')  // replace double backslashes (Windows) with single forward slashes
     .replace(/^\//, '') // remove the leading '/' if present
     .replace(/\/$/, '') // remove the trailing '/' if present
 }
