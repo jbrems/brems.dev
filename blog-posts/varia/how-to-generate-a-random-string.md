@@ -1,7 +1,7 @@
 ---
 title: How to generate a random string with Javascript
 description: Straight to the point instructions on how to generate a random string with Javascript.
-date: 2024-11-18
+created: 2024-11-18
 sttp: true
 ---
 
