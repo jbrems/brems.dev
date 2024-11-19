@@ -1,5 +1,5 @@
 ---
-title: `Front-end` vs `frontend` vs `front end`
+title: "`Front-end` vs `frontend` vs `front end`"
 description: When to use "front-end", "frontend", or "front end" and when to use "back-end", "backend", or "back end".
 created: 2024-11-19
 ---
