@@ -11,7 +11,7 @@ If you want to use the correct term however, use `front end` as a noun and `fron
 
 For example:
 ```text
-The frontend is maintained by front-end developers.
+The front end is maintained by front-end developers.
 ```
 
 ## Back end
@@ -19,5 +19,5 @@ The same applies to `back-end`, `backend`, and `back end`, which refer to the pa
 
 For example:
 ```text
-The backend is maintained by back-end developers.
+The back end is maintained by back-end developers.
 ```
