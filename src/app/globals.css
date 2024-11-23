@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark-dimmed.min.css');
 
+:root {
+  --background-color: #222222;
+  --color: #dddddd;
+}
+
 * {
   box-sizing: border-box;
 
 }
 
 body {
-  background-color: #222222;
-  color: #dddddd;
+  background-color: var(--background-color);
+  color: var(--color);
   
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;

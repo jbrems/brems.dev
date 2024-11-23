@@ -14,7 +14,7 @@ export default function CareerPage() {
     <div className={styles.careerTimeline}>
       <Timeline />
       <div className={styles.career}>
-        <DeLijnBlock />
+        <DeLijnBlock className={styles.deLijn} />
         <div className={styles.thailand}></div>
         <C4TBlock />
         <CmWebBlock />
@@ -26,7 +26,7 @@ export default function CareerPage() {
 
 function C4TBlock() {
   return <CareerBlock title="Web developer - Customs4Trade" period={['April 2022', 'October 2023']} technologies={['Angular', 'Cypress', 'Storybook', 'Azure']} className={styles.c4t}>
-    <p>At Custums4Trade I spearheaded the front end development for the company&apos;s SAAS application in a vast team of backend developers.</p>
+    <p>At Customs4Trade I spearheaded the front end development for the company&apos;s SAAS application in a vast team of backend developers.</p>
     <p>As the only front-end developer my responsibilities included managing the Angular code base and teaching my colleagues some web application development.</p>
   </CareerBlock>
 }
