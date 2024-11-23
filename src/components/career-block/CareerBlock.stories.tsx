@@ -27,7 +27,7 @@ export const CMWeb = {
   args: {
     title: 'Web developer - CM',
     period: ['May 2017', 'April 2022'],
-    technologies: ['Angular', 'Node.js', 'MongoDB', 'Express.js', 'OAuth', 'Jest', 'REST'],
+    technologies: ['Angular', 'Node.js', 'MongoDB', 'Express.js', 'OAuth', 'Jest', 'REST', 'Docker'],
     children: <><p>After 5 years of Java development I joined CM&apos;s web team as a junior,
     self-taught Angular and Nodejs
     developer and contributed to making
