@@ -15,3 +15,4 @@
 * (x) Interactive torch
 * (x) Blog post OG image
 * (x) Career company logo's
+* (x) Favicon
