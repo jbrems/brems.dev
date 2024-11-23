@@ -4,6 +4,7 @@ import { CareerBlock } from "@/components/career-block/CareerBlock";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import Link from "next/link";
 import { DeLijnBlock } from "./DeLijnBlock";
+import { InteractiveTorch } from "@/components/interactive-torch/InteractiveTorch";
 
 export default function CareerPage() {
   return <>
@@ -21,6 +22,7 @@ export default function CareerPage() {
         <CmJavaBlock />
       </div>
     </div>
+    <InteractiveTorch />
   </>
 }
 
