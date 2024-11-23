@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Analytics />
         <Navigation />
         <div style={{ padding: '0 1em' }}>
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   );
