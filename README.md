@@ -8,6 +8,7 @@
 * STTP blog posts
 * Career timeline
 * Highlighted blog posts
+* Most recent blog posts
 * Anonymous analytics
 * Storybook
 
@@ -15,4 +16,8 @@
 * (x) Interactive torch
 * (x) Blog post OG image
 * (x) Career company logo's
+* (x) Responsive career block
 * (x) Favicon
+* (x) SVG path blog post
+* (x) Checkbox menu blog post
+* (x) Extract BlogPost and Markdown components

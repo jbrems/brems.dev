@@ -1,11 +1,12 @@
 import styles from './page.module.css'
 import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
-import { getAllBlogPosts } from "./blog/blog.utils"
+import { getAllBlogPosts, sortBlogPosts } from "./blog/blog.utils"
 import Link from 'next/link'
 import { DeLijnBlock } from './career/DeLijnBlock'
 
 export default async function HomePage() {
   const blogPosts = await getAllBlogPosts()
+  blogPosts.sort(sortBlogPosts).reverse()
   const highlightedBlogPosts = blogPosts.filter(blogPost => blogPost.highlight)
   highlightedBlogPosts.sort((a, b) => a.highlight - b.highlight)
 
@@ -22,5 +23,7 @@ export default async function HomePage() {
       <Link href="/blog">All blog posts</Link>
     </div>
     <BlogPostList blogPosts={highlightedBlogPosts} />
+    <h3 className={styles.title}>Most recent blog posts</h3>
+    <BlogPostList blogPosts={blogPosts.slice(0, 3)} />
   </>
 }
