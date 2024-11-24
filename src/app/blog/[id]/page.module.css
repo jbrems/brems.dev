@@ -1,16 +1,3 @@
 .blogPostPage {
   margin-top: 1rem;
-
-  & .content {
-    & :not(pre) code {
-      display: inline;
-      background-color: #333333;
-      padding: 0.3em 0.5em;
-      border-radius: 0.5em;
-    }
-
-    & h2 {
-      color: goldenrod;
-    }
-  }
 }

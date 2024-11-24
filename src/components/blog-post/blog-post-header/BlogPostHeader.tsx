@@ -1,9 +1,9 @@
 import { BlogPost } from '@/app/blog/blog.types'
-import styles from './BlogPostPreview.module.css'
+import styles from './BlogPostHeader.module.css'
 import { SttpTag } from '../sttp-tag/SttpTag'
 
-export function BlogPostPreview({ blogPost, className }: { blogPost: BlogPost, className?: string }) {
-  return <div className={`${styles.blogPostPreview} ${className}`}>
+export function BlogPostHeader({ blogPost, className }: { blogPost: BlogPost, className?: string }) {
+  return <header className={`${styles.blogPostHeader} ${className}`}>
     <div className={styles.cover}>
       <span className={styles.topic}>{blogPost.topic}</span>
       {blogPost.sttp && <SttpTag className={styles.sttpTag} />}
@@ -15,5 +15,5 @@ export function BlogPostPreview({ blogPost, className }: { blogPost: BlogPost, c
         <span>by Jonas Brems</span>
       </p>
     </div>
-  </div>
+  </header>
 }

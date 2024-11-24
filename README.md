@@ -20,4 +20,3 @@
 * (x) Favicon
 * (x) SVG path blog post
 * (x) Checkbox menu blog post
-* (x) Extract BlogPost and Markdown components

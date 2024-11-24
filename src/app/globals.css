@@ -4,6 +4,7 @@
 :root {
   --background-color: #222222;
   --color: #dddddd;
+  --highlight-color: goldenrod;
 }
 
 * {

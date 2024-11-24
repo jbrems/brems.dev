@@ -1,12 +1,12 @@
 import { StoryObj } from "@storybook/react";
-import { BlogPostPreview } from "./BlogPostPreview";
+import { BlogPostHeader } from "./BlogPostHeader";
 import { storybook } from "@/app/blog/blog.fixtures";
 
 export default {
-  component: BlogPostPreview,
+  component: BlogPostHeader,
 }
 
-export const Storybook: StoryObj<typeof BlogPostPreview> = {
+export const Storybook: StoryObj<typeof BlogPostHeader> = {
   args: {
     blogPost: storybook,
   }

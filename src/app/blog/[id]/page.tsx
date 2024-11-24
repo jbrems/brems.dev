@@ -1,12 +1,7 @@
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeStringify from 'rehype-stringify'
-
 import { getAllBlogPosts, getBlogPostById } from "../blog.utils";
-import { BlogPostPreview } from '@/components/blog-post/blog-post-preview/BlogPostPreview';
+import { BlogPostHeader } from '@/components/blog-post/blog-post-header/BlogPostHeader';
 import styles from './page.module.css'
+import { Markdown } from "@/components/markdown/Markdown";
 
 export const dynamicParams = false
 
@@ -45,17 +40,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   if (!blogPost) return
 
-  const htmlVFile = await unified()
-    .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypeHighlight)
-    .use(rehypeStringify)
-    .process(blogPost.content)
-
-  const htmlContent = htmlVFile.toString()
-
-  return <div style={{ marginTop: '1em' }} className={styles.blogPostPage}>
-    <BlogPostPreview blogPost={blogPost} />
-    <article dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.content} />
+  return <div className={styles.blogPostPage}>
+    <BlogPostHeader blogPost={blogPost} />
+    <Markdown content={blogPost.content} />
   </div>
 }

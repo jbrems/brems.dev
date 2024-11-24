@@ -12,5 +12,9 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
-};
-export default config;
+  features: {
+    experimentalRSC: true,
+  },
+}
+
+export default config
