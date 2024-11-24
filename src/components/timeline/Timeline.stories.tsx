@@ -5,5 +5,8 @@ export default {
 }
 
 export const Default = {
-  args: {},
+  args: {
+    start: 2012,
+    end: 2025,
+  },
 }
