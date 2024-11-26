@@ -1,6 +1,6 @@
 ---
-title: Should I use Javascript or Typescript?
-description: My honest opinion on when you should choose for Typescript and when to stick with plain old Javascript.
+title: Should you use Javascript or Typescript?
+description: My honest opinion on when you should choose Typescript and when to stick with plain old Javascript.
 created: 2024-11-19
 ---
 
