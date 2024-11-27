@@ -1,4 +1,4 @@
-import { IconProps } from "./icons.types";
+import { IconProps } from "../icons.types";
 
 export function CloseIcon({ size = 24, color = '#dddddd' }: IconProps) {
   return <svg width={size} height={size} viewBox="0 0 10 10" aria-label="Close icon">

@@ -1,7 +1,6 @@
 import { getAllBlogPosts, getBlogPostById } from "../blog.utils";
-import { BlogPostHeader } from '@/components/blog-post/blog-post-header/BlogPostHeader';
 import styles from './page.module.css'
-import { Markdown } from "@/components/markdown/Markdown";
+import { BlogPost } from "@/components/blog-post/BlogPost";
 
 export const dynamicParams = false
 
@@ -40,8 +39,5 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   if (!blogPost) return null
 
-  return <div className={styles.blogPostPage}>
-    <BlogPostHeader blogPost={blogPost} />
-    <Markdown content={blogPost.content} />
-  </div>
+  return <BlogPost className={styles.blogPostPage} blogPost={blogPost} />
 }
