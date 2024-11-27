@@ -11,5 +11,8 @@ sttp: true
 ```
 
 ```javascript
-document.documentElement.style.setProperty('--my-var', 'updated value');
+document.documentElement.style.setProperty(
+  '--my-var', 
+  'updated value',
+);
 ```

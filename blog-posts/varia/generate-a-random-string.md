@@ -6,7 +6,10 @@ sttp: true
 ---
 
 ```javascript
-new Array(43).fill(0).map(() => Math.floor(Math.random() * 36).toString(36)).join('')
+new Array(43)
+  .fill(0)
+  .map(() => Math.floor(Math.random() * 36).toString(36))
+  .join('')
 ```
 
 _Where `43` is the length of the string and `36` is the range of characters to choose from ([0-9a-z])._
