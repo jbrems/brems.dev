@@ -11,10 +11,10 @@
 * Most recent blog posts
 * Anonymous analytics
 * Storybook
+* Blog post OpenGraph images
 
 * (x) Blog posts topic filter
 * (x) Interactive torch
-* (x) Blog post OG image
 * (x) Career company logo's
 * (x) Responsive career block
 * (x) Favicon
