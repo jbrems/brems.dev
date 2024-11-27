@@ -10,7 +10,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
 
   if (!blogPost) return null
 
-  const sourceCodePro = fs.promises.readFile(path.join(fileURLToPath(import.meta.url), '../../../../../public/Source_Code_Pro/static/SourceCodePro-Medium.ttf'))
+  const sourceCodePro = fs.promises.readFile(path.join(fileURLToPath(import.meta.url), '../SourceCodePro-Medium.ttf'))
 
   return new ImageResponse(
     <div style={{ display: 'flex', width: '100%', height: '100%', backgroundColor: '#222222' }}>
