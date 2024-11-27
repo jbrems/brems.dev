@@ -37,6 +37,6 @@ Encoding is easily reversible and should not be used for securing data.
 
 Encoding is often used to pass "complex" data or data containing reserved characters in URL query parameters.
 
-Encoding is also also used to convert text to binary data.
+Encoding is also used to convert text to binary data.
 
 Common encoding algorithms are `Base64` and `UTF-8`.
