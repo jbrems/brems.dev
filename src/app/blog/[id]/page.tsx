@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const blogPost = await getBlogPostById(id)
 
-  if (!blogPost) return
+  if (!blogPost) return null
 
   return <div className={styles.blogPostPage}>
     <BlogPostHeader blogPost={blogPost} />

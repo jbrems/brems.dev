@@ -1,0 +1,10 @@
+.watermark {
+  font-size: 0.5em;
+  font-weight: normal;
+  line-height: 1em;
+  padding: 0.5em 1em;
+  border: solid 1px #daa52050;
+  border-radius: 0  15px 0 15px;
+  color: gold;
+  background: #daa52020;
+}

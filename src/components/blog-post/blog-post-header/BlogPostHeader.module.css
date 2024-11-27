@@ -6,36 +6,6 @@
   padding: 0.75em;
   border-radius: 10px;
 
-  & .cover {
-    position: relative;
-    flex-shrink: 0;
-    height: 5em;
-    width: 5em;
-    line-height: 3em;
-    text-align: center;
-    border-radius: 15px;
-    padding: 0.75em;
-    font-weight: normal;
-    
-    background: radial-gradient(ellipse at top left, #222222, transparent),
-                radial-gradient(ellipse at bottom right, #2a2a2a, transparent);
-    border: solid 1px #333333;
-
-    & .topic {
-      font-size: 1.5em;
-      font-variant: small-caps;
-      background: linear-gradient(45deg, transparent, goldenrod, gold, goldenrod, transparent);
-      background-clip: text;
-      color: transparent;
-    }
-
-    & .sttpTag {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
-
   & .info {
     & .title {
       display: inline;
