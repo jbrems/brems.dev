@@ -1,16 +1,17 @@
 import { ImageResponse } from "next/og"
-import { getBlogPostById } from "../blog.utils"
-import fs from 'fs'
-import { fileURLToPath } from "url"
-import path from 'path'
+
+export const runtime = 'edge'
 
 export default async function OpenGraphImage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const blogPost = await getBlogPostById(id)
+  
+  const blogPost = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogposts/${id}`).then(res => res.json())
 
   if (!blogPost) return null
 
-  const sourceCodePro = fs.promises.readFile(path.join(fileURLToPath(import.meta.url), '../SourceCodePro-Medium.ttf'))
+  const sourceCodePro = fetch(
+    new URL('./SourceCodePro-Medium.ttf', import.meta.url)
+  ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
     <div style={{ display: 'flex', width: '100%', height: '100%', backgroundColor: '#222222' }}>
