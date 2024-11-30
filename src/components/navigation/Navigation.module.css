@@ -50,7 +50,7 @@
     & + .menu {
       display: flex;
       flex-direction: column;
-      gap: 1em;
+      gap: 0.5em;
 
       position: absolute;
       top: 100px;
@@ -69,7 +69,7 @@
     }
   }
 
-  @container (min-width: 500px) {
+  @container (min-width: 600px) {
     .toggleMenu {
       display: none;
     }
