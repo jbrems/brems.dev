@@ -1,8 +1,15 @@
-import Link from "next/link";
+import { Project } from "@/components/project/Project";
+
+import styles from './page.module.css'
 
 export default function ProjectsPage() {
   return <>
     <h2>Projects</h2>
-    <Link href="/projects/presentr">Presentr</Link>
+    <div className={styles.projectsContainer}>
+      <Project url="/projects/presentr" coverImageUrl="/presenting.jpeg" title="Presentr">
+        <p>Present your photos with style!</p>
+        <p>Implements the Google Photos picker APIs.</p>
+      </Project>
+    </div>
   </>
 }
