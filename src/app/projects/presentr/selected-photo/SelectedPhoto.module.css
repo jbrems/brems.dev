@@ -1,0 +1,22 @@
+.selectedPhotoContainer {
+  position: absolute;
+  top: 19%;
+  left: 28%;
+  height: 52%;
+  width: 58%;
+
+  perspective: 950px;
+
+  & img {
+    background-color: #ff000099;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(2deg) rotateY(-40deg) rotateZ(-1deg);
+  }
+
+  & button {
+    position: absolute;
+    background: none;
+    border: none;
+  }
+}

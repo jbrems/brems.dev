@@ -17,6 +17,7 @@ export function Navigation() {
       </li>
       <ul className={styles.menu}>
         <li><Link href="/">Home</Link></li>
+        <li><Link href="/projects">Projects</Link></li>
         <li><Link href="/career">Career</Link></li>
         <li><Link href="/blog">Blog</Link></li>
       </ul>
