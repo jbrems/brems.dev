@@ -42,8 +42,6 @@ export async function getPickedPhotos(accessToken: string, sessionId: string): P
 }
 
 export async function getPickedPhoto(accessToken: string, url: string) {
-  console.log('Fetching photo', url)
-
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
