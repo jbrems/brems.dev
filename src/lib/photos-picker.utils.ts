@@ -48,6 +48,7 @@ export async function getPickedPhoto(accessToken: string, url: string) {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
+    cache: 'force-cache',
   })
 
   console.log(response.status, response.statusText)

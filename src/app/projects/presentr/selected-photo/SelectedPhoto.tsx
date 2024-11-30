@@ -1,19 +1,17 @@
 'use client'
 
-import { ChevronLeftIcon } from '@/components/icons/chevron-left-icon/ChevronLeftIcon'
 import { usePhotosPicker } from '../photos-picker/photos-picker.hook'
 import styles from './SelectedPhoto.module.css'
+import { useContext } from 'react'
+import { PresentrContext } from '../presentr-provider'
 
 export function SelectedPhoto() {
-  const { selectedPhoto, hasMorePhotos, showPreviousPhoto, showNextPhoto } = usePhotosPicker()
+  const { selectedPhoto } = useContext(PresentrContext)
+  usePhotosPicker()
 
-  if (!selectedPhoto) return
+  if (!selectedPhoto) return null
 
   return <div className={styles.selectedPhotoContainer}>
     <img src={URL.createObjectURL(selectedPhoto)} />
-    {hasMorePhotos() && <>
-      <button onClick={showPreviousPhoto}><ChevronLeftIcon color="gold" /></button>
-      <button onClick={showNextPhoto}><ChevronLeftIcon color="gold" className="rotate-180" /></button>
-    </>}
   </div>
 }

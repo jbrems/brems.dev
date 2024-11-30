@@ -1,12 +1,9 @@
-import { getPickedPhoto, getPickedPhotos, pollPhotosPickerSession, startPhotosPickerSession } from "@/lib/photos-picker.utils"
-import { useContext, useEffect, useState } from "react"
+import { getPickedPhotos, pollPhotosPickerSession, startPhotosPickerSession } from "@/lib/photos-picker.utils"
+import { useContext, useEffect } from "react"
 import { PresentrContext } from "../presentr-provider"
 
 export function usePhotosPicker() {
-  const { tokenResponse, photosPickerSession, setPhotosPickerSession } = useContext(PresentrContext)
-  const [pickedPhotos, setPickedPhotos] = useState<string[]>([])
-  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number>(0)
-  const [selectedPhoto, setSelectedPhoto] = useState<Blob | null>(null)
+  const { tokenResponse, photosPickerSession, setPhotosPickerSession, setPickedPhotos } = useContext(PresentrContext)
   
   useEffect(() => {
     async function startSession() {
@@ -30,40 +27,8 @@ export function usePhotosPicker() {
         const photos = await getPickedPhotos(tokenResponse.access_token, photosPickerSession.id)
         const mappedPhotos = photos.mediaItems.map(p => p.mediaFile.baseUrl)
         setPickedPhotos(mappedPhotos)
-
       }
     }, 5000)
     return () => clearInterval(interval)
-  }, [tokenResponse, photosPickerSession, setPhotosPickerSession])
-  
-  useEffect(() => {
-    async function fetchSelectedPhoto() {
-      if (!tokenResponse || !pickedPhotos) return
-
-      setSelectedPhoto(await getPickedPhoto(tokenResponse.access_token, pickedPhotos[selectedPhotoIndex]))
-    }
-    fetchSelectedPhoto()
-  }, [tokenResponse, pickedPhotos, selectedPhotoIndex, setSelectedPhoto])
-
-  function hasMorePhotos() {
-    return pickedPhotos.length > 1
-  }
-
-  function showPreviousPhoto() {
-    setSelectedPhotoIndex((selectedPhotoIndex) => {
-      if (selectedPhotoIndex === 0) return pickedPhotos.length - 1
-      return (selectedPhotoIndex - 1) % pickedPhotos.length
-    })
-  }
-  
-  function showNextPhoto() {
-    setSelectedPhotoIndex((selectedPhotoIndex) => (selectedPhotoIndex + 1) % pickedPhotos.length)
-  }
-
-  return {
-    selectedPhoto,
-    hasMorePhotos,
-    showPreviousPhoto,
-    showNextPhoto,
-  }
+  }, [tokenResponse, photosPickerSession, setPhotosPickerSession, setPickedPhotos])
 }

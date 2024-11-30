@@ -1,6 +1,7 @@
 import styles from './page.module.css'
 import { PhotosPickerActions } from "./photos-picker/PhotosPickerActions";
 import { PhotosPickerStatus } from "./photos-picker/PhotosPickerStatus";
+import { PresentrActions } from './PresentrActions';
 import { SelectedPhoto } from './selected-photo/SelectedPhoto';
 
 export default async function PresentrPage() {
@@ -10,7 +11,8 @@ export default async function PresentrPage() {
     <div className={styles.presentingContainer}>
       <img src="/presenting.jpeg" />
       <SelectedPhoto />
-      <PhotosPickerActions className={styles.addIcon} />
+      <PhotosPickerActions className={styles.photosPickerActions} />
+      <PresentrActions className={styles.presentrActions} />
     </div>
     <PhotosPickerStatus />
   </>
