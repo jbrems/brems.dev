@@ -1,0 +1,64 @@
+.presentingContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  & img {
+    width: 100%;
+  }
+
+  .photo {
+    position: absolute;
+    top: 19%;
+    left: 28%;
+    height: 52%;
+    width: 58%;
+
+    perspective: 950px;
+
+    & img {
+      background-color: #ff000099;
+      width: 100%;
+      height: 100%;
+      transform: rotateX(2deg) rotateY(-40deg) rotateZ(-1deg);
+    }
+  }
+
+  .photosPickerActions {
+    position: absolute;
+    top: 32%;
+    left: 45%;
+
+    width: 25%;
+    height: 25%;
+  }
+
+  .presentrActions {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 60%;
+    transform: rotate(-3deg);
+
+    display: flex;
+    justify-content: space-between;
+
+    & button {
+      border: none;
+      background: none;
+
+      & svg {
+        width: clamp(0px, 5dvw, 60px);
+      }
+    }
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+
+    filter: drop-shadow(5px 5px 4px #222222);
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,10 @@
+.projectsContainer {
+  display: flex;
+  flex-flow: wrap;
+  gap: 25px;
+
+  & > * {
+    flex: 1 0 300px;
+    max-width: 600px;
+  }
+}

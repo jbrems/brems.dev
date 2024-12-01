@@ -36,3 +36,7 @@ p {
 pre code {
   line-height: 1.5em;
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
