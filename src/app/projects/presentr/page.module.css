@@ -46,6 +46,10 @@
     & button {
       border: none;
       background: none;
+
+      & svg {
+        width: clamp(0px, 5dvw, 60px);
+      }
     }
   }
 
