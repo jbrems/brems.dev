@@ -1,17 +1,30 @@
 .selectedPhotoContainer {
   position: absolute;
-  top: 19%;
-  left: 28%;
-  height: 52%;
-  width: 58%;
+  top: 19.2%;
+  left: 32.8%;
+  height: 100%;
+  width: 100%;
 
-  perspective: 950px;
+  perspective: clamp(6px, 100dvw * 0.023, 27px); /* 10 - 27 */
+
+  /* w > w * 0.023 - 1 */
+  /* 300 > 6 */ 
+  /* 400 > 8 */
+  /* 500 > 10 */
+  /* 600 > 13 */
+  /* 700 > 15 */
+  /* 800 > 17 */
+  /* 900 > 19 */
+  /* 1000 > 21 */
+  /* 1100 > 24 */
+  /* 1200 > 27 */
+
 
   & img {
     background-color: #ff000099;
-    width: 100%;
-    height: 100%;
-    transform: rotateX(2deg) rotateY(-40deg) rotateZ(-1deg);
+    width: 49.4%;
+    height: 52.15%;
+    transform: rotateY(-0.5deg);
   }
 
   & button {
