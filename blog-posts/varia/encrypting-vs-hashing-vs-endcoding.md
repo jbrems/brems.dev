@@ -2,7 +2,7 @@
 title: Encryption vs hashing vs encoding
 description: A short description of the differences between encrypting, hashing, and encoding.
 created: 2024-11-26
-highlight: 1
+highlight: 2
 ---
 
 ## Encryption

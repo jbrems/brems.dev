@@ -12,11 +12,11 @@
 * Anonymous analytics
 * Storybook
 * Blog post OpenGraph images
+* Projects
 
 * (x) Blog posts topic filter
 * (x) Interactive torch
-* (x) Career company logo's
+* (x) Career company logos
 * (x) Responsive career block
 * (x) Favicon
-* (x) SVG path blog post
-* (x) Checkbox menu blog post
+* (x) Publish OAuth app
