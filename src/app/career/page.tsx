@@ -5,6 +5,10 @@ import { LinkedinIcon } from "@/components/icons/linkedin-icon/LinkedinIcon";
 import Link from "next/link";
 import { DeLijnBlock } from "./DeLijnBlock";
 
+export const metadata = {
+  title: 'Career',
+}
+
 export default function CareerPage() {
   return <>
     <div className={styles.title}>

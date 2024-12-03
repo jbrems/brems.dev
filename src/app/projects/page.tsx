@@ -2,6 +2,10 @@ import { Project } from "@/components/project/Project";
 
 import styles from './page.module.css'
 
+export const metadata = {
+  title: 'Projects',
+}
+
 export default function ProjectsPage() {
   return <>
     <h2>Projects</h2>

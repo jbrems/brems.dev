@@ -11,6 +11,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: 'https://brems.dev/projects',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+    },
+    {
+      url: 'https://brems.dev/projects/presentr',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://brems.dev/career',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1.0,
+    },
+    {
       url: 'https://brems.dev/blog',
       lastModified: new Date(),
       changeFrequency: 'daily',

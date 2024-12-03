@@ -4,6 +4,10 @@ import { getAllBlogPosts, sortBlogPosts } from "./blog/blog.utils"
 import Link from 'next/link'
 import { DeLijnBlock } from './career/DeLijnBlock'
 
+export const metadata = {
+  title: '<Home /> | Brems.dev',
+}
+
 export default async function HomePage() {
   const blogPosts = await getAllBlogPosts()
   blogPosts.sort(sortBlogPosts).reverse()

@@ -13,10 +13,10 @@
 * Storybook
 * Blog post OpenGraph images
 * Projects
+* Favicon
 
 * (x) Blog posts topic filter
 * (x) Interactive torch
 * (x) Career company logos
 * (x) Responsive career block
-* (x) Favicon
 * (x) Publish OAuth app

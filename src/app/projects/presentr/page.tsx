@@ -4,6 +4,10 @@ import { PhotosPickerStatus } from "./photos-picker/PhotosPickerStatus";
 import { PresentrActions } from './PresentrActions';
 import { SelectedPhoto } from './selected-photo/SelectedPhoto';
 
+export const metadata = {
+  title: 'Presentr',
+}
+
 export default async function PresentrPage() {
   return <>
     <h2>Presentr</h2>

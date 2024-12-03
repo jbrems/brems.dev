@@ -4,6 +4,10 @@ import { SttpTag } from "@/components/blog-post/sttp-tag/SttpTag"
 
 import styles from './page.module.css'
 
+export const metadata = {
+  title: 'Blog',
+}
+
 export default async function BlogHomePage() {
   const blogPosts = await getAllBlogPosts()
   blogPosts.sort(sortBlogPosts).reverse()
