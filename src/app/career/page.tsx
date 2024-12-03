@@ -7,6 +7,7 @@ import { DeLijnBlock } from "./DeLijnBlock";
 
 export const metadata = {
   title: 'Career',
+  description: 'A quick overview of my web developer career. For more details, see my Linkedin profile.',
 }
 
 export default function CareerPage() {

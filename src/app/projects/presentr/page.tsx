@@ -6,6 +6,7 @@ import { SelectedPhoto } from './selected-photo/SelectedPhoto';
 
 export const metadata = {
   title: 'Presentr',
+  description: 'Present your photos with style! Implements the Google Photos picker APIs.',
 }
 
 export default async function PresentrPage() {

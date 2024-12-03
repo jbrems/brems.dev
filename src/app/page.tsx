@@ -6,6 +6,7 @@ import { DeLijnBlock } from './career/DeLijnBlock'
 
 export const metadata = {
   title: '<Home /> | Brems.dev',
+  description: 'Jonas Brems - Web developer. My very own place on the world wide web.',
 }
 
 export default async function HomePage() {

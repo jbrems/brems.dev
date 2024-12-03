@@ -6,6 +6,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Blog',
+  description: 'An overview of all blog posts I have written in my life. Mostly centered around web development.',
 }
 
 export default async function BlogHomePage() {

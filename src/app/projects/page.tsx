@@ -4,6 +4,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Projects',
+  description: 'Some side projects I have created for your pleasure and sometimes convenience.',
 }
 
 export default function ProjectsPage() {
