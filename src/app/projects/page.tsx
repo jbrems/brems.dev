@@ -15,8 +15,8 @@ export default function ProjectsPage() {
         <p>Present your photos with style!</p>
         <p>Implements the Google Photos picker APIs.</p>
       </Project>
-      <Project url="/projects/whos-that-pocemon" title="Who's that POCemon?">
-        <p>It started as a proof of concept about Next.js caching and turned into a standalone project.</p>
+      <Project url="/projects/whos-that-pocemon" coverImageUrl="/whos-that-pocemon.jpg" title="Who's that POCemon?">
+        <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
       </Project>
     </div>
   </>

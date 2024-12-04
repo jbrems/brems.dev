@@ -3,7 +3,7 @@ import { WhosThatPocemonGame } from './whos-that-pocemon-game/WhosThatPocemonGam
 
 export const metadata = {
   title: 'Who\'s that POCemon?',
-  description: 'It started as a POC about Next.js caching and turned into a standalone project.',
+  description: 'What started as a proof of concept about Next.js caching turned into a standalone project.',
 }
 
 export default function WhosThatPocemonPage() {
