@@ -12,7 +12,7 @@
 
   & svg {
     position: absolute;
-    right: -50;
+    right: -50px;
     bottom: 0;
     height: 100%;
     z-index: -1;
