@@ -23,6 +23,7 @@ body {
 
 a {
   color: #bbbbbb;
+  text-underline-offset: 0.25em;
 }
 
 h1, h2, h3, h4, h5 {

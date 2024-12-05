@@ -18,6 +18,11 @@
     .deLijn {
       height: 130px;
       --lines: 3;
+      --title-lines: 1;
+
+      & svg {
+        right: -70px;
+      }
     }
 
     & .thailand {
@@ -28,14 +33,31 @@
     & .c4t {
       height: 170px;
       --lines: 5;
+      --title-lines: 1;
+
+      & svg {
+        height: 100px;
+        bottom: 10px;
+        right: -50px;
+      }
     }
 
     & .cmWeb {
       height: 590px;
+
+      & svg {
+        height: 200px;
+        right: -60px;
+      }
     }
 
     & .cmJava {
       height: 600px;
+
+      & svg {
+        height: 200px;
+        right: -60px;
+      }
     }
   }
 }
