@@ -13,7 +13,6 @@
 * Favicon
 
 ## Whish list
-* Blog posts topic filter
 * Interactive torch
 * Publish OAuth app
-* Overlays project
+* Eslint

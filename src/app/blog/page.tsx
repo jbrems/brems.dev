@@ -3,6 +3,7 @@ import { getAllBlogPosts, sortBlogPosts } from "./blog.utils"
 import { SttpTag } from "@/components/blog-post/sttp-tag/SttpTag"
 
 import styles from './page.module.css'
+import { TopicFilter } from "@/components/topic-filter/TopicFilter"
 
 export const metadata = {
   title: 'Blog',
@@ -12,6 +13,8 @@ export const metadata = {
 export default async function BlogHomePage() {
   const blogPosts = await getAllBlogPosts()
   blogPosts.sort(sortBlogPosts).reverse()
+  
+  const topics = [...new Set(blogPosts.map(blogPost => blogPost.topic))]
 
   return <>
     <h2>My Blog</h2>
@@ -19,6 +22,7 @@ export default async function BlogHomePage() {
       <SttpTag className={styles.sttpTag} />{' '}
       <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
     </p>
+    <TopicFilter topics={topics} />
     <BlogPostList blogPosts={blogPosts} />
   </>
 }

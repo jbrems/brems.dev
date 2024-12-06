@@ -1,0 +1,33 @@
+.topicFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+
+  & button {
+    zoom: 0.68;
+    flex-grow: 1;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    font-weight: normal;
+    color: goldenrod;
+  }
+}
+
+@media (min-width: 390px) {
+  .topicFilter button {
+    zoom: 0.75;
+  }
+}
+
+@media (min-width: 450px) {
+  .topicFilter button {
+    zoom: 0.88;
+  }
+}
+
+@media (min-width: 500px) {
+  .topicFilter button {
+    zoom: 1;
+  }
+}
