@@ -14,7 +14,6 @@
     color: goldenrod;
 
     &:first-of-type {
-      margin-right: 1em;
       max-width: 12em;
     }
   }
