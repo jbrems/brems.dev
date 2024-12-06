@@ -22,7 +22,7 @@ export default async function BlogHomePage() {
       <SttpTag className={styles.sttpTag} />{' '}
       <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
     </p>
-    <TopicFilter topics={topics} />
+    <TopicFilter topics={topics} className={styles.topicFilters} />
     <BlogPostList blogPosts={blogPosts} />
   </>
 }

@@ -4,7 +4,7 @@ import { TopicFilterButton } from "@/components/topic-filter/topic-filter-button
 import styles from './TopicFilter.module.css'
 import { useState } from "react"
 
-export function TopicFilter({ topics }: { topics: string[] }) {
+export function TopicFilter({ topics, className = '' }: { topics: string[], className?: string }) {
   const [hiddenTopics, setHiddenTopics] = useState<string[]>([])
 
   function handleToggleTopic(topic: string, visible: boolean) {
@@ -23,7 +23,7 @@ export function TopicFilter({ topics }: { topics: string[] }) {
     topics.forEach(topic => handleToggleTopic(topic, visible))
   }
 
-  return <div className={styles.topicFilter}>
+  return <div className={`${styles.topicFilter} ${className}`}>
     <TopicFilterButton topic="All topics" visible={hiddenTopics.length === 0} toggle={handleToggleAllTopics} />
     {topics.map(topic => <TopicFilterButton key={topic} topic={topic} visible={!hiddenTopics.includes(topic)} toggle={handleToggleTopic} />)}
   </div>

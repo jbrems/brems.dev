@@ -7,10 +7,16 @@
   & button {
     zoom: 0.68;
     flex-grow: 1;
+    max-width: 10em;
     text-transform: uppercase;
     font-variant: small-caps;
     font-weight: normal;
     color: goldenrod;
+
+    &:first-of-type {
+      margin-right: 1em;
+      max-width: 12em;
+    }
   }
 }
 
@@ -20,14 +26,8 @@
   }
 }
 
-@media (min-width: 450px) {
+@media (min-width: 800px) {
   .topicFilter button {
-    zoom: 0.88;
-  }
-}
-
-@media (min-width: 500px) {
-  .topicFilter button {
-    zoom: 1;
+    flex-grow: 0;
   }
 }
