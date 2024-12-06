@@ -12,7 +12,7 @@
 * Projects
 * Favicon
 
-## Whish list
+## Wishlist
 * Interactive torch
 * Publish OAuth app
 * Eslint
