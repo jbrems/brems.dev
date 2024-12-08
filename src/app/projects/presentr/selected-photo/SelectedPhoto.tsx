@@ -12,6 +12,6 @@ export function SelectedPhoto() {
   if (!selectedPhoto) return null
 
   return <div className={styles.selectedPhotoContainer}>
-    <img src={URL.createObjectURL(selectedPhoto)} />
+    <img src={URL.createObjectURL(selectedPhoto)} alt="Presentr active photo" />
   </div>
 }

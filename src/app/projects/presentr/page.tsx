@@ -14,7 +14,7 @@ export default async function PresentrPage() {
     <h2>Presentr</h2>
     <p>Present your photos with style!</p>
     <div className={styles.presentingContainer}>
-      <img src="/presentr-template.jpeg" />
+      <img src="/presentr-template.jpeg" alt="Presentr template" />
       <SelectedPhoto />
       <PhotosPickerActions className={styles.photosPickerActions} />
       <PresentrActions className={styles.presentrActions} />
