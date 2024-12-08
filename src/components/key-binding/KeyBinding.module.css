@@ -1,0 +1,9 @@
+.keyBinding {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+
+  & *:last-child {
+    margin-left: 0.5em;
+  }
+}

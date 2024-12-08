@@ -9,6 +9,11 @@
 * Career timeline
 * Highlighted blog posts
 
-* (x) Blog posts topic filter
-* (x) Interactive torch
-* (x) Blog post OG image
+## Wishlist
+* Interactive torch
+* Publish OAuth app
+* Eslint
+* Javascript topic
+* Dedupe array post
+* Favicon border radius
+* Blog posts topic filter query param
