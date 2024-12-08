@@ -1,0 +1,15 @@
+.backToBlogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  text-decoration: none;
+  color: #888888;
+
+  &:first-child {
+    margin-bottom: 1em;
+  }
+
+  &:last-child {
+    margin-top: 1em;
+  }
+}

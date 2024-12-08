@@ -1,0 +1,40 @@
+.blogPostHeader {
+  container-type: inline-size;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  padding: 0.75em;
+  border-radius: 10px;
+
+  & .info {
+    & .title {
+      display: inline;
+      font-size: 1.25em;
+      font-weight: lighter;
+
+      background: linear-gradient(45deg, #cccccc, #ffffff, #cccccc);
+      background-clip: text;
+      color: transparent;
+    }
+  
+    & .metadata {
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      font-size: 0.9em;
+      font-weight: normal;
+      font-variant: small-caps;
+      color: goldenrod;
+
+      & span:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  @container (min-width: 450px) {
+    .info .metadata span:last-of-type {
+      display: inline;
+    }
+  }
+}

@@ -8,6 +8,9 @@
 
 body, p, canvas {
   cursor: var(--cursor)
+  --background-color: #222222;
+  --color: #dddddd;
+  --highlight-color: goldenrod;
 }
 
 * {
@@ -16,8 +19,8 @@ body, p, canvas {
 }
 
 body {
-  background-color: #222222;
-  color: #dddddd;
+  background-color: var(--background-color);
+  color: var(--color);
   
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
@@ -26,6 +29,7 @@ body {
 
 a {
   color: #bbbbbb;
+  text-underline-offset: 0.25em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -38,4 +42,37 @@ p {
 
 pre code {
   line-height: 1.5em;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  padding: 0.5em 1em;
+  color: #dddddd;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-size: 1em;
+  font-weight: lighter;
+
+  background: none;
+  border: solid 1px goldenrod;
+  border-radius: 2em;
+  box-shadow: 1px 1px 3px #000000;
+  
+  cursor: pointer;
+  transition: background 0.5s linear;
+
+  &:hover {
+    background: #333333;
+  }
 }

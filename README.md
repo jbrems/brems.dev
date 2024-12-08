@@ -7,7 +7,10 @@
 * Blog post topics
 * STTP blog posts
 * Career timeline
-* Highlighted blog posts
+* Anonymous analytics
+* Storybook
+* Projects
+* Favicon
 
 ## Wishlist
 * Interactive torch

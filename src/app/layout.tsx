@@ -5,8 +5,8 @@ import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Brems.dev',
-    default: 'Jonas Brems - Web developer',
+    template: '<%s /> | Brems.dev',
+    default: '</> | Brems.dev',
   },
   description: "My very own place on the world wide web.",
 };
@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navigation />
-        <div style={{ padding: '0 1em' }}>
+        <main style={{ padding: '0 1em' }}>
           {children}
-        </div>
+        </main>
         <Analytics />
       </body>
     </html>

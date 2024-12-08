@@ -2,6 +2,13 @@
   list-style: none;
   padding: 0;
 
+  & li {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    margin-bottom: -1px;
+  }
+
   & li + li {
     border-top: solid 1px #333333;
   }
