@@ -7,7 +7,7 @@
 }
 
 body, p, canvas {
-  cursor: var(--cursor)
+  cursor: var(--cursor);
   --background-color: #222222;
   --color: #dddddd;
   --highlight-color: goldenrod;

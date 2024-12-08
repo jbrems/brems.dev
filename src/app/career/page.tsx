@@ -29,7 +29,6 @@ export default function CareerPage() {
         <CmJavaBlock />
       </div>
     </div>
-    <InteractiveTorch />
   </>
 }
 
