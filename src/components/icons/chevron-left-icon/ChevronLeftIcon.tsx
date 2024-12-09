@@ -1,4 +1,4 @@
-import { IconProps } from "../icons.types";
+import { IconProps } from '../icons.types'
 
 export function ChevronLeftIcon({ size = 24, color = '#dddddd', className = '' }: IconProps) {
   return <svg width={size} height={size} viewBox="0 0 10 10" className={className}>

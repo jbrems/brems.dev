@@ -1,5 +1,5 @@
-import { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies"
-import { type NextResponse } from "next/server"
+import { ResponseCookie } from 'next/dist/compiled/@edge-runtime/cookies'
+import { type NextResponse } from 'next/server'
 
 export function setCookie(response: NextResponse, name: string, value: string, options: Partial<ResponseCookie>) {
   const cookieStore = response.cookies

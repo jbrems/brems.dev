@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 import styles from './Navigation.module.css'
-import { Branding } from "../branding/Branding";
-import { MenuIcon } from "../icons/menu-icon/MenuIcon";
-import { CloseIcon } from "../icons/close-icon/CloseIcon";
+import { Branding } from '../branding/Branding'
+import { MenuIcon } from '../icons/menu-icon/MenuIcon'
+import { CloseIcon } from '../icons/close-icon/CloseIcon'
 
 export function Navigation() {
   return <nav className={styles.navigation}>

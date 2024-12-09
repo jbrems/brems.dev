@@ -1,9 +1,9 @@
 'use client'
 
-import { useRouter, useSearchParams } from "next/navigation"
-import { Suspense, useContext, useEffect } from "react"
-import { PresentrContext } from "../presentr-provider"
-import { getTokensAction } from "./callback.actions"
+import { useRouter, useSearchParams } from 'next/navigation'
+import { Suspense, useContext, useEffect } from 'react'
+import { PresentrContext } from '../presentr-provider'
+import { getTokensAction } from './callback.actions'
 
 export default function SuspenseWrapper() {
   return <Suspense><PresentrCallbackPage /></Suspense>

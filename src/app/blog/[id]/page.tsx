@@ -1,12 +1,12 @@
-import { getAllBlogPosts, getBlogPostById } from "../blog.utils";
+import { getAllBlogPosts, getBlogPostById } from '../blog.utils'
 import styles from './page.module.css'
-import { BlogPost } from "@/components/blog-post/BlogPost";
+import { BlogPost } from '@/components/blog-post/BlogPost'
 
 export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const blogPosts = await getAllBlogPosts() 
- 
+  const blogPosts = await getAllBlogPosts()
+
   return blogPosts.map((blogPost) => ({
     id: blogPost.id,
   }))
@@ -29,12 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       publishedTime: blogPost.created?.toISOString(),
       modifiedTime: blogPost.updated?.toISOString(),
       section: blogPost.topic,
-    }
+    },
   }
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+  const { id } = await params
   const blogPost = await getBlogPostById(id)
 
   if (!blogPost) return null

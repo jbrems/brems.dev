@@ -1,10 +1,10 @@
 'use client'
 
-import { ChevronLeftIcon } from "@/components/icons/chevron-left-icon/ChevronLeftIcon"
-import { useContext } from "react"
-import { PresentrContext } from "./presentr-provider"
+import { ChevronLeftIcon } from '@/components/icons/chevron-left-icon/ChevronLeftIcon'
+import { useContext } from 'react'
+import { PresentrContext } from './presentr-provider'
 
-export function PresentrActions({className}: { className?: string }) {
+export function PresentrActions({ className }: { className?: string }) {
   const { hasMorePhotos, showPreviousPhoto, showNextPhoto } = useContext(PresentrContext)
 
   if (!hasMorePhotos()) return null

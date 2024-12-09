@@ -1,6 +1,6 @@
 import styles from './page.module.css'
-import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
-import { getAllBlogPosts, sortBlogPosts } from "./blog/blog.utils"
+import { BlogPostList } from '@/components/blog-post/blog-post-list/BlogPostList'
+import { getAllBlogPosts, sortBlogPosts } from './blog/blog.utils'
 import Link from 'next/link'
 import { DeLijnBlock } from './career/DeLijnBlock'
 

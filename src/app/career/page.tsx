@@ -1,11 +1,11 @@
-import { Timeline } from "@/components/timeline/Timeline";
+import { Timeline } from '@/components/timeline/Timeline'
 import styles from './page.module.css'
-import { CareerBlock } from "@/components/career-block/CareerBlock";
-import { LinkedinIcon } from "@/components/icons/linkedin-icon/LinkedinIcon";
-import Link from "next/link";
-import { DeLijnBlock } from "./DeLijnBlock";
-import { C4TLogo } from "@/components/logos/c4t-logo/C4TLogo";
-import { CmLogo } from "@/components/logos/cm-logo/CmLogo";
+import { CareerBlock } from '@/components/career-block/CareerBlock'
+import { LinkedinIcon } from '@/components/icons/linkedin-icon/LinkedinIcon'
+import Link from 'next/link'
+import { DeLijnBlock } from './DeLijnBlock'
+import { C4TLogo } from '@/components/logos/c4t-logo/C4TLogo'
+import { CmLogo } from '@/components/logos/cm-logo/CmLogo'
 
 export const metadata = {
   title: 'Career',

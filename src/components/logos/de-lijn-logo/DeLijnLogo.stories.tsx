@@ -1,7 +1,7 @@
-import { DeLijnLogo } from "./DeLijnLogo";
+import { DeLijnLogo } from './DeLijnLogo'
 
 export default {
-  component: DeLijnLogo
+  component: DeLijnLogo,
 }
 
 export const Default = {

@@ -1,4 +1,4 @@
-import { Project } from "@/components/project/Project";
+import { Project } from '@/components/project/Project'
 
 import styles from './page.module.css'
 

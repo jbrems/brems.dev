@@ -1,4 +1,4 @@
-import { MenuIcon } from "./MenuIcon";
+import { MenuIcon } from './MenuIcon'
 
 export default {
   component: MenuIcon,

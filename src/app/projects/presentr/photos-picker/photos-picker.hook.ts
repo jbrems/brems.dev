@@ -1,10 +1,10 @@
-import { getPickedPhotos, pollPhotosPickerSession, startPhotosPickerSession } from "@/lib/photos-picker.utils"
-import { useContext, useEffect } from "react"
-import { PresentrContext } from "../presentr-provider"
+import { getPickedPhotos, pollPhotosPickerSession, startPhotosPickerSession } from '@/lib/photos-picker.utils'
+import { useContext, useEffect } from 'react'
+import { PresentrContext } from '../presentr-provider'
 
 export function usePhotosPicker() {
   const { tokenResponse, photosPickerSession, setPhotosPickerSession, setPickedPhotos } = useContext(PresentrContext)
-  
+
   useEffect(() => {
     async function startSession() {
       if (tokenResponse && !photosPickerSession) {
@@ -21,7 +21,7 @@ export function usePhotosPicker() {
 
       const session = await pollPhotosPickerSession(tokenResponse.access_token, photosPickerSession.id)
       setPhotosPickerSession(session)
-      
+
       if (session.mediaItemsSet) {
         clearInterval(interval)
         const photos = await getPickedPhotos(tokenResponse.access_token, photosPickerSession.id)

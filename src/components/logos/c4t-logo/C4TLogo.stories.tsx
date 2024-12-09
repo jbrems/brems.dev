@@ -1,4 +1,4 @@
-import { C4TLogo } from "./C4TLogo";
+import { C4TLogo } from './C4TLogo'
 
 export default {
   component: C4TLogo,

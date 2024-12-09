@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test'
-import { getFirstGenPocemonNames } from "@/lib/pocemon.utils";
-import { ComboBox } from "./ComboBox";
+import { getFirstGenPocemonNames } from '@/lib/pocemon.utils'
+import { ComboBox } from './ComboBox'
 
 export default {
   component: ComboBox,

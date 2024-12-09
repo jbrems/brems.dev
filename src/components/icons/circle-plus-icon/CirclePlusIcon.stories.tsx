@@ -1,4 +1,4 @@
-import { CirclePlusIcon } from "./CirclePlusIcon";
+import { CirclePlusIcon } from './CirclePlusIcon'
 
 export default {
   component: CirclePlusIcon,

@@ -1,8 +1,8 @@
 import styles from './page.module.css'
-import { PhotosPickerActions } from "./photos-picker/PhotosPickerActions";
-import { PhotosPickerStatus } from "./photos-picker/PhotosPickerStatus";
-import { PresentrActions } from './PresentrActions';
-import { SelectedPhoto } from './selected-photo/SelectedPhoto';
+import { PhotosPickerActions } from './photos-picker/PhotosPickerActions'
+import { PhotosPickerStatus } from './photos-picker/PhotosPickerStatus'
+import { PresentrActions } from './PresentrActions'
+import { SelectedPhoto } from './selected-photo/SelectedPhoto'
 
 export const metadata = {
   title: 'Presentr',

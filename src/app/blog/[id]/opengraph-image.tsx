@@ -1,10 +1,10 @@
-import { ImageResponse } from "next/og"
+import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
 export default async function OpenGraphImage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  
+
   const blogPost = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogposts/${id}`).then(res => res.json())
 
   if (!blogPost) return null
@@ -20,7 +20,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
           {blogPost.topic}
         </span>
         {blogPost.sttp && <span style={{ position: 'absolute', top: '0', right: '0', border: 'solid 1px goldenrod', borderRadius: '0 25px 0 25px', fontSize: '20px', padding: '5px 15px', background: '#daa52020' }}>
-          STTP  
+          STTP
         </span>}
         <span style={{ position: 'absolute', bottom: '0', left: '0', border: 'solid 1px goldenrod', borderRadius: '0 25px 0 25px', fontSize: '20px', padding: '5px 15px', background: '#daa52020' }}>
           Brems.dev
@@ -35,10 +35,10 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ id:
         </span>
       </div>
     </div>,
-    { 
-      width: 1200, 
+    {
+      width: 1200,
       height: 630,
-      fonts: [{ name: 'Source code pro', data: await sourceCodePro, style: 'normal', weight: 400}]
+      fonts: [{ name: 'Source code pro', data: await sourceCodePro, style: 'normal', weight: 400 }],
     },
   )
 }

@@ -1,8 +1,8 @@
-import { BlogPost } from "@/app/blog/blog.types";
+import { BlogPost } from '@/app/blog/blog.types'
 
 import styles from './BlogPostCover.module.css'
-import { SttpTag } from "../sttp-tag/SttpTag";
-import { Watermark } from "./watermark/Watermark";
+import { SttpTag } from '../sttp-tag/SttpTag'
+import { Watermark } from './watermark/Watermark'
 
 export default function BlogPostCover({ blogPost, withWatermark = false }: { blogPost: BlogPost, withWatermark?: boolean }) {
   return <div className={styles.blogPostCover}>

@@ -1,4 +1,4 @@
-import { SttpTag } from "./SttpTag";
+import { SttpTag } from './SttpTag'
 
 export default {
   component: SttpTag,

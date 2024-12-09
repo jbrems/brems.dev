@@ -1,8 +1,8 @@
 'use client'
 
-import { TopicFilterButton } from "@/components/topic-filter/topic-filter-button/TopicFilterButton"
+import { TopicFilterButton } from '@/components/topic-filter/topic-filter-button/TopicFilterButton'
 import styles from './TopicFilter.module.css'
-import { useState } from "react"
+import { useState } from 'react'
 
 export function TopicFilter({ topics, className = '' }: { topics: string[], className?: string }) {
   const [hiddenTopics, setHiddenTopics] = useState<string[]>([])

@@ -15,4 +15,3 @@
 ## Wishlist
 * Interactive torch
 * Publish OAuth app
-* Eslint

@@ -1,9 +1,9 @@
-import { BlogPostList } from "@/components/blog-post/blog-post-list/BlogPostList"
-import { getAllBlogPosts, sortBlogPosts } from "./blog.utils"
-import { SttpTag } from "@/components/blog-post/sttp-tag/SttpTag"
+import { BlogPostList } from '@/components/blog-post/blog-post-list/BlogPostList'
+import { getAllBlogPosts, sortBlogPosts } from './blog.utils'
+import { SttpTag } from '@/components/blog-post/sttp-tag/SttpTag'
 
 import styles from './page.module.css'
-import { TopicFilter } from "@/components/topic-filter/TopicFilter"
+import { TopicFilter } from '@/components/topic-filter/TopicFilter'
 
 export const metadata = {
   title: 'Blog',
@@ -13,7 +13,7 @@ export const metadata = {
 export default async function BlogHomePage() {
   const blogPosts = await getAllBlogPosts()
   blogPosts.sort(sortBlogPosts).reverse()
-  
+
   const topics = [...new Set(blogPosts.map(blogPost => blogPost.topic))]
 
   return <>

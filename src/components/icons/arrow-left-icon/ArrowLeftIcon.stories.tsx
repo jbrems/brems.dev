@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "./ArrowLeftIcon";
+import { ArrowLeftIcon } from './ArrowLeftIcon'
 
 export default {
   component: ArrowLeftIcon,

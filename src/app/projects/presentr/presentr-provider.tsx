@@ -1,8 +1,8 @@
 'use client'
 
-import { type TokenResponse } from "@/lib/oauth.utils"
-import { getPickedPhoto, type PhotosPickerSession } from "@/lib/photos-picker.utils"
-import { createContext, type Dispatch, type ReactNode, type SetStateAction, useCallback, useEffect, useMemo, useState } from "react"
+import { type TokenResponse } from '@/lib/oauth.utils'
+import { getPickedPhoto, type PhotosPickerSession } from '@/lib/photos-picker.utils'
+import { createContext, type Dispatch, type ReactNode, type SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 
 export type PresenterContextType = {
   authenticate: (tokenResponse: TokenResponse) => void
@@ -66,7 +66,7 @@ export function PresentrProvider({ children }: {children: ReactNode }) {
       return (selectedPhotoIndex - 1) % pickedPhotos.length
     })
   }, [setSelectedPhotoIndex, pickedPhotos])
-  
+
   const showNextPhoto = useCallback(() => {
     setSelectedPhotoIndex((selectedPhotoIndex) => (selectedPhotoIndex + 1) % pickedPhotos.length)
   }, [setSelectedPhotoIndex, pickedPhotos])

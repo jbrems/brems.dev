@@ -1,4 +1,4 @@
-import { Branding } from "./Branding";
+import { Branding } from './Branding'
 
 export default {
   component: Branding,

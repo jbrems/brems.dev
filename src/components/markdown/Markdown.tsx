@@ -12,13 +12,13 @@ import styles from './Markdown.module.css'
 export async function Markdown({ content }: { content: string }) {
   const htmlVFile = await unified()
     .use(remarkParse)
-    .use(remarkRehype, {allowDangerousHtml: true})
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeHighlight)
     .use(rehypeStringify)
     .process(content)
 
   const htmlContent = htmlVFile.toString()
-  
+
   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} className={styles.markdownContent} />
 }

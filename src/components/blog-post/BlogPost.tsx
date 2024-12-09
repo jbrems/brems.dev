@@ -1,8 +1,8 @@
-import { BlogPost as BlogPostType } from "@/app/blog/blog.types";
-import { BlogPostHeader } from "./blog-post-header/BlogPostHeader";
-import { Markdown } from "../markdown/Markdown";
-import { ArrowLeftIcon } from "../icons/arrow-left-icon/ArrowLeftIcon";
-import Link from "next/link";
+import { BlogPost as BlogPostType } from '@/app/blog/blog.types'
+import { BlogPostHeader } from './blog-post-header/BlogPostHeader'
+import { Markdown } from '../markdown/Markdown'
+import { ArrowLeftIcon } from '../icons/arrow-left-icon/ArrowLeftIcon'
+import Link from 'next/link'
 
 import styles from './BlogPost.module.css'
 

@@ -1,4 +1,4 @@
-import { IconProps } from "../icons.types";
+import { IconProps } from '../icons.types'
 
 export function CirclePlusIcon({ size = 24, color = '#dddddd' }: IconProps) {
   return <svg width={size} height={size} viewBox="0 0 12 12">

@@ -1,11 +1,11 @@
 'use client'
 
-import { useContext } from "react"
-import { PresentrContext } from "../presentr-provider"
-import Link from "next/link"
-import { CirclePlusIcon } from "@/components/icons/circle-plus-icon/CirclePlusIcon"
-import { LockIcon } from "@/components/icons/lock-icon/LockIcon"
-import { getAuthUrl, State } from "@/lib/oauth.utils"
+import { useContext } from 'react'
+import { PresentrContext } from '../presentr-provider'
+import Link from 'next/link'
+import { CirclePlusIcon } from '@/components/icons/circle-plus-icon/CirclePlusIcon'
+import { LockIcon } from '@/components/icons/lock-icon/LockIcon'
+import { getAuthUrl, State } from '@/lib/oauth.utils'
 
 export function PhotosPickerActions({ className }: { className?: string }) {
   const { isAuthenticated, photosPickerSession } = useContext(PresentrContext)

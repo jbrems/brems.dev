@@ -1,4 +1,4 @@
-import Pocemon from "./Pocemon";
+import Pocemon from './Pocemon'
 
 export default {
   component: Pocemon,

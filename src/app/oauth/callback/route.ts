@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { redirect } from "next/navigation";
-import { decodeState } from "@/lib/oauth.utils";
+import { NextRequest, NextResponse } from 'next/server'
+import { redirect } from 'next/navigation'
+import { decodeState } from '@/lib/oauth.utils'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams

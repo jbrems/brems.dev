@@ -1,4 +1,4 @@
-import { EyeClosedIcon } from "./EyeClosedIcon"
+import { EyeClosedIcon } from './EyeClosedIcon'
 
 export default {
   component: EyeClosedIcon,

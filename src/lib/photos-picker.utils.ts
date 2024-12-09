@@ -9,7 +9,7 @@ export async function startPhotosPickerSession(accessToken: string): Promise<Pho
     method: 'POST',
     headers: {
       Authorization: `Bearer ${accessToken}`,
-    }
+    },
   })
 
   console.log(response.status, response.statusText)
@@ -21,7 +21,7 @@ export async function pollPhotosPickerSession(accessToken: string, sessionId: st
   const response = await fetch(`https://photospicker.googleapis.com/v1/sessions/${sessionId}`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
-    }
+    },
   })
 
   console.log(response.status, response.statusText)

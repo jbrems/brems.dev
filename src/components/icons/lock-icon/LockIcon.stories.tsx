@@ -1,4 +1,4 @@
-import { LockIcon } from "./LockIcon";
+import { LockIcon } from './LockIcon'
 
 export default {
   component: LockIcon,

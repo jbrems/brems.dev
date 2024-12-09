@@ -1,9 +1,9 @@
 'use client'
 
-import { useContext } from "react"
-import { PresentrContext } from "../presentr-provider"
-import { LockIcon } from "@/components/icons/lock-icon/LockIcon"
-import { CirclePlusIcon } from "@/components/icons/circle-plus-icon/CirclePlusIcon"
+import { useContext } from 'react'
+import { PresentrContext } from '../presentr-provider'
+import { LockIcon } from '@/components/icons/lock-icon/LockIcon'
+import { CirclePlusIcon } from '@/components/icons/circle-plus-icon/CirclePlusIcon'
 
 import styles from './PhotosPickerStatus.module.css'
 

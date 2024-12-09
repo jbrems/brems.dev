@@ -1,4 +1,4 @@
-import { TopicFilter } from "./TopicFilter"
+import { TopicFilter } from './TopicFilter'
 
 export default {
   component: TopicFilter,

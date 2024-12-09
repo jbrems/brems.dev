@@ -1,4 +1,4 @@
-import { TopicFilterButton } from "./TopicFilterButton"
+import { TopicFilterButton } from './TopicFilterButton'
 
 export default {
   component: TopicFilterButton,
@@ -17,5 +17,5 @@ export const Hidden = {
     topic: 'Nextjs',
     visible: false,
     toggle: () => {},
-  }
+  },
 }

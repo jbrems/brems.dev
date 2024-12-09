@@ -1,5 +1,5 @@
-import { StoryObj } from "@storybook/react";
-import { Project } from "./Project";
+import { StoryObj } from '@storybook/react'
+import { Project } from './Project'
 
 export default {
   component: Project,

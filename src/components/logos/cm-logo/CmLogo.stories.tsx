@@ -1,4 +1,4 @@
-import { CmLogo } from "./CmLogo";
+import { CmLogo } from './CmLogo'
 
 export default {
   component: CmLogo,

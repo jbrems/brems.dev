@@ -1,4 +1,4 @@
-import { ChevronLeftIcon } from "./ChevronLeftIcon";
+import { ChevronLeftIcon } from './ChevronLeftIcon'
 
 export default {
   component: ChevronLeftIcon,
