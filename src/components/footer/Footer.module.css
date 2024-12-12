@@ -1,0 +1,17 @@
+.footer {
+  font-size: 0.8em;
+  text-align: center;
+  padding-bottom: 0.5em;
+
+  & .spacer {
+    padding: 0 0.5em;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    height: 2px;
+    margin-bottom: 1em;
+    background: linear-gradient(90deg, transparent, goldenrod, gold, goldenrod, transparent);
+  }
+}

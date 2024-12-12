@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Navigation } from '../components/navigation/Navigation'
 import { Analytics } from '@vercel/analytics/next'
+import { Footer } from '@/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -20,9 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navigation />
-        <main style={{ padding: '0 1em' }}>
+        <main>
           {children}
         </main>
+        <Footer />
         <Analytics />
       </body>
     </html>
