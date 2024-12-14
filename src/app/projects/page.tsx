@@ -11,6 +11,10 @@ export default function ProjectsPage() {
   return <>
     <h2>Projects</h2>
     <div className={styles.projectsContainer}>
+      <Project url="/projects/base64-encoder" coverImageUrl="/base64-encoder.jpg" title="Base64 encoder">
+        <p>A simple client side tool to encode and decode Base64 values.</p>
+        <p>Also supports Base64url encoding.</p>
+      </Project>
       <Project url="/projects/presentr" coverImageUrl="/presentr.jpg" title="Presentr">
         <p>Present your photos with style!</p>
         <p>Implements the Google Photos picker APIs.</p>

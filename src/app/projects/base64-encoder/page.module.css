@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: calc(100dvh - 110px - 8rem);
+}
+
+.textArea {
+  width: 100%;
+
+  flex-grow: 1;
+
+  background-color: #333333;
+  color: #dddddd;
+
+  padding: 0.5em;
+  border-radius: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+  justify-content: space-around;
+}
+
+@media (max-width: 500px) {
+  .actions button:nth-of-type(2) {
+    display: none;
+  }
+}
