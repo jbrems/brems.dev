@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  & .actions {
+    order: 1;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-size: 0.75em;
+  }
+  
+  & .textArea {
+    order: 2;
+    width: 100%;
+    min-height: 4.6em;
+    flex-grow: 1;
+  
+    word-break: break-all;
+  
+    background-color: #333333;
+    color: #dddddd;
+  
+    padding: 0.5em 0.75em;
+    border-radius: 0.5em;
+  }
+}
+
+.action {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+}

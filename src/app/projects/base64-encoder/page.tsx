@@ -2,6 +2,7 @@
 
 import { ArrowLeftIcon } from '@/components/icons/arrow-left-icon/ArrowLeftIcon'
 import styles from './page.module.css'
+import { TextArea } from '@/components/text-area/TextArea'
 
 export default function Base64Page() {
   function encode(formData: FormData) {
@@ -35,13 +36,13 @@ export default function Base64Page() {
   return <>
     <h2>Base64 encoder</h2>
     <form className={styles.form}>
-      <textarea name="plain" placeholder="The plain text value to encode" className={styles.textArea}></textarea>
+      <TextArea name="plain" placeholder="The plain text value to encode" className={styles.textArea}></TextArea>
       <div className={styles.actions}>
         <button className="button" formAction={encode}>Base64 encode <ArrowLeftIcon className="rotate-270" /></button>
         <button className="button" formAction={urlEncode}>Base64url encode <ArrowLeftIcon className="rotate-270" /></button>
         <button className="button" formAction={decode}>Decode <ArrowLeftIcon className="rotate-90" /></button>
       </div>
-      <textarea name="encoded" placeholder="The Base64 encoded value to decode" className={styles.textArea}></textarea>
+      <TextArea name="encoded" placeholder="The Base64 encoded value to decode" className={styles.textArea}></TextArea>
     </form>
   </>
 }
