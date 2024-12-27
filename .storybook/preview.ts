@@ -1,6 +1,10 @@
 import type { Preview } from "@storybook/react";
 
+import { initialize as initializeMswAddon, mswLoader } from 'msw-storybook-addon'
+
 import '../src/app/globals.css'
+
+initializeMswAddon()
 
 const preview: Preview = {
   parameters: {
@@ -14,6 +18,7 @@ const preview: Preview = {
       appDirectory: true,
     },
   },
+  loaders: [mswLoader],
 };
 
 export default preview;

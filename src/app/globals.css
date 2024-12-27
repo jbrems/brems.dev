@@ -5,6 +5,9 @@
   --background-color: #222222;
   --color: #dddddd;
   --highlight-color: goldenrod;
+
+  --radial-bg: radial-gradient(ellipse at top left, #222222, transparent),
+                  radial-gradient(ellipse at bottom right, #444444, transparent);
 }
 
 * {

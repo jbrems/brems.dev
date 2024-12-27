@@ -11,16 +11,17 @@ export default function ProjectsPage() {
   return <>
     <h2>Projects</h2>
     <div className={styles.projectsContainer}>
-      <Project url="/projects/base64-encoder" coverImageUrl="/base64-encoder.jpg" title="Base64 encoder">
+      <Project path="/projects/base64-encoder" title="Base64 encoder">
         <p>A simple client side tool to encode and decode Base64 values.</p>
         <p>Also supports Base64url encoding.</p>
       </Project>
-      <Project url="/projects/presentr" coverImageUrl="/presentr.jpg" title="Presentr">
-        <p>Present your photos with style!</p>
-        <p>Implements the Google Photos picker APIs.</p>
+      <Project path="/projects/presentr" title="Presentr">
+        <p>A proof of concept project to support the Dev meeting on OAuth at De Lijn.</p>
+        <p>Implements the Google Photos picker API.</p>
       </Project>
-      <Project url="/projects/whos-that-pocemon" coverImageUrl="/whos-that-pocemon.jpg" title="Who's that POCemon?">
+      <Project path="/projects/whos-that-pocemon" title="Who's that POCemon?">
         <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
+        <p>Have you figured out why the POCemon Pidgeot, Kabuto, and Mew will never show up in this quiz?</p>
       </Project>
     </div>
   </>
