@@ -8,10 +8,10 @@ import styles from './BlogPost.module.css'
 
 export function BlogPost({ blogPost, className = '' }: { blogPost: BlogPostType, className?: string }) {
   return <article className={className}>
-    <BackToBlogLink />
+    <nav><BackToBlogLink /></nav>
     <BlogPostHeader blogPost={blogPost} />
     <Markdown content={blogPost.content} />
-    <BackToBlogLink />
+    <nav><BackToBlogLink /></nav>
   </article>
 }
 
