@@ -1,7 +1,19 @@
-import puppeteer from 'puppeteer'
-
 export async function capturePage(url: string, { width = 1200, height = 640, cssRules = '' } = {}) {
-  const browser = await puppeteer.launch()
+  let browser = null
+  if (process.env.NODE_ENV === 'development') {
+    const puppeteer = await import('puppeteer')
+    browser = await puppeteer.launch()
+  } else {
+    const chromium = (await import('chrome-aws-lambda')).default
+    browser = await chromium.puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    })
+  }
+
   const page = await browser.newPage()
 
   await page.setViewport({ width, height })
