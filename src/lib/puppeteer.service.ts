@@ -23,7 +23,7 @@ export async function capturePage(url: string, { width = 1200, height = 640, css
   const fadeOut = 'body::after { display: block; content: \'\'; width: 100%; height: 50px; position: fixed; bottom: 0; left: 0; z-index: 9999; background: linear-gradient(transparent, #222222); }'
   await page.addStyleTag({ content: `${cssRules} ${fadeOut}` })
 
-  const screenShot = await page.screenshot({ type: 'jpeg' })
+  const screenShot = await page.screenshot({ type: 'jpeg', fullPage: false })
 
   await browser.close()
 

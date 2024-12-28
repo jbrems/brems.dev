@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import * as puppeteerService from '@/lib/puppeteer.service'
 
-const sizes: Record<string, { width: number, height: number }> = {
+export const screenCaptureSize = {
   openGraph: { width: 1200, height: 630 },
   msTeams: { width: 790, height: 627 },
   square: { width: 800, height: 800 },
@@ -12,8 +12,10 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   const { path } = await params
   const searchParams = request.nextUrl.searchParams
 
-  const width = Number(searchParams.get('width')) || sizes[searchParams.get('size') || 'openGraph'].width
-  const height = Number(searchParams.get('height')) || sizes[searchParams.get('size') || 'openGraph'].height
+  const size = searchParams.get('size') as keyof typeof screenCaptureSize || 'openGraph'
+
+  const width = Number(searchParams.get('width')) || screenCaptureSize[size].width
+  const height = Number(searchParams.get('height')) || screenCaptureSize[size].height
 
   const options = {
     width,
