@@ -1,4 +1,4 @@
-import { screenCaptureSize } from '@/app/api/screen-captures/[[...path]]/route'
+import { screenCaptureSize } from '@/lib/puppeteer.service'
 import { getAllBlogPosts, getBlogPostById } from '../blog.utils'
 import styles from './page.module.css'
 import { BlogPost } from '@/components/blog-post/BlogPost'

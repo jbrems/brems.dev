@@ -1,3 +1,9 @@
+export const screenCaptureSize = {
+  openGraph: { width: 1200, height: 630 },
+  msTeams: { width: 790, height: 627 },
+  square: { width: 800, height: 800 },
+}
+
 export async function capturePage(url: string, { width = 1200, height = 640, cssRules = '' } = {}) {
   let browser = null
   if (process.env.NODE_ENV === 'development') {
