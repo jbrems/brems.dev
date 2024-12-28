@@ -5,12 +5,12 @@ export async function capturePage(url: string, { width = 1200, height = 640, css
     browser = await puppeteer.launch()
   } else {
     const puppeteer = await import('puppeteer-core')
-    const chromium = (await import('chrome-aws-lambda')).default
+    const chromium = (await import('@sparticuz/chromium')).default
     browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
+      executablePath: await chromium.executablePath(),
+      headless: !!chromium.headless,
       ignoreHTTPSErrors: true,
     })
   }

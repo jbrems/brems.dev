@@ -11,8 +11,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^131.0.1",
     "@vercel/analytics": "^1.4.1",
-    "chrome-aws-lambda": "^10.1.0",
     "gray-matter": "^4.0.3",
     "next": "15.0.1",
     "puppeteer-core": "^10.4.0",
