@@ -15,6 +15,9 @@ export default function ProjectsPage() {
         <p>A simple client side tool to encode and decode Base64 values.</p>
         <p>Also supports Base64url encoding.</p>
       </Project>
+      <Project path="/projects/form-validation" title="Form validation">
+        <p>A proof of concept project that implements Angular style form validation in React.</p>
+      </Project>
       <Project path="/projects/presentr" title="Presentr">
         <p>A proof of concept project to support the Dev meeting on OAuth at De Lijn.</p>
         <p>Implements the Google Photos picker API.</p>
