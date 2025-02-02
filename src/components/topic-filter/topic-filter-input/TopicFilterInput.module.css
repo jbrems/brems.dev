@@ -1,0 +1,16 @@
+.topicFilterInput {
+  display: flex;
+  gap: 0.5em;
+
+  & input {
+    width: 100%;
+
+    color: #dddddd;
+    border: none;
+    background: transparent;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

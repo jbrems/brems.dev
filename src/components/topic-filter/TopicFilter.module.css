@@ -17,6 +17,10 @@
       max-width: 12em;
     }
   }
+
+  & .searchInput {
+    zoom: 0.68;
+  }
 }
 
 @media (min-width: 390px) {
