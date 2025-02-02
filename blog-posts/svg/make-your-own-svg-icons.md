@@ -2,6 +2,7 @@
 title: Why not make your own SVG icons?
 description: A gentle persuasion attempt for you to start making some of your own SVG icons and how to do it.
 created: 2024-12-02
+updated: 2025-02-02
 highlight: 1
 ---
 
@@ -94,7 +95,7 @@ One thing that might be slightly confusing is the `viewBox`.
 
 The `viewBox` defines the raster on which the elements of the `SVG` will be placed.
 
-The four numbers represent the origin coordinate's X and Y values (often `0 0`), the width, and the height of the `viewBox`.
+The four numbers represent the origin coordinate's X and Y values (often `0 0`) and the width and height of the raster.
 
 A `viewBox` of `0 0 10 10` will generate a raster with origin coordinates (0, 0), 10 columns (width) and 10 rows (height).
 
@@ -179,7 +180,7 @@ The `viewBox` is only used to define the position of the components on the raste
 
 You might have noticed that all icon definitions stay at least 1 viewBox unit away from the edge of the `viewBox`.
 
-This is because strokes are centered around their path. A horizontal line with `Y = 5` will be drawn from half a unit above to half a unit below the `Y5` line. A line on the `Y0` line will therefor lose half of its width.
+This is because strokes are centered around their path. A horizontal line with `Y = 5` will be drawn from half a unit above the `Y5` line to half a unit below the `Y5` line. A line on the `Y0` line will therefor lose half of its width _(due to the top half being cut off)_.
 
 Also, the `stroke-linecap` _(the rounded endings of the line)_ are drawn half a unit past the line's endpoints.
 
@@ -225,9 +226,68 @@ Also, the `stroke-linecap` _(the rounded endings of the line)_ are drawn half a 
   <circle cx="90" cy="40" r="2" fill="#00ff00" />
 </svg>
 
+## Groups
+
+If you notice you are repeating the same attributes (e.g.: `fill`, `stroke`, `stroke-linecap`) over and over again in your elements, it might be time to start grouping them together.
+
+This can be achieved by wrapping the elements with a `<g>` element.
+
+(i) Groups can also be used when animating or styling an `SVG` by targeting the grouped parts by their group's id.
+
+Some of the initial examples can be defined as follows _(notice the added `<g>` element)_:
+
+<svg width="40" height="40" viewBox="0 0 10 10">
+  <g stroke="goldenrod" stroke-linecap="round">
+    <line x1="1" y1="2" x2="9" y2="2" />
+    <line x1="1" y1="5" x2="9" y2="5" />
+    <line x1="1" y1="8" x2="9" y2="8" />
+  </g>
+</svg>
+
+```html
+<svg width="40" height="40" viewBox="0 0 10 10">
+  <g stroke="goldenrod" stroke-linecap="round">
+    <line x1="1" y1="2" x2="9" y2="2" />
+    <line x1="1" y1="5" x2="9" y2="5" />
+    <line x1="1" y1="8" x2="9" y2="8" />
+  </g>
+</svg>
+```
+
+---
+
+<svg width="40" height="40" viewBox="0 0 12 12">
+  <g stroke="goldenrod" stroke-linecap="round">
+    <circle cx="6" cy="6" r="5" fill="none" />
+    <line x1="4" y1="6" x2="8" y2="6" />
+    <line x1="6" y1="4" x2="6" y2="8" />
+  </g>
+</svg>
+
+```html
+<svg width="40" height="40" viewBox="0 0 12 12">
+  <g stroke="goldenrod" stroke-linecap="round">
+    <circle cx="6" cy="6" r="5" fill="none" />
+    <line x1="4" y1="6" x2="8" y2="6" />
+    <line x1="6" y1="4" x2="6" y2="8" />
+  </g>
+</svg>
+```
+
+(i) In our simple examples all elements share the same group. In such cases you can define the shared attributes on the `<svg>` element itself instead of adding a group.
+
+```html
+<svg width="40" height="40" viewBox="0 0 10 10" stroke="goldenrod" stroke-linecap="round">
+  <line x1="1" y1="2" x2="9" y2="2" />
+  <line x1="1" y1="5" x2="9" y2="5" />
+  <line x1="1" y1="8" x2="9" y2="8" />
+</svg>
+```
+
+
 ## Paths
 
-If you are worried about the size of the `SVG` element in the `HTML` file or you just dislike repeating the same `stroke` and `stroke-linecap` rule over and over again, you can use a `path` element which uses a sort of encoding to define lines, arcs, and curves.
+If you are worried about the size of the `SVG` element in the `HTML` file, you can use a `path` element which uses an encoding to define lines, arcs, and curves.
 
 Certain animations can also require you to use a path instead of separate lines, circles, or rectangles.
 
