@@ -1,0 +1,5 @@
+.nrnField {
+    & .inputField {
+        font-size: 3em;
+    }
+}

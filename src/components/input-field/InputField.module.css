@@ -1,0 +1,14 @@
+.inputField {
+    padding: 0.25em 0.75em;
+
+    color: #dddddd;
+
+    background: none;
+    border: solid 1px goldenrod;
+    border-radius: 0.75em;
+
+    &:focus-visible {
+        outline: none;
+        border-color: gold;
+    }
+}
