@@ -6,7 +6,7 @@ export default {
 
 export const Default = {
   args: {
-    size: 24,
+    size: 100,
     color: '#dddddd',
   },
 }

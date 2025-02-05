@@ -1,0 +1,60 @@
+@keyframes buzz {
+    from { transform: translateX(0px) }
+    to { transform: translateX(-5px) }
+}
+
+@keyframes flash {
+    from { stroke: goldenrod }
+    to { }
+}
+
+.nrnField {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+
+    & .inputField {
+        font-size: 1.25em;
+        width: 9.5em;
+        color: transparent;
+        caret-color: goldenrod;
+
+        &.inputError {
+            border-color: red !important;
+            animation: 0.16s linear 0s 6 buzz;
+        }
+    }
+
+    & .nrn {
+        position: absolute;
+        top: 0.35em;
+        left: 0.75em;
+        font-size: 1.25em;
+
+        pointer-events: none;
+
+        & span:nth-child(7),
+        & span:nth-child(10) {
+            margin-left: 0.6em;
+        }
+
+        & span.userInput {
+            color: goldenrod;
+
+            &.inputError {
+                color: red;
+            }
+        }
+    }
+
+    & .actions {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        & button.activated svg g {
+            animation: 0.5s linear 0s 1 both flash;
+        }
+    }
+}

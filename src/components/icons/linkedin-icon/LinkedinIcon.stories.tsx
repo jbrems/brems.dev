@@ -8,7 +8,7 @@ export default {
 
 export const Default: StoryObj<typeof LinkedinIcon> = {
   args: {
-    size: 24,
+    size: 100,
     color: '#dddddd',
   },
 }
