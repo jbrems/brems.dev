@@ -1,7 +1,7 @@
-import { CirclePlusIcon } from './CirclePlusIcon'
+import { CopyIcon } from './CopyIcon'
 
 export default {
-  component: CirclePlusIcon,
+  component: CopyIcon,
 }
 
 export const Default = {

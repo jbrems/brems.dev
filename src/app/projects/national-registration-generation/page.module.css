@@ -1,0 +1,22 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  & .title {
+    color: goldenrod;
+    text-align: center;
+    margin-top: 10dvh;
+    margin-bottom: 2em;
+  }
+}
+
+@media (min-width: 460px) {
+  .page .title {
+    margin-top: 20dvh;
+  }
+
+  .page .nrnField {
+    zoom: 1.5;
+  }
+}

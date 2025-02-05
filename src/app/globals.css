@@ -91,6 +91,12 @@ input {
   &:hover {
     background: #333333;
   }
+
+  &.iconButton {
+    padding: 0.25em;
+    border: none;
+    box-shadow: none;
+  }
 }
 
 iframe {

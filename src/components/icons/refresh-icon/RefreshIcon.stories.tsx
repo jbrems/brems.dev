@@ -1,7 +1,7 @@
-import { CirclePlusIcon } from './CirclePlusIcon'
+import { RefreshIcon } from './RefreshIcon'
 
 export default {
-  component: CirclePlusIcon,
+  component: RefreshIcon,
 }
 
 export const Default = {
