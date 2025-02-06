@@ -17,6 +17,7 @@ export function formatNrn(value: string): string {
 
 export function completeNrn(value: string): string | null {
   if (!isValidDate(value.substring(0, 6))) return null
+  if (!isValidBirthCounter(value.substring(6, 9))) return null
 
   if (value.length >= 9) return addCheckSum(value)
   if (value.length >= 6) return addCheckSum(completeBirthCounter(value))
@@ -46,6 +47,10 @@ function isValidDate(value: string): boolean {
   return date.getFullYear() === Number(`${century}${year}`) && date.getMonth() === Number(month) - 1 && date.getDate() === Number(day)
 }
 
+function isValidBirthCounter(value: string): boolean {
+  return !['000', '999'].includes(value)
+}
+
 function addCheckSum(value: string): string {
   const centuryModifier = determineCentury(value) === '20' ? '2' : ''
   const checkSum = 97 - Number(centuryModifier + value.substring(0, 9)) % 97
@@ -56,6 +61,9 @@ function completeBirthCounter(value: string): string {
   const birthCounter = value.substring(6, 9)
   const randomBirthCounter = Math.ceil(Math.random() * 500).toString().padStart(3, '0')
   const mergedBirthCounters = (birthCounter[0] || randomBirthCounter[0]) + (birthCounter[1] || randomBirthCounter[1]) + (birthCounter[2] || randomBirthCounter[2])
+
+  if (!isValidBirthCounter(mergedBirthCounters)) return completeBirthCounter(value)
+
   return value.substring(0, 6) + mergedBirthCounters
 }
 

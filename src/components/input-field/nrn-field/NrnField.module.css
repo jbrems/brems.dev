@@ -28,9 +28,10 @@
 
     & .nrn {
         position: absolute;
-        top: 0.35em;
+        top: 0.30em;
         left: 0.75em;
         font-size: 1.25em;
+        font-weight: 400;
 
         pointer-events: none;
 
