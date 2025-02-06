@@ -2,7 +2,7 @@
 title: Why not make your own SVG icons?
 description: A gentle persuasion attempt for you to start making some of your own SVG icons and how to do it.
 created: 2024-12-02
-updated: 2025-02-02
+updated: 2025-02-06
 highlight: 1
 ---
 
@@ -174,7 +174,7 @@ Within this `viewBox` you can define the components that make up your `SVG`.
   <text x="80" y="44" style="font-size: 5px; font-weight: bold;" fill="#00ff00">(9, 5)</text>
 </svg>
 
-The `viewBox` is only used to define the position of the components on the raster. In our example the lines are positioned on a `10px` by `10px` raster but are scaled to a `40px` by `40px` icon due to the `width` and `height` values of the `SVG`.
+The `viewBox` is only used to define the position of the components on the raster. In our example the lines are positioned on a `10` by `10` raster but are scaled to a `40px` by `40px` icon due to the `width` and `height` values of the `SVG`.
 
 ## Edge values
 

@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 
 export function Footer() {
   return <footer className={styles.footer}>
-    &copy;2024
+    &copy;2024-{new Date().getFullYear()}
     <span className={styles.spacer}>|</span>
     <Link href="/privacy-policy">Privacy policy</Link>
     <span className={styles.spacer}>|</span>

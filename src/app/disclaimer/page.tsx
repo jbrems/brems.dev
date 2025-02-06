@@ -8,7 +8,7 @@ export default function DisclaimerPage() {
       Most information on this website is provided for educational purposes.
     </p>
     <p>
-      All rights of any copyrighted material used on this website remains with the rightful ownerss.
+      All rights of any copyrighted material used on this website remain with the rightful owners.
     </p>
   </>
 }
