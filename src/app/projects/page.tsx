@@ -12,7 +12,7 @@ export default function ProjectsPage() {
     <h2>Projects</h2>
     <div className={styles.projectsContainer}>
       <Project path="/projects/national-registration-generation" title="National Registration Generation">
-        <p>Completes your input to generate a valid Belgian national registration number (or social security number).</p>
+        <p>Generates and completes a Belgian national registration number.</p>
       </Project>
       <Project path="/projects/base64-encoder" title="Base64 encoder">
         <p>A simple client side tool to encode and decode Base64 values.</p>
