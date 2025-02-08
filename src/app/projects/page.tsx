@@ -1,10 +1,22 @@
 import { Project } from '@/components/project/Project'
 
 import styles from './page.module.css'
+import { screenCaptureSize } from '@/lib/puppeteer.service'
 
 export const metadata = {
   title: 'Projects',
   description: 'Some side projects I have created for your pleasure and sometimes convenience.',
+  openGraph: {
+    title: 'Projects',
+    description: 'Some side projects I have created for your pleasure and sometimes convenience.',
+    images: [{
+      url: 'https://brems.dev/api/screen-captures/projects?size=openGraph',
+      type: 'image/jpeg',
+      width: screenCaptureSize.openGraph.width,
+      height: screenCaptureSize.openGraph.height,
+      alt: 'Screen capture of the project',
+    }],
+  },
 }
 
 export default function ProjectsPage() {
