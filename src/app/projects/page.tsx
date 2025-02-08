@@ -14,7 +14,7 @@ export const metadata = {
       type: 'image/jpeg',
       width: screenCaptureSize.openGraph.width,
       height: screenCaptureSize.openGraph.height,
-      alt: 'Screen capture of the project',
+      alt: 'Screen capture of the projects page',
     }],
   },
 }
