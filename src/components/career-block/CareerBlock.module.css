@@ -56,3 +56,16 @@
     color: goldenrod;
   }
 }
+
+@media (min-width: 860px) {
+  .careerBlock .description p {
+    margin: 8px 0;
+    line-height: unset;
+  }
+}
+
+@media (min-width: 1000px) {
+  .careerBlock .description p {
+    font-size: 1em;
+  }
+}

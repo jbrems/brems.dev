@@ -44,6 +44,8 @@
 
     & .cmWeb {
       height: 590px;
+      --lines: 28;
+      --title-lines: 1;
 
       & svg {
         height: 200px;
@@ -53,6 +55,8 @@
 
     & .cmJava {
       height: 600px;
+      --lines: 28;
+      --title-lines: 1;
 
       & svg {
         height: 200px;
