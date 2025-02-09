@@ -1,0 +1,16 @@
+.loadingPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #2a2a2a;
+
+  & svg {
+    width: 33% !important;
+    height: 100% !important;
+
+    & * {
+      stroke: #444444 !important;
+    }
+  }
+}

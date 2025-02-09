@@ -5,8 +5,9 @@ import { http, HttpResponse } from 'msw'
 
 const msw = {
   handlers: [
-    http.get('/api/screen-capture/projects/*', async (mock) => {
+    http.get('/api/screen-captures/projects/*', async (mock) => {
       const searchParams = new URL(mock.request.url).searchParams
+      await new Promise(resolve => setTimeout(resolve, 2500))
       return HttpResponse.redirect(`https://picsum.photos/800/${searchParams.get('size') === 'portrait' ? 300 : 800}`)
     }),
   ],
