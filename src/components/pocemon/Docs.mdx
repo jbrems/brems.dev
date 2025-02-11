@@ -1,0 +1,35 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as stories from './Pocemon.stories.tsx';
+import Pocemon from './Pocemon.tsx'
+
+<Meta title="Pocemon/Docs" of={stories} />
+
+# Pocemon
+
+A Pocemon is a magical creature that looks a lot like a Pokemon but only shows up in POCs.
+
+## Lives
+
+A Pocemon starts with 3 lives or 100% of their HP and is mysteriously hidden.
+
+<Canvas of={stories.FullHealth} />
+
+Each time an incorrect guess is made, 1 live or 33% if its HP is deducted.
+
+<Canvas of={stories.HitOnce} />
+
+When a Pocemon loses all its HP, it faints and is shortly revealed.
+
+<Canvas of={stories.Fainted} />
+
+## My favorite Pocemon
+
+<Pocemon id="25" hidden={false} />
+
+
+## Playground
+
+Go ahead and play around with the controls for a bit.
+
+<Canvas of={stories.HitTwice} />
+<Controls of={stories.HitTwice} exclude="className" /> 
