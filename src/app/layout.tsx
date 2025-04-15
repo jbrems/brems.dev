@@ -3,6 +3,7 @@ import './globals.css'
 import { Navigation } from '../components/navigation/Navigation'
 import { Analytics } from '@vercel/analytics/next'
 import { Footer } from '@/components/footer/Footer'
+import { SkipToMainContent } from '@/components/skip-to-main-content/SkipToMainContent'
 
 export const metadata: Metadata = {
   title: {
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SkipToMainContent />
         <Navigation />
-        <main>
+        <main id="main-content">
           {children}
         </main>
         <Footer />

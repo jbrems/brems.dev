@@ -7,6 +7,10 @@
     overflow: hidden;
     transition: max-height 1s ease-out;
     margin-bottom: -1px;
+
+    &:has(a:focus-visible) {
+      outline: solid 2px #dddddd;
+    }
   }
 
   & li + li {

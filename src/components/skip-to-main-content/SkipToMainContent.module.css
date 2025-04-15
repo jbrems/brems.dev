@@ -1,0 +1,17 @@
+.skipToMainContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+  padding: 1rem;
+  background: #444444;
+  border: solid 1px #dddddd;
+  border-radius: 5px;
+
+  transform: translateY(-110%);
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
