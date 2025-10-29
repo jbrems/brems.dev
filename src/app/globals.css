@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark-dimmed.min.css');
+@import "tailwindcss";
 
 :root {
+  --white: #dddddd;
+  --black: #222222;
+  --yellow: #ffbb00;
+  --blue: #00aaff;
+
   --background-color: #222222;
   --color: #dddddd;
   --highlight-color: goldenrod;
@@ -15,6 +22,13 @@
 
 }
 
+html {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -25,9 +39,10 @@ body {
   background-color: var(--background-color);
   color: var(--color);
   
-  font-family: "Source Code Pro", monospace;
+  font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
-  font-weight: lighter;
+  font-weight: 400;
+  font-style: normal;
 }
 
 main {
@@ -37,6 +52,7 @@ main {
 
 a {
   color: #bbbbbb;
+  text-decoration: underline;
   text-underline-offset: 0.25em;
 }
 
@@ -44,8 +60,24 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 1.25em;
+  margin: 1em 0 0.5em 0;
+}
+
 p {
   line-height: 1.8em;
+  margin: 1em 0;
 }
 
 pre code {

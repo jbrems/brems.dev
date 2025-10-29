@@ -16,8 +16,8 @@
     }
 
     .deLijn {
-      height: 130px;
-      --lines: 3;
+      height: 260px;
+      --lines: 5;
       --title-lines: 1;
 
       & svg {
@@ -32,7 +32,7 @@
 
     & .c4t {
       height: 170px;
-      --lines: 5;
+      --lines: 3;
       --title-lines: 1;
 
       & svg {
