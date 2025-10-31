@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import * as puppeteerService from '@/lib/puppeteer.service'
 
-export async function GET(request: NextRequest, { params }: { params: Promise<{ path: string[] }>}) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ path?: string[] | undefined }>}) {
   const { path } = await params
   const searchParams = request.nextUrl.searchParams
 
@@ -18,9 +18,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 
   try {
-    const image = await puppeteerService.capturePage(`${process.env.NEXT_PUBLIC_URL}/${path?.join('/') ?? ''}`, options)
+    // Cast the result from capturePage directly to Uint8Array
+    const image = await puppeteerService.capturePage(`${process.env.NEXT_PUBLIC_URL}/${path?.join('/') ?? ''}`, options) as Uint8Array
     if (!image) return new NextResponse(null, { status: 404 })
-    return new NextResponse(image, { headers: { 'content-type': 'image/jpeg', 'cache-control': `max-age=${60 * 60 * 24}, public, stale-while-revalidate` } })
+
+  // Create a Blob from the Uint8Array's underlying ArrayBuffer (type-cast to satisfy lib mismatch)
+  const blob = new Blob([image.buffer as unknown as ArrayBuffer], { type: 'image/jpeg' })
+    return new NextResponse(blob, { headers: { 'content-type': 'image/jpeg', 'cache-control': `max-age=${60 * 60 * 24}, public, stale-while-revalidate` } })
   } catch (error) {
     console.log('Error while capturing screen', error)
     return new NextResponse(null, { status: 500, statusText: 'Failed to generate screen capture.' })

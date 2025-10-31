@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import { getFirstGenPocemonNames } from '@/lib/pocemon.utils'
 import { ComboBox } from './ComboBox'
 

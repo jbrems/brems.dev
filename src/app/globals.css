@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark-dimmed.min.css');
 @import "tailwindcss";
+
+/* Fonts are provided and optimized by Next's next/font/google.
+   Use the CSS variables injected by next/font (--font-sans and --font-mono).
+   Fallback values are provided here so styles work when the variables are not present. */
+:root {
+  --default-font-family: var(--font-sans, "Nunito, sans-serif");
+  --font-mono-fallback: var(--font-mono, "Source Code Pro, monospace");
+}
 
 :root {
   --white: #dddddd;
@@ -23,7 +29,7 @@
 }
 
 html {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--default-font-family);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -39,7 +45,7 @@ body {
   background-color: var(--background-color);
   color: var(--color);
   
-  font-family: "Nunito", sans-serif;
+  font-family: var(--default-font-family);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -85,7 +91,7 @@ pre code {
 }
 
 input {
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-mono-fallback);
 }
 
 .rotate-90 {
@@ -107,7 +113,7 @@ input {
 
   padding: 0.5em 1em;
   color: #dddddd;
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-mono-fallback);
   font-optical-sizing: auto;
   font-size: 1em;
   font-weight: lighter;

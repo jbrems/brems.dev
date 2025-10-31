@@ -1,6 +1,6 @@
 import { storybook } from '@/app/blog/blog.fixtures'
 import BlogPostCover from './BlogPostCover'
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/nextjs'
 
 export default {
   component: BlogPostCover,

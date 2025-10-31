@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/react";
-import { themes } from '@storybook/theming';
+import type { Preview } from "@storybook/nextjs";
+import { themes } from 'storybook/theming';
 import { initialize as initializeMswAddon, mswLoader } from 'msw-storybook-addon'
 
 import '../src/app/globals.css'

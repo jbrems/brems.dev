@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/nextjs'
 import { BlogPostHeader } from './BlogPostHeader'
 import { storybook } from '@/app/blog/blog.fixtures'
 
