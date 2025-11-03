@@ -1,19 +1,19 @@
 import { ScreenCapture } from './ScreenCapture'
-import { http, HttpResponse } from 'msw'
+// import { http, HttpResponse } from 'msw'
 
 export default {
   component: ScreenCapture,
 }
 
-const msw = {
-  handlers: [
-    http.get('/api/screen-captures/projects/*', async (mock) => {
-      const searchParams = new URL(mock.request.url).searchParams
-      await new Promise(resolve => setTimeout(resolve, 2500))
-      return HttpResponse.redirect(`https://picsum.photos/400/${searchParams.get('size') === 'portrait' ? 200 : 400}`)
-    }),
-  ],
-}
+// const msw = {
+//   handlers: [
+//     http.get('/api/screen-captures/projects/*', async (mock) => {
+//       const searchParams = new URL(mock.request.url).searchParams
+//       await new Promise(resolve => setTimeout(resolve, 2500))
+//       return HttpResponse.redirect(`https://picsum.photos/400/${searchParams.get('size') === 'portrait' ? 200 : 400}`)
+//     }),
+//   ],
+// }
 
 export const NationalNumberGenerator = {
   args: {
@@ -22,5 +22,5 @@ export const NationalNumberGenerator = {
     alt: '',
     className: '',
   },
-  parameters: { msw },
+  // parameters: { msw },
 }

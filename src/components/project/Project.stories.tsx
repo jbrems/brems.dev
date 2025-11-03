@@ -3,15 +3,15 @@ import { Project } from './Project'
 
 import { http, HttpResponse } from 'msw'
 
-const msw = {
-  handlers: [
-    http.get('/api/screen-captures/projects/*', async (mock) => {
-      const searchParams = new URL(mock.request.url).searchParams
-      await new Promise(resolve => setTimeout(resolve, 2500))
-      return HttpResponse.redirect(`https://picsum.photos/800/${searchParams.get('size') === 'portrait' ? 300 : 800}`)
-    }),
-  ],
-}
+// const msw = {
+//   handlers: [
+//     http.get('/api/screen-captures/projects/*', async (mock) => {
+//       const searchParams = new URL(mock.request.url).searchParams
+//       await new Promise(resolve => setTimeout(resolve, 2500))
+//       return HttpResponse.redirect(`https://picsum.photos/800/${searchParams.get('size') === 'portrait' ? 300 : 800}`)
+//     }),
+//   ],
+// }
 
 export default {
   component: Project,
@@ -26,7 +26,7 @@ export const Presentr: StoryObj<typeof Project> = {
       <p>Implements the Google Photos Picker OAuth APIs.</p>
     </>,
   },
-  parameters: { msw },
+  // parameters: { msw },
 }
 
 export const WhosThatPocemon: StoryObj<typeof Project> = {
@@ -38,5 +38,5 @@ export const WhosThatPocemon: StoryObj<typeof Project> = {
       <p>Do you know all 151 original POCemon?</p>
     </>,
   },
-  parameters: { msw },
+  // parameters: { msw },
 }

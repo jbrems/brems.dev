@@ -1,10 +1,10 @@
 import type { Preview } from "@storybook/nextjs";
 import { themes } from 'storybook/theming';
-import { initialize as initializeMswAddon, mswLoader } from 'msw-storybook-addon'
+// import { initialize as initializeMswAddon, mswLoader } from 'msw-storybook-addon'
 
 import '../src/app/globals.css'
 
-initializeMswAddon()
+// initializeMswAddon()
 
 const preview: Preview = {
   parameters: {
@@ -21,7 +21,7 @@ const preview: Preview = {
       theme: themes.dark,
     },
   },
-  loaders: [mswLoader],
+  // loaders: [mswLoader],
   // tags: ['autodocs'],
 };
 
