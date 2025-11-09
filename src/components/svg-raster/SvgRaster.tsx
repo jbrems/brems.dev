@@ -1,9 +1,9 @@
 import React, { ReactNode, useId } from "react";
 
-export function SvgRaster({ columns = 10, rows = 10, size = 30, color = '#aaa', children }: { columns?: number, rows?: number, size?: number, color?: string, children?: ReactNode }) {
+export function SvgRaster({ columns = 10, rows = 10, size = 30, color = '#aaa', children, className }: { columns?: number, rows?: number, size?: number, color?: string, children?: ReactNode, className?: string }) {
   const clipPathId = useId()
 
-  return <svg width={columns * size + 35} height={rows * size + 35} viewBox={`-15 -15 ${columns * size + 20} ${rows * size + 20}`}>
+  return <svg width={columns * size + 35} height={rows * size + 40} viewBox={`-15 -15 ${columns * size + 20} ${rows * size + 25}`} className={className}>
     <clipPath id={clipPathId}>
       <rect x="0" y="0" width={columns * size} height={rows * size} />
     </clipPath>

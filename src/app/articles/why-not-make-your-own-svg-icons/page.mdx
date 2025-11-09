@@ -7,6 +7,8 @@ updated: 2025-11-07
 
 import { SvgRaster, SvgRasterLine, SvgRasterPoint } from "@/components/svg-raster/SvgRaster";
 
+# Why not make your own SVG icons?
+
 Here are some `SVG` icons:
 
 <div className="flex gap-2">
@@ -125,7 +127,7 @@ The `viewBox` defines the raster on which the elements of the `SVG` will be plac
 
 The four numbers represent the origin coordinate's X and Y values (often `0 0`) and the width and height of the raster.
 
-A `viewBox` of `0 0 10 10` will generate a raster with origin coordinates [0, 0], 10 columns and 10 rows.
+A `viewBox` of `0 0 10 10` will generate a raster with origin coordinates (0, 0), 10 columns and 10 rows.
 
 <SvgRaster columns={10} rows={10} />
 
@@ -139,7 +141,7 @@ Within this `viewBox` you can define the components that make up your `SVG`.
 </svg>
 ```
 
-<SvgRaster columns={10} rows={10} size={30} >
+<SvgRaster columns={10} rows={10} size={30} className="mt-4">
   <SvgRasterLine x1={1} y1={5} x2={4} y2={3} />
   <SvgRasterLine x1={1} y1={5} x2={4} y2={7} />
   <SvgRasterLine x1={1} y1={5} x2={9} y2={5} />
@@ -157,7 +159,7 @@ You might have noticed that all icon definitions stay at least 1 unit away from 
 
 This is because strokes are centered around their path. A horizontal line with `Y = 5` will be drawn from half a unit above the `Y5` line to half a unit below the `Y5` line. A line on the `Y0` line will therefor lose half of its width.
 
-Also, the `stroke-linecap` _(the caps or endings of the line)_ are drawn half a unit past the line's endpoints.
+Also, the `stroke-linecap` _(the endings of a line or path)_ are drawn half a unit past the line's endpoints.
 
 ```html
 <svg viewBox="0 0 10 10" stroke="goldenrod" stroke-linecap="round">
@@ -169,7 +171,7 @@ Also, the `stroke-linecap` _(the caps or endings of the line)_ are drawn half a 
 </svg>
 ```
 
-<SvgRaster columns={10} rows={8} size={30} >
+<SvgRaster columns={10} rows={8} size={30} className="mt-4">
   <SvgRasterLine x1={1} y1={0} x2={9} y2={0} />
   <SvgRasterLine x1={0} y1={2} x2={8} y2={2} />
   <SvgRasterLine x1={1} y1={4} x2={9} y2={4} />
@@ -280,7 +282,7 @@ _Since you cannot draw complete circles with the arc syntax, we draw 2 semicircl
 
 ## Q & A
 
-Q: Where is the XML namespace _(`xmlns="http://www.w3.org/2000/svg"`)_?
+Q: Where is the XML namespace _(`xmlns="http://www.w3.org/2000/svg"`)_ in the `SVG` definition?
 
 A: When using `SVG` elements in an `HTML5` context you do not need to specify the namespace.
 
@@ -317,3 +319,10 @@ A: This is personal preference. It preserves the `width` and `height` of the `SV
     <line x1="1" y1="3" x2="4" y2="5" stroke="goldenrod" strokeLinecap="round" />
   </svg>
 </div>
+
+---
+
+Q: Do I really expect you to make all of your `SVG` icons yourself?
+
+A: Of course not. But I do want to show you that it is not as impossible as you might have thought it to be.
+And maybe next time you see Figma spit out a complete riddle of an `SVG` icon, you might think to yourself: "I can probably make that `SVG` icon myself!"

@@ -16,19 +16,19 @@ export default async function HomePage() {
   highlightedBlogPosts.sort((a, b) => a.highlight - b.highlight)
 
   return <>
-    <h2>Jonas Brems - Web developer</h2>
+    <h1>Jonas Brems - Web developer</h1>
     <p>My very own place on the world wide web.</p>
     <div className={styles.title}>
-      <h3>Current position</h3>
+      <h2>Current position</h2>
       <Link href="/career">To career</Link>
     </div>
     <DeLijnBlock />
     <div className={styles.title}>
-      <h3>Highlighted blog posts</h3>
+      <h2>Highlighted blog posts</h2>
       <Link href="/blog">All blog posts</Link>
     </div>
     <BlogPostList blogPosts={highlightedBlogPosts} />
-    <h3 className={styles.title}>Most recent blog posts</h3>
+    <h2 className={styles.title}>Most recent blog posts</h2>
     <BlogPostList blogPosts={blogPosts.slice(0, 3)} />
   </>
 }

@@ -17,7 +17,7 @@ export default async function BlogHomePage() {
   const topics = [...new Set(blogPosts.map(blogPost => blogPost.topic))]
 
   return <>
-    <h2>My Blog</h2>
+    <h1>My Blog</h1>
     <p>
       <SttpTag className={styles.sttpTag} />{' '}
       <span>The STTP tag marks blog posts containing straight to the point instructions with little or no context or explanation.</span>
