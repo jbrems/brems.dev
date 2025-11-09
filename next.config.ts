@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['mdx', 'tsx'],
   async redirects() {
     return [
       { source: '/nrg', destination: '/projects/national-registration-generation', permanent: true },
@@ -11,8 +11,14 @@ const nextConfig: NextConfig = {
   },
 }
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-})
+const withMDX = createMDX(({
+  options: {
+    remarkPlugins: [
+      'remark-frontmatter',
+      ['remark-mdx-frontmatter', { name: 'matter' }],
+    ],
+    rehypePlugins: ['rehype-highlight'],
+  }
+}) as any)
 
 export default withMDX(nextConfig)

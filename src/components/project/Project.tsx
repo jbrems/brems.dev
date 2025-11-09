@@ -11,7 +11,7 @@ export function Project({ path, title, children }: { path: string, title: string
         <ScreenCapture path={path} size="square" className={styles.projectImage} alt="Project cover image" />
       </div>
       <main>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         {children}
       </main>
     </article>

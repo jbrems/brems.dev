@@ -1,6 +1,6 @@
 export default function DisclaimerPage() {
   return <>
-    <h2>Disclaimer</h2>
+    <h1>Disclaimer</h1>
     <p>
       All information on this website is presented as is, without any guarantees of correctness or harmlessness.
     </p>

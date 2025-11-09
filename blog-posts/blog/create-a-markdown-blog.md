@@ -188,7 +188,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   const htmlContent = (await remark().use(remarkHtml).process(blogPost.content)).toString()
   
   return <>
-    <h3>{blogPost.title}</h3>
+    <h2>{blogPost.title}</h2>
     <p>{blogPost.date?.toString()}</p>
     <p dangerouslySetInnerHTML={{ __html: htmlContent }} />
   </>

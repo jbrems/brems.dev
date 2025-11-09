@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return <>
-    <h2>Projects</h2>
+    <h1>Projects</h1>
     <div className={styles.projectsContainer}>
       <Project path="/projects/national-registration-generation" title="National Registration Generation">
         <p>Generates and completes Belgian national registration numbers.</p>

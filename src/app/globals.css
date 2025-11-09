@@ -20,12 +20,12 @@
   --highlight-color: goldenrod;
 
   --radial-bg: radial-gradient(ellipse at top left, #222222, transparent),
-                  radial-gradient(ellipse at bottom right, #444444, transparent);
+    radial-gradient(ellipse at bottom right, #444444, transparent);
 }
 
 * {
   box-sizing: border-box;
-
+  scrollbar-width: thin;
 }
 
 html {
@@ -44,7 +44,7 @@ body {
 
   background-color: var(--background-color);
   color: var(--color);
-  
+
   font-family: var(--default-font-family);
   font-optical-sizing: auto;
   font-weight: 400;
@@ -62,23 +62,25 @@ a {
   text-underline-offset: 0.25em;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: normal;
 }
 
 h1 {
   font-size: 2em;
-  margin: 0.5em 0 0.5em 0;
 }
 
 h2 {
   font-size: 1.5em;
-  margin: 1em 0 0.5em 0;
+  margin-top: 1em;
 }
 
 h3 {
   font-size: 1.25em;
-  margin: 1em 0 0.5em 0;
 }
 
 p {
@@ -122,7 +124,7 @@ input {
   border: solid 1px goldenrod;
   border-radius: 2em;
   box-shadow: 1px 1px 3px #000000;
-  
+
   cursor: pointer;
   transition: background 0.5s linear;
 
