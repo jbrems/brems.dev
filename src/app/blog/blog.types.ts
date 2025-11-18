@@ -3,9 +3,10 @@ export type BlogPost = {
   title: string
   description: string
   created: Date
-  updated: Date
-  sttp: boolean
-  topic: string
+  updated?: Date
+  sttp?: boolean
+  topic?: string
   content: string
-  highlight: number
+  highlight?: number
+  href?: string
 }
