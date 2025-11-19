@@ -14,7 +14,7 @@ export default async function BlogHomePage() {
   const blogPosts = await getAllBlogPosts()
   blogPosts.sort(sortBlogPosts).reverse()
 
-  const topics = [...new Set(blogPosts.map(blogPost => blogPost.topic))]
+  const topics = [...new Set(blogPosts.map(blogPost => blogPost.topic || 'unknown'))]
 
   return <>
     <h1>My Blog</h1>

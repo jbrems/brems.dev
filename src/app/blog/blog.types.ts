@@ -5,8 +5,8 @@ export type BlogPost = {
   created: Date
   updated?: Date
   sttp?: boolean
-  topic?: string
+  topic: string
   content: string
-  highlight?: number
+  highlight: number
   href?: string
 }

@@ -65,7 +65,7 @@ function slugify(text: string): string {
 }
 
 export function groupByTopic(result: Record<string, BlogPost[]>, blogPost: BlogPost): Record<string, BlogPost[]> {
-  if (!result[blogPost.topic]) result[blogPost.topic] = []
-  result[blogPost.topic].push(blogPost)
+  if (!result[blogPost.topic || 'unknown']) result[blogPost.topic || 'unknown'] = []
+  result[blogPost.topic || 'unknown'].push(blogPost)
   return result
 }

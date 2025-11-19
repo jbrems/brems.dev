@@ -80,6 +80,7 @@ export default async function Page() {
               id: a.slug,
               href: a.href,
               content: a.content,
+              highlight: 0,
               ...a.frontmatter,
             }} />
           </li>
