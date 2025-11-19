@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import matter from  'gray-matter'
+import matter from 'gray-matter'
 import { BlogPost } from './blog.types'
 import { cache } from 'react'
 
@@ -18,7 +18,7 @@ export async function getAllBlogPosts() {
 }
 
 export function sortBlogPosts(a: BlogPost, b: BlogPost) {
-  if (a.updated > b.updated) return 1
+  if (a.updated && b.updated && a.updated > b.updated) return 1
   return -1
 }
 
