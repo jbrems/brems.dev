@@ -1,8 +1,7 @@
 import styles from './page.module.css'
-import { BlogPostList } from '@/components/blog-post/blog-post-list/BlogPostList'
-import { getAllBlogPosts, sortBlogPosts } from './blog/blog.utils'
 import Link from 'next/link'
-import { DeLijnBlock } from './career/DeLijnBlock'
+import { getArticles } from '@/lib/article.service'
+import { ArticleList } from '@/components/article/ArticleList'
 
 export const metadata = {
   title: '<Home /> | Brems.dev',
@@ -10,25 +9,15 @@ export const metadata = {
 }
 
 export default async function HomePage() {
-  const blogPosts = await getAllBlogPosts()
-  blogPosts.sort(sortBlogPosts).reverse()
-  const highlightedBlogPosts = blogPosts.filter(blogPost => blogPost.highlight)
-  highlightedBlogPosts.sort((a, b) => a.highlight - b.highlight)
+  const articles = await getArticles();
 
   return <>
     <h1>Jonas Brems - Web developer</h1>
     <p>My very own place on the world wide web.</p>
     <div className={styles.title}>
-      <h2>Current position</h2>
-      <Link href="/career">To career</Link>
+      <h2>Articles</h2>
+      <Link href="/articles">All articles</Link>
     </div>
-    <DeLijnBlock />
-    <div className={styles.title}>
-      <h2>Highlighted blog posts</h2>
-      <Link href="/blog">All blog posts</Link>
-    </div>
-    <BlogPostList blogPosts={highlightedBlogPosts} />
-    <h2 className={styles.title}>Most recent blog posts</h2>
-    <BlogPostList blogPosts={blogPosts.slice(0, 3)} />
+    <ArticleList articles={articles.slice(0, 3)} />
   </>
 }

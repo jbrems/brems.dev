@@ -1,6 +1,19 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark-dimmed.min.css');
 @import "tailwindcss";
 
+@theme {
+  --color-goldenrod: goldenrod;
+}
+
+@utility small-caps {
+  font-variant: small-caps;
+}
+
+@utility radial-bg {
+  background: radial-gradient(ellipse at top left, #222222, transparent),
+    radial-gradient(ellipse at bottom right, #444444, transparent);
+}
+
 /* Fonts are provided and optimized by Next's next/font/google.
    Use the CSS variables injected by next/font (--font-sans and --font-mono).
    Fallback values are provided here so styles work when the variables are not present. */
