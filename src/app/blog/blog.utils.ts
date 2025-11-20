@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import matter from  'gray-matter'
+import matter from 'gray-matter'
 import { BlogPost } from './blog.types'
 import { cache } from 'react'
 
@@ -18,7 +18,7 @@ export async function getAllBlogPosts() {
 }
 
 export function sortBlogPosts(a: BlogPost, b: BlogPost) {
-  if (a.updated > b.updated) return 1
+  if (a.updated && b.updated && a.updated > b.updated) return 1
   return -1
 }
 
@@ -65,7 +65,7 @@ function slugify(text: string): string {
 }
 
 export function groupByTopic(result: Record<string, BlogPost[]>, blogPost: BlogPost): Record<string, BlogPost[]> {
-  if (!result[blogPost.topic]) result[blogPost.topic] = []
-  result[blogPost.topic].push(blogPost)
+  if (!result[blogPost.topic || 'unknown']) result[blogPost.topic || 'unknown'] = []
+  result[blogPost.topic || 'unknown'].push(blogPost)
   return result
 }

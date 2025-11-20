@@ -1,12 +1,10 @@
-export type BlogPost = {
+export type Article = {
   id: string
   title: string
   description: string
   created: Date
   updated?: Date
-  sttp?: boolean
   topic: string
+  href: string
   content: string
-  highlight: number
-  href?: string
 }

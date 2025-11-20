@@ -4,7 +4,7 @@ import { BlogPostHeader } from '../blog-post-header/BlogPostHeader'
 import styles from './LinkToBlogPost.module.css'
 
 export function LinkToBlogPost({ blogPost }: { blogPost: BlogPost }) {
-  return <Link href={`/blog/${blogPost.id}`} className={styles.linkToBlogPost}>
+  return <Link href={blogPost.href || `/blog/${blogPost.id}`} className={styles.linkToBlogPost}>
     <BlogPostHeader blogPost={blogPost} className={styles.blogPost} />
   </Link>
 }

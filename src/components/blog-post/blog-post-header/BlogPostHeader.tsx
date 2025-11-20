@@ -8,7 +8,7 @@ export function BlogPostHeader({ blogPost, className }: { blogPost: BlogPost, cl
     <div className={styles.info}>
       <h1 className={styles.title}>{blogPost.title}</h1>
       <p className={styles.metadata}>
-        <span>last modified at {blogPost.updated?.toISOString().split('T')[0]}</span>
+        <span>last modified at {(blogPost.updated || blogPost.created).toISOString().split('T')[0]}</span>
         <span>by Jonas Brems</span>
       </p>
     </div>
