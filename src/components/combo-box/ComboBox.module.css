@@ -1,5 +1,5 @@
 .comboBox {
-  width: 300px;
+  width: 410px;
 
   & .input {
     anchor-name: --input-el;
@@ -21,7 +21,7 @@
     position-anchor: --input-el;
     top: anchor(bottom);
     left: anchor(left);
-    width: 300px;
+    width: 410px;
     margin: 0;
     border: solid 1px #111111;
     border-radius: 4px;

@@ -8,7 +8,7 @@ export function Project({ path, title, children }: { path: string, title: string
   return <Link href={path} className={styles.project}>
     <article className={styles.article}>
       <div className={styles.imageContainer}>
-        <ScreenCapture path={path} size="square" className={styles.projectImage} alt="Project cover image" />
+        <img src={`${path}/opengraph-image.png`} className={styles.projectImage} alt="Project cover image" />
       </div>
       <main>
         <h2>{title}</h2>

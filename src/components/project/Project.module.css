@@ -4,7 +4,7 @@
   display: block;
   container-type: inline-size;
 
-  &:hover article{
+  &:hover article {
     background: var(--radial-bg);
   }
 
@@ -23,18 +23,19 @@
 
       border: solid 1px #daa52080;
       border-radius: 15px 15px 0 0;
-      
+
       overflow: hidden;
-      
+
       & .projectImage {
         width: 100%;
         height: 100%;
       }
     }
-    
-  
+
+
     & main {
       padding: 0 1em;
+      flex-grow: 1;
 
       & h3 {
         color: goldenrod;
@@ -44,10 +45,10 @@
 
   @container (min-width: 400px) {
     .article {
-      display: block;
+      flex-direction: row;
 
       & .imageContainer {
-        float: left;
+        flex-shrink: 0;
 
         width: 213px;
         height: 213px;
@@ -60,7 +61,7 @@
         & h3 {
           margin-top: 0.5em;
         }
-        
+
         & p:last-of-type {
           margin-bottom: 0;
         }
