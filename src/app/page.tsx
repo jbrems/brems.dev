@@ -13,8 +13,13 @@ export default async function HomePage() {
   const articles = await getArticles();
 
   return <>
-    <h1>Jonas Brems - Web developer</h1>
-    <p>My very own place on the world wide web.</p>
+    <section className="flex items-center gap-8 mt-8">
+      <img src="/this-is-me.png" alt="This is me" className="w-48 h-48 rounded-full scale-x-[-1]" />
+      <div>
+        <h1>Jonas Brems - Web developer @ De Lijn</h1>
+        <p>My very own place on the world wide web.</p>
+      </div>
+    </section>
     <div className={styles.title}>
       <h2>Some articles</h2>
       <Link href="/articles">All articles</Link>
