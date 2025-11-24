@@ -28,7 +28,7 @@ export async function getArticles(): Promise<Article[]> {
   const articles: Article[] = await Promise.all(
     files.map(async (filePath) => {
       const raw = await fs.readFile(filePath, "utf8");
-      const { data: { title, description, created, updated, topic }, content } = matter(raw);
+      const { data: { title, description, created, updated, topic = '?', rank = 3 }, content } = matter(raw);
 
       // compute href relative to app root: src/app/.../page.mdx -> /...
       const relative = path
@@ -37,11 +37,13 @@ export async function getArticles(): Promise<Article[]> {
       const href = "/" + relative.replace(/\/page\.mdx$/, "");
       const slug = href.replace(/^\//, "");
 
-      return { id: slug, href, content, title, description, created, updated, topic };
+      return { id: slug, href, content, title, description, created, updated, topic, rank };
     })
   );
 
   articles.sort((a, b) => {
+    if (a.rank !== b.rank) return a.rank - b.rank
+
     const da = a.updated || a.created
     const db = b.updated || b.created
     return db.getTime() - da.getTime()

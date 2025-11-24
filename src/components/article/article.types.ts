@@ -7,4 +7,5 @@ export type Article = {
   topic: string
   href: string
   content: string
+  rank: number
 }
