@@ -1,3 +1,5 @@
+import { MousePointer } from "../icons/mouse-pointer/MousePointer"
+
 export function Overlay({ children }: { children: React.ReactNode }) {
   return <div className="w-[300px] h-[200px] bg-neutral-800 rounded-lg border border-neutral-600 overflow-hidden">
     <div className="w-full h-[30px] bg-neutral-900 flex items-center gap-2 px-2 rounded-t-lg">
@@ -22,7 +24,18 @@ export function Snackbar() {
 }
 
 export function Toast() {
-  return <div className="absolute bottom-0 right-2 h-[80px] w-[100px] bg-neutral-700 rounded-t-lg animate-slide-up-delayed"></div>
+  return <div className="absolute bottom-0 right-2 h-[60px] w-[100px] bg-neutral-700 rounded-t-lg animate-slide-up-delayed"></div>
+}
+
+export function Tooltip() {
+  return <>
+    <div className="absolute top-18 left-4 h-[30px] w-[120px] border border-dashed border-neutral-500 rounded-lg"></div>
+    <MousePointer size={32} color="#666" className="absolute top-[85px] left-28 animate-slide-diagonally" />
+    <section className="animate-fade-in-out">
+      <div className="absolute top-[44px] left-[60px] h-[20px] w-[20px] bg-neutral-700 rotate-45"></div>
+      <div className="absolute top-[30px] left-[50px] h-[30px] w-[200px] bg-neutral-700 rounded-lg"></div>
+    </section>
+  </>
 }
 
 export function Drawer() {

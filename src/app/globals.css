@@ -28,6 +28,30 @@
 
   --animate-slide-right: slide-right 8s ease-out infinite;
 
+  @keyframes slide-left {
+    0% {
+      transform: translateX(120%);
+    }
+
+    25% {
+      transform: translateX(0%);
+    }
+
+    80% {
+      transform: translateX(0%);
+    }
+
+    90% {
+      transform: translateX(120%);
+    }
+
+    100% {
+      transform: translateX(120%);
+    }
+  }
+
+  --animate-slide-left: slide-left 8s ease-out infinite;
+
   @keyframes slide-up {
     0% {
       transform: translateY(120%);
@@ -52,6 +76,58 @@
 
   --animate-slide-up: slide-up 8s ease-out infinite;
   --animate-slide-up-delayed: slide-up 8s ease-out 1s infinite;
+
+  @keyframes slide-diagonally {
+    0% {
+      transform: translate(80px, 50px);
+    }
+
+    25% {
+      transform: translate(0, 0);
+    }
+
+    80% {
+      transform: translate(0, 0);
+    }
+
+    90% {
+      transform: translate(80px, 50px);
+    }
+
+    100% {
+      transform: translate(80px, 50px);
+    }
+  }
+
+  --animate-slide-diagonally: slide-diagonally 8s ease-out infinite;
+
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 0;
+    }
+
+    35% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    85% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  --animate-fade-in-out: fade-in-out 8s ease-in-out infinite;
 }
 
 @utility small-caps {

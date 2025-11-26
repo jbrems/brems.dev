@@ -2,18 +2,19 @@
 title: Popup vs modal vs overlay
 description: A quick explanation of the different UX/UI overlay elements and how to correctly name them.
 created: 2024-11-07
-updated: 2025-11-25
+updated: 2025-11-26
 topic: UI
 rank: 2
 ---
 
-import { Overlay, Modal, Snackbar, Toast, Drawer, Sheet } from '@/components/overlay/Overlay'
+import { Overlay, Modal, Snackbar, Toast, Tooltip, Drawer, Sheet } from '@/components/overlay/Overlay'
+import { MousePointer } from '@/components/icons/mouse-pointer/MousePointer'
 
 # Popup vs modal vs overlay
 
 The terms `popup`, `modal`, and `overlay` are often used interchangeably, but they refer to different UI elements with distinct behaviors and purposes.
 
-So if you want to impress your UI/UX designer friends or colleagues, here's a quick rundown of the differences between these terms.
+Here's a quick rundown of the differences between these terms.
 
 ## Overlay
 An `overlay` is any element that is rendered over the main content of the UI and is generally a temporary addition to the page.
@@ -21,7 +22,9 @@ An `overlay` is any element that is rendered over the main content of the UI and
 `Modals`, `popups`, and `tooltips` are all different kinds of `overlays`. 
 
 ## Modal
-A `modal` is an overlay that blocks interactions with the main content until the `modal` is closed. Important actions or information that cannot be ignored can be shown in a `modal`. 
+A `modal` is an `overlay` that blocks interactions with the main content until the `modal` is closed.
+
+Important actions or information that cannot be ignored can be shown in a `modal`. 
 
 Examples of a `modal` are a login form or a delete confirmation alert.
 
@@ -30,7 +33,7 @@ Examples of a `modal` are a login form or a delete confirmation alert.
 </Overlay>
 
 ## Popup
-A `popup` is an overlay that does not block interactions with the main content. It usually disappears after a short time or when dismissed.
+A `popup` is an `overlay` that does not block interactions with the main content. It usually disappears after a short time or when dismissed by the user.
 
 `Toasts` and `snackbars` are examples of `popups`.
 
@@ -41,7 +44,11 @@ A `popup` is an overlay that does not block interactions with the main content. 
 
 ## Tooltip
 
-A `tooltip` is a small overlay that appears when the user hovers over an element and usually disappears when the user moves the cursor away.
+A `tooltip` is a small `overlay` that appears when the user hovers over an element and usually disappears when the user moves the cursor away.
+
+<Overlay>
+  <Tooltip />
+</Overlay>
 
 ## Drawer
 A `drawer` is an `overlay` that enters the page from the side of the screen (either from the left or from the right).
@@ -51,7 +58,7 @@ A `drawer` is an `overlay` that enters the page from the side of the screen (eit
 </Overlay>
 
 ## Top/bottom sheet
-A `top sheet` is an overlay that enters the page from the top. A `bottom sheet` is an overlay that enters the page from the bottom.
+A `top sheet` is an `overlay` that enters the page from the top. A `bottom sheet` is an overlay that enters the page from the bottom.
 
 These `overlays` are often used on mobile devices.
 
