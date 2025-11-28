@@ -75,7 +75,6 @@
   }
 
   --animate-slide-up: slide-up 8s ease-out infinite;
-  --animate-slide-up-delayed: slide-up 8s ease-out 1s infinite;
 
   @keyframes slide-diagonally {
     0% {
