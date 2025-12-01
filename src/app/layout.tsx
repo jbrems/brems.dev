@@ -2,12 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Nunito, Source_Code_Pro } from 'next/font/google'
 
-const nunito = Nunito({ subsets: ['latin'], weight: ['200','400','700','900'], variable: '--font-sans', display: 'swap' })
-const sourceCodePro = Source_Code_Pro({ subsets: ['latin'], weight: ['200','400','700','900'], variable: '--font-mono', display: 'swap' })
-import { Navigation } from '../components/navigation/Navigation'
-import { Analytics } from '@vercel/analytics/next'
-import { Footer } from '@/components/footer/Footer'
-import { SkipToMainContent } from '@/components/skip-to-main-content/SkipToMainContent'
+const nunito = Nunito({ subsets: ['latin'], weight: ['200', '400', '700', '900'], variable: '--font-sans', display: 'swap' })
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'], weight: ['200', '400', '700', '900'], variable: '--font-mono', display: 'swap' })
 
 export const metadata: Metadata = {
   title: {
@@ -25,13 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable} ${sourceCodePro.variable}`}>
       <body>
-        <SkipToMainContent />
-        <Navigation />
-        <main id="main-content">
-          {children}
-        </main>
-        <Footer />
-        <Analytics />
+        {children}
       </body>
     </html>
   )
