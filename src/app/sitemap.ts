@@ -1,8 +1,6 @@
 import { MetadataRoute } from 'next'
-import { getAllBlogPosts } from './blog/blog.utils'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogPosts = await getAllBlogPosts()
   return [
     {
       url: 'https://brems.dev',
@@ -17,28 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: 'https://brems.dev/projects/presentr',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://brems.dev/career',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1.0,
-    },
-    {
-      url: 'https://brems.dev/blog',
+      url: 'https://brems.dev/articles',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
-    ...blogPosts.map(blogPost => ({
-      url: `https://brems.dev/blog/${blogPost.id}`,
-      lastModified: blogPost.updated,
-      changeFrequency: 'yearly' as MetadataRoute.Sitemap[0]['changeFrequency'],
-      priority: 0.8,
-    })),
+    // ...blogPosts.map(blogPost => ({
+    //   url: `https://brems.dev/blog/${blogPost.id}`,
+    //   lastModified: blogPost.updated,
+    //   changeFrequency: 'yearly' as MetadataRoute.Sitemap[0]['changeFrequency'],
+    //   priority: 0.8,
+    // })),
   ]
 }
