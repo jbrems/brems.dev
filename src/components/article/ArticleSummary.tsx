@@ -9,7 +9,7 @@ export function ArticleSummary({ article }: { article: Article }) {
       <h2 className="text-xl! font-light! mt-0! text-neutral-100">{article.title}</h2>
       <p className="my-0! font-extralight! text-neutral-350">{article.description}</p>
       <p className="my-0! text-goldenrod small-caps text-sm!">
-        Last updated at <span className="ml-1">{(article.updated || article.created).toISOString().split('T')[0]}</span>
+        Last updated <span className="ml-1">{(article.updated || article.created).toISOString().split('T')[0]}</span>
       </p>
     </section>
   </article>

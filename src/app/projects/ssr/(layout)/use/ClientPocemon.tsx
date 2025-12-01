@@ -5,14 +5,14 @@ import { use, useEffect, useState } from "react"
 
 export function ClientPocemon({ pocemonPromise }: { pocemonPromise: Promise<number> }) {
   const pocemon = use(pocemonPromise)
-  const [hp, setHp] = useState(0)
+  const [hp, setHp] = useState(100)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setHp((hp) => hp + 1)
+      setHp((hp) => hp - 1 > 0 ? hp - 1 : 115)
     }, 100)
     return () => clearInterval(interval)
   }, [])
 
-  return <Pocemon id={pocemon} hpPercentage={hp % 100} />
+  return <Pocemon id={pocemon} hpPercentage={hp} />
 }
