@@ -12,7 +12,9 @@ export function Project({ path, title, children }: { path: string, title: string
       </div>
       <main>
         <h2>{title}</h2>
-        {children}
+        <section className="font-extralight text-neutral-350">
+          {children}
+        </section>
       </main>
     </article>
   </Link>
