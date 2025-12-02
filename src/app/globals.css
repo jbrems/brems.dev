@@ -180,6 +180,10 @@ body {
   margin: 0.5em 1em;
 
   background-color: var(--background-color);
+  background-image: url('/api/starry-sky');
+  background-repeat: repeat;
+  background-size: 1000px 1000px;
+  background-position: left top;
   color: var(--color);
 
   font-family: var(--default-font-family);
