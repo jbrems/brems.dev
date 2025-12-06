@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
-  const color = searchParams.get('color') || 'goldenrod'
-  const size = Number(searchParams.get('size') || 1)
+  const color = searchParams.get('color') || '#daa520aa'
+  const size = Number(searchParams.get('size') || 1.5)
   const density = Number(searchParams.get('density') || 0.0002)
 
   if (density > 0.00125) return new Response('Density too high', { status: 400 })
