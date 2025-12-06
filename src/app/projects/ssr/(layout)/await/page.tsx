@@ -1,6 +1,8 @@
 import Pocemon from "@/components/pocemon/Pocemon";
 import { getPocemon } from "../../ssr.service";
 
+export const revalidate = 0
+
 export default function SsrAwaitPage() {
   return <SsrAwaitPageContent className="flex justify-around" />
 }

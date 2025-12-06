@@ -3,6 +3,8 @@ import { Suspense } from "react"
 import { getPocemon } from "../../ssr.service"
 import { ClientPocemon } from "./ClientPocemon"
 
+export const revalidate = 0
+
 export default function SsrUsePage() {
   return <SsrUsePageContent className="flex justify-around" />
 }

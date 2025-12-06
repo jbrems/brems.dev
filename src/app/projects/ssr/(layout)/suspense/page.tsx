@@ -2,6 +2,8 @@ import Pocemon from "@/components/pocemon/Pocemon"
 import { Suspense } from "react"
 import { getPocemon } from "../../ssr.service"
 
+export const revalidate = 0
+
 export default function SsrSuspensePage() {
   return <SsrSuspensePageContent className="flex justify-around" />
 }

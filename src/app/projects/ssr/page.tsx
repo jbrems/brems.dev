@@ -5,6 +5,8 @@ import { SsrUsePageContent } from "./(layout)/use/page";
 import { Suspense } from "react";
 import { LinkSpinner } from "./LinkSpinner";
 
+export const revalidate = 0
+
 export default async function SsrPage() {
   return <>
     <h1>Next SSR - Server Side Rendering</h1>
