@@ -16,7 +16,7 @@ export function formatNrn(value: string): string {
 }
 
 export function completeNrn(value: string): string | null {
-  if (!isValidDate(value.substring(0, 6))) return null
+  if (!isValidDate(value.substring(0, 6)) && !isValidBisDate(value.substring(0, 6))) return null
   if (!isValidBirthCounter(value.substring(6, 9))) return null
 
   if (value.length >= 9) return addCheckSum(value)
@@ -45,6 +45,17 @@ function isValidDate(value: string): boolean {
   const date = new Date(`${century}${year}-${month}-${day}`)
 
   return date.getFullYear() === Number(`${century}${year}`) && date.getMonth() === Number(month) - 1 && date.getDate() === Number(day)
+}
+
+function isValidBisDate(value: string): boolean {
+  if (value.length <= 2) return isValidDate(value)
+
+  const month = Number(value.substring(2, 4).padEnd(2, '1'))
+
+  if (month > 40) return isValidDate(`${value.substring(0, 2)}${(month - 40).toString().padStart(2, '0')}${value.substring(4)}`)
+  if (month > 20) return isValidDate(`${value.substring(0, 2)}${(month - 20).toString().padStart(2, '0')}${value.substring(4)}`)
+
+  return isValidDate(value)
 }
 
 function isValidBirthCounter(value: string): boolean {
@@ -83,7 +94,7 @@ function completeMonth(value: string): string {
 
   const mergedValue = value.substring(0, 2) + (month[0] || randomMonth[0]) + (month[1] || randomMonth[1])
 
-  if (!isValidDate(mergedValue)) return completeMonth(value)
+  if (!isValidDate(mergedValue) && !isValidBisDate(mergedValue)) return completeMonth(value)
 
   return mergedValue + value.substring(4)
 }
@@ -94,7 +105,7 @@ function completeDay(value: string): string {
 
   const mergedValue = value.substring(0, 4) + (day[0] || randomDay[0]) + (day[1] || randomDay[1])
 
-  if (!isValidDate(mergedValue)) return completeDay(value)
+  if (!isValidDate(mergedValue) && !isValidBisDate(mergedValue)) return completeDay(value)
 
   return mergedValue + value.substring(6)
 }
