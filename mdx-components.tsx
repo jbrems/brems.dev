@@ -7,6 +7,7 @@ const components: MDXComponents = {
   ),
   hr: () => <hr className="my-6 border-gray-300 dark:border-gray-600" />,
   h2: ({ children }) => <h2 className="mt-16!">{children}</h2>,
+  li: ({ children }) => <li className="list-disc ml-6 marker:text-[var(--yellow)]">{children}</li>,
 }
 
 export function useMDXComponents(): MDXComponents {
