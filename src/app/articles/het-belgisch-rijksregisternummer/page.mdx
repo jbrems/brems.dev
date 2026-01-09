@@ -2,7 +2,7 @@
 title: Het Belgisch Rijksregisternummer (Dutch)
 description: Een volledige beschrijving van de opmaak en structuur van het Belgisch Rijksregisternummer.
 created: 2025-12-07
-updated: 2025-12-09
+updated: 2026-01-09
 topic: RRN
 rank: 2
 ---
@@ -28,15 +28,15 @@ _Dit zijn de offiële specificaties sinds 2016. Voordien was het gebruikelijk om
 
 Het volgnummer is een oplopend nummer van `001` tot `998` dat even is voor vrouwen en oneven voor mannen.
 
-Wanneer alle volgnummers voor een dag uitgeput zijn - dit gebeurt enkel voor rijksregisternummers waarvoor de geboortedag en/of maand niet gekends is - wordt de fictieve geboortedag (`00`) verhoogd met 1 (`01`), wanneer ook die uitgeput is wordt er opnieuw verhoogd met 1 (`02`, `03`, ...) tot een vrije dag wordt gevonden.
+Wanneer alle volgnummers voor een dag uitgeput zijn - dit gebeurt enkel voor rijksregisternummers waarvoor de geboortedag en/of maand niet gekends is - wordt de fictieve geboortedag (`00`) verhoogd met 1 (`01`), wanneer ook die uitgeput is wordt er opnieuw verhoogd met 1 (`02`, `03`, `04`, ...) tot een vrije dag wordt gevonden.
 
-_Gemiddeld worden in België per dag 296 kinderen geboren, met pieken in de zomermaanden tot iets meer dan 450 kinderen per dag._
+_Gemiddeld worden in België 296 kinderen per dag geboren, met pieken in de zomermaanden tot iets meer dan 450 kinderen per dag._
 
 
 ## Controlegetal (______ ___ CC)
 
 Het controlegetal wordt gebruikt om een Rijksregisternummer te valideren en invoerfouten tegen te gaan.  
-Het wordt ook gebruikt om na te gaan of de geboortedatum in de 21ste eeuw _(2000-2099)_ of eerder (19de of 20ste eeuw) valt.
+Het wordt ook gebruikt om na te gaan of de geboortedatum in de 21ste eeuw _(2000-2099)_ of de 19de of 20ste eeuw valt.
 
 Het controlegetal wordt berekend uit de eerste 9 cijfers van het Rijksregisternummer (geboortedatum + identificatienummer) door de `modulo 97` check.
 
@@ -51,17 +51,42 @@ CC = 97 - (2YYMMDDVVV mod 97)
 ```
 
 
+## Het identificatienummer van de sociale zekerheid (INSZ)
+
+Voor iedereen die een Rijksregisternummer heeft is dit nummer ook hun identificatienummer van de social zekerheid.
+
+Personenen die een link hebben met België maar geen Rijksregisternummer hebben, krijgen een BIS-nummer als identificatienummer.
+
+
+## Het BIS-nummer
+
+Het BIS-nummer wordt op een gelijkaardige manier opgebouwd als het Rijksregisternummer, maar: 
+* Het BIS-nummer wordt opgemaakt met de gegevens die bij aanmaak gekend zijn en wordt niet aangepast wanneer meer gegevens bekend worden of wijzigen.
+* De geboortemaand (3de en 4de cijfer) wordt verhoogd met 40 wanneer het geslacht gekend is of 20 wanneer het geslacht niet gekend is.
+* Het volgnummer is oneven wanneer het geslacht niet gekend is.
+* Wanneer de geboortedag niet gekend is wordt soms een getal groter dan 31 ingegeven.
+
+
 ## Q & a
 
 Q: Kan je de geboortedatum uit een Rijksregisternummer halen?
 
-A: Ja dat kan in de meeste gevallen, door het controlegetal te gebruiken om na te gaan of de persoon geboren is in de 21ste eeuw.
+A: Ja dat kan in de meeste gevallen. Gebruik het controlegetal om na te gaan of de persoon geboren is in de 21ste eeuw. De rest van de geboortedatum haal je uit de eerste 6 cijfers van het Rijksregisternummer.
 
 Let op:
 * Je kan uit het Rijksregisternummer niet afleiden of iemand geboren is in de 19de (1800-1899) of 20ste (1900-1999) eeuw.
 * Hou er rekening mee dat de eerste 6 cijfers van het Rijksregisternummer niet altijd een geldige datum vormen.
 * Zoals in 2016 kunnen de regels rond het opstellen van het Rijksregisternummer aangepast worden zonder retroactieve werking.
-* Het resultaat zal nooit 100% sluitend zijn.
+* Het resultaat zal niet 100% sluitend zijn.
+
+---
+
+Q: Kan je de geboortedatum uit een BIS-nummer halen?
+
+A: Ja dat kan door 20 of 40 af te trekken van de geboortemaand.
+
+Let op:
+* Het BIS-nummer is doorgaans veel minder nauwkeuring dan het Rijksregisternummer en wordt niet gecorrigeerd.
 
 ---
 
@@ -70,8 +95,18 @@ Q: Kan je het geslacht uit het Rijksregisternummer halen?
 A: Ja dat kan door te kijken naar het volgnummer. Personen die officieel van geslacht veranderen krijgen een nieuw Rijksregisternummer.
 
 Let op:
-* Dit kan heel gevoelig liggen voor personen in transitie, personen die niet officieel van geslacht veranderd zijn, of personen die zich niet identificeren met een van de twee geslachten.
+* Dit kan heel gevoelig liggen voor sommige personen.
 
+--
+
+Q: Kan je het geslacht uit een BIS-nummer halen?
+
+A: Ja, maar enkel als de geboortemaand tussen 41 en 52 valt (geboortemaand + 40).
+
+Let op:
+* Het BIS-nummer is doorgaans veel minder nauwkeuring dan het Rijksregisternummer en wordt niet gecorrigeerd.
+
+---
 
 ## Bronnen
 [https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf]()  
