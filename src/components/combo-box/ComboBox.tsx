@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react'
 
 export type Option = {
@@ -11,8 +12,13 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
   const [value, setValue] = useState('')
   const [disabled, setDisabled] = useState(false)
   const [filteredOptions, setFilteredOptions] = useState<Option[]>([])
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1)
   const inputElement = useRef<HTMLInputElement>(null)
   const optionsRef = useRef<HTMLUListElement>(null)
+
+  function isOpen() {
+    return optionsRef.current?.matches(':popover-open') || false
+  }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const val = event.target.value
@@ -24,6 +30,7 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
     else optionsRef.current?.hidePopover()
 
     setFilteredOptions(options.filter(({ label }) => label.toLocaleLowerCase().startsWith(val.toLocaleLowerCase())))
+    setSelectedOptionIndex(-1)
   }
 
   const select = useCallback((option: Option) => {
@@ -35,6 +42,7 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
       setValue('')
       setFilteredOptions(options)
       setDisabled(false)
+      setSelectedOptionIndex(-1)
     }, 999)
   }, [selectOption])
 
@@ -54,12 +62,23 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
       if (event.key === 'Enter') {
         const option = filteredOptions.find(({ label }) => label.toLocaleLowerCase() === value.toLocaleLowerCase())
         if (option) select(option)
+        if (selectedOptionIndex >= 0 && selectedOptionIndex < filteredOptions.length) {
+          select(filteredOptions[selectedOptionIndex])
+        }
+      }
+      if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        setSelectedOptionIndex((prevIndex) => prevIndex + 1 >= filteredOptions.length ? 0 : prevIndex + 1)
+      }
+      if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        setSelectedOptionIndex((prevIndex) => prevIndex - 1 < 0 ? filteredOptions.length - 1 : prevIndex - 1)
       }
     }
 
     inputElement.current?.addEventListener('keydown', handleKeyDown)
     return () => inputElement.current?.removeEventListener('keydown', handleKeyDown)
-  }, [filteredOptions, select])
+  }, [filteredOptions, selectedOptionIndex, select])
 
   return (
     <div className="relative w-[410px]">
@@ -74,26 +93,27 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
         disabled={disabled}
         autoComplete="one-time-code"
         role="combobox"
-        aria-expanded={optionsRef.current?.matches(':popover-open') || false}
+        aria-expanded={isOpen()}
         aria-controls="options"
         aria-haspopup="listbox"
         aria-autocomplete="list"
+        aria-activedescendant={`option-${selectedOptionIndex}`}
       />
 
       <ul role="listbox" popover="manual" id="options" ref={optionsRef} className="[position-anchor:--input-el] [top:anchor(bottom)] [left:anchor(left)] w-[410px] border border-[#111111] rounded bg-[#333333]">
-        {filteredOptions.map((o) => (
-          <Option key={o.value} option={o} markedCharacters={value.length} selectOption={select} />
+        {filteredOptions.map((o, i) => (
+          <Option key={o.value} id={`option-${i}`} option={o} markedCharacters={value.length} selected={selectedOptionIndex === i || value === o.label} selectOption={select} />
         ))}
       </ul>
     </div >
   )
 }
 
-function Option({ option, markedCharacters = 0, selectOption }: { option: Option, markedCharacters?: number, selectOption: (option: Option) => void }) {
+function Option({ id, option, markedCharacters = 0, selected, selectOption }: { id: string, option: Option, markedCharacters?: number, selected: boolean, selectOption: (option: Option) => void }) {
   return (
-    <li role="option" className="text-[#dddddd] p-1 cursor-pointer" onClick={() => selectOption(option)}>
+    <li id={id} aria-current={selected} role="option" className={classNames("text-[#ddd] p-1 cursor-pointer", { 'bg-[goldenrod] text-[#222]!': selected })} onClick={() => selectOption(option)}>
       <span>
-        <mark className="text-[goldenrod] bg-transparent">{option.label.slice(0, markedCharacters)}</mark>
+        <mark className={classNames("text-[goldenrod] bg-transparent", { 'text-[#ddd]!': selected })}>{option.label.slice(0, markedCharacters)}</mark>
       </span>
       <span>{option.label.slice(markedCharacters)}</span>
     </li>
