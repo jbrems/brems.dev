@@ -2,8 +2,6 @@
 
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 
-import styles from './ComboBox.module.css'
-
 export type Option = {
   value: string
   label: string
@@ -25,7 +23,7 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
     if (value?.length) document.getElementById('options')?.showPopover()
     else document.getElementById('options')?.hidePopover()
 
-    setFilteredOptions(options.filter(({ value: option, label }) => option === value || label.toLocaleLowerCase().startsWith(value.toLocaleLowerCase())))
+    setFilteredOptions(options.filter(({ label }) => label.toLocaleLowerCase().startsWith(value.toLocaleLowerCase())))
   }, [value, options, setFilteredOptions])
 
   useEffect(() => {
@@ -45,16 +43,36 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
     if (!disabled) inputElement.current?.focus()
   }, [disabled])
 
-  return <div className={styles.comboBox}>
-    <input type="text" onChange={handleInputChange} value={value} placeholder="Keep typing until only one option remains" className={styles.input} ref={inputElement} id="input" disabled={disabled} autoComplete="one-time-code"/>
-    <div popover="manual" id="options" className={styles.options} >
-      {filteredOptions.map(o => <Option key={o.value} label={o.label} markedCharacters={value.length} />)}
+  return (
+    <div className="relative w-[410px]">
+      <input
+        type="text"
+        onChange={handleInputChange}
+        value={value}
+        placeholder="Who's that Pocemon?"
+        className="[anchor-name:--input-el] w-full p-2 text-[#dddddd] bg-[#333333] border border-[#bbbbbb] rounded focus-visible:outline-none focus-visible:border-[goldenrod]"
+        ref={inputElement}
+        id="input"
+        disabled={disabled}
+        autoComplete="one-time-code"
+      />
+
+      <div popover="manual" id="options" className="[position-anchor:--input-el] [top:anchor(bottom)] [left:anchor(left)] w-[410px] border border-[#111111] rounded bg-[#333333]">
+        {filteredOptions.map((o) => (
+          <Option key={o.value} label={o.label} markedCharacters={value.length} />
+        ))}
+      </div>
     </div>
-  </div>
+  )
 }
 
 function Option({ label, markedCharacters = 0 }: { label: Option['label'], markedCharacters?: number }) {
-  return <div className={styles.option}>
-    <span><mark>{label.slice(0, markedCharacters)}</mark></span><span>{label.slice(markedCharacters)}</span>
-  </div>
+  return (
+    <div className="text-[#dddddd] p-1">
+      <span>
+        <mark className="text-[goldenrod] bg-transparent">{label.slice(0, markedCharacters)}</mark>
+      </span>
+      <span>{label.slice(markedCharacters)}</span>
+    </div>
+  )
 }
