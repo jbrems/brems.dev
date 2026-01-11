@@ -36,7 +36,7 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
       setFilteredOptions(options)
       setDisabled(false)
     }, 999)
-  }, [])
+  }, [selectOption])
 
   useEffect(() => {
     if (!disabled && filteredOptions.length === 1) {
