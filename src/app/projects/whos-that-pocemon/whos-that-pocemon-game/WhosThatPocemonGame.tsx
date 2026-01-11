@@ -12,7 +12,7 @@ export function WhosThatPocemonGame() {
   const [name, setName] = useState('Ditto')
   const [hidden, setHidden] = useState(true)
   const [lives, setLives] = useState(3)
-  const exclusions = useRef([])
+  const exclusions = useRef<number[]>([])
 
   function handleSelectOption(option: Option) {
     if (option.value !== id + '') {
