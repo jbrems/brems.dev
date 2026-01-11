@@ -44,7 +44,7 @@ export default async function HomePage() {
       <li>
         <Project path="/projects/whos-that-pocemon" title="Who's that POCemon?">
           <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
-          <p>Have you figured out why the POCemon Pidgeot, Kabuto, and Mew will never show up in this quiz?</p>
+          <p>Test your generation 1 POCemon knowledge with this fun little game.</p>
         </Project>
       </li>
     </ul>
