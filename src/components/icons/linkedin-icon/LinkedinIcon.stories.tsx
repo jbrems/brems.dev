@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/nextjs'
+import type { StoryObj } from '@storybook/nextjs-vite'
 
 import { LinkedinIcon } from './LinkedinIcon'
 

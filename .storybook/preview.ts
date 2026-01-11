@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/nextjs";
+import type { Preview } from "@storybook/nextjs-vite";
 import { themes } from 'storybook/theming';
 // import { initialize as initializeMswAddon, mswLoader } from 'msw-storybook-addon'
 

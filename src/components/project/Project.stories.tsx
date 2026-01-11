@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/nextjs'
+import { StoryObj } from '@storybook/nextjs-vite'
 import { Project } from './Project'
 
 import { http, HttpResponse } from 'msw'
