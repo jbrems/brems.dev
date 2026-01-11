@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react'
 
 export type Option = {
   value: string
@@ -12,30 +12,35 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
   const [disabled, setDisabled] = useState(false)
   const [filteredOptions, setFilteredOptions] = useState<Option[]>([])
   const inputElement = useRef<HTMLInputElement>(null)
+  const optionsRef = useRef<HTMLUListElement>(null)
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    setValue(event.target.value)
-  }
+    const val = event.target.value
+    setValue(val)
 
-  useEffect(() => {
     if (!options?.length) return
 
-    if (value?.length) document.getElementById('options')?.showPopover()
-    else document.getElementById('options')?.hidePopover()
+    if (val?.length) optionsRef.current?.showPopover()
+    else optionsRef.current?.hidePopover()
 
-    setFilteredOptions(options.filter(({ label }) => label.toLocaleLowerCase().startsWith(value.toLocaleLowerCase())))
-  }, [value, options, setFilteredOptions])
+    setFilteredOptions(options.filter(({ label }) => label.toLocaleLowerCase().startsWith(val.toLocaleLowerCase())))
+  }
+
+  const select = useCallback((option: Option) => {
+    selectOption(option)
+    setDisabled(true)
+    setValue(option.label)
+    optionsRef.current?.hidePopover()
+    setTimeout(() => {
+      setValue('')
+      setFilteredOptions(options)
+      setDisabled(false)
+    }, 999)
+  }, [])
 
   useEffect(() => {
     if (!disabled && filteredOptions.length === 1) {
-      selectOption(filteredOptions[0])
-      setValue(filteredOptions[0].label)
-      setDisabled(true)
-      setTimeout(() => {
-        setValue('')
-        setDisabled(false)
-        setFilteredOptions(options)
-      }, 999)
+      select(filteredOptions[0])
     }
   }, [disabled, filteredOptions, selectOption, setValue, setDisabled, setFilteredOptions, options])
 
@@ -55,24 +60,29 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
         id="input"
         disabled={disabled}
         autoComplete="one-time-code"
+        role="combobox"
+        aria-expanded={optionsRef.current?.matches(':popover-open') || false}
+        aria-controls="options"
+        aria-haspopup="listbox"
+        aria-autocomplete="list"
       />
 
-      <div popover="manual" id="options" className="[position-anchor:--input-el] [top:anchor(bottom)] [left:anchor(left)] w-[410px] border border-[#111111] rounded bg-[#333333]">
+      <ul role="listbox" popover="manual" id="options" ref={optionsRef} className="[position-anchor:--input-el] [top:anchor(bottom)] [left:anchor(left)] w-[410px] border border-[#111111] rounded bg-[#333333]">
         {filteredOptions.map((o) => (
-          <Option key={o.value} label={o.label} markedCharacters={value.length} />
+          <Option key={o.value} option={o} markedCharacters={value.length} selectOption={select} />
         ))}
-      </div>
-    </div>
+      </ul>
+    </div >
   )
 }
 
-function Option({ label, markedCharacters = 0 }: { label: Option['label'], markedCharacters?: number }) {
+function Option({ option, markedCharacters = 0, selectOption }: { option: Option, markedCharacters?: number, selectOption: (option: Option) => void }) {
   return (
-    <div className="text-[#dddddd] p-1">
+    <li role="option" className="text-[#dddddd] p-1 cursor-pointer" onClick={() => selectOption(option)}>
       <span>
-        <mark className="text-[goldenrod] bg-transparent">{label.slice(0, markedCharacters)}</mark>
+        <mark className="text-[goldenrod] bg-transparent">{option.label.slice(0, markedCharacters)}</mark>
       </span>
-      <span>{label.slice(markedCharacters)}</span>
-    </div>
+      <span>{option.label.slice(markedCharacters)}</span>
+    </li>
   )
 }
