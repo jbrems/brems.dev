@@ -48,6 +48,19 @@ export function ComboBox({ options, selectOption }: { options: Option[], selectO
     if (!disabled) inputElement.current?.focus()
   }, [disabled])
 
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') optionsRef.current?.hidePopover()
+      if (event.key === 'Enter') {
+        const option = filteredOptions.find(({ label }) => label.toLocaleLowerCase() === value.toLocaleLowerCase())
+        if (option) select(option)
+      }
+    }
+
+    inputElement.current?.addEventListener('keydown', handleKeyDown)
+    return () => inputElement.current?.removeEventListener('keydown', handleKeyDown)
+  }, [filteredOptions, select])
+
   return (
     <div className="relative w-[410px]">
       <input
