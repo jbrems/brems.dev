@@ -1,0 +1,113 @@
+---
+title: The Belgian National Register Number
+description: A full description of the format and structure of the Belgian National Register Number.
+created: 2026-01-14
+updated: 2026-01-14
+topic: NRN
+rank: 2
+---
+
+# The Belgian National Register Number
+
+The Belgian National Register Number consists of 11 digits divided into 3 groups (`YYMMDD VVV CC`).
+* The first group of 6 digits is the date of birth in the format `YYMMDD`.
+* The second group is a sequence number of 3 digits for persons born on the same day.
+* The last group of 2 digits is the control number.
+
+
+## Date of Birth (`YYMMDD ___ __`)
+
+When the day of birth is unknown, `00` is entered as the day (`YYMM00`).  
+When the month is also unknown, it is likewise replaced by `00` (`YY0000`).  
+When the full date of birth is unknown, the fictitious date `01/00/1900` or `01/00/2000` is used (`000001`).
+
+_These are the official specifications since 2016. Previously, it was common to use `01` instead of `00` for unknown birth dates and, if necessary, to estimate the year of birth._
+
+
+## Sequence Number (`______ VVV __`)
+
+The sequence number is an incremental number from `001` to `998` that is even for women and odd for men.
+
+When all sequence numbers for a specific day are exhausted - this only happens for national register numbers where the birth day and/or month is unknown - the birth day is increased by 1. When those are also exhausted, it is increased by 1 again until a free day is found.
+
+_On average, 296 children are born per day in Belgium, with peaks in the summer months of just over 450 children per day._
+
+
+## Check Digit (`______ ___ CC`)
+
+The check digit is used to validate a National Register Number and prevent input errors.  
+It is also used to determine whether the date of birth falls in the 21st century _(2000-2099)_ or the 19th or 20th century.
+
+The check digit is calculated from the first 9 digits of the National Register Number (date of birth + identification number) using the `modulo 97` check.
+
+```
+CC = 97 - (YYMMDDVVV mod 97)
+```
+
+For birth dates from the 21st century, the digit `2` is prefixed to the 9 digits.
+
+```
+CC = 97 - (2YYMMDDVVV mod 97)
+```
+
+
+## The Social Security Identification Number
+
+For everyone who has a National Register Number, this number is also their social security identification number.
+
+Persons who have a link with Belgium but do not have a National Register Number receive a BIS number as an identification number.
+
+
+## The BIS Number
+
+The BIS number is structured in a similar way to the National Register Number, but: 
+* The BIS number is created using the data known at the time of creation and is not updated when more data becomes known or changes.
+* The birth month (3rd and 4th digit) is increased by 40 when the gender is known, or by 20 when the gender is unknown.
+* The sequence number is odd when the gender is unknown.
+* When the day of birth is unknown, a number greater than 31 is sometimes used.
+
+
+## Q & A
+
+Q: Can you extract the date of birth from a National Register Number?
+
+A: Yes, in most cases you can. Use the control number to determine if the person was born in the 21st century. The rest of the date of birth is extracted from the first 6 digits of the National Register Number.
+
+Note:
+* You cannot determine from the National Register Number whether someone was born in the 19th (1800-1899) or 20th (1900-1999) century.
+* Keep in mind that the first 6 digits of the National Register Number do not always form a valid date.
+* As in 2016, the rules regarding the composition of the National Register Number can be adjusted without retroactive effect.
+* The result will not be 100% conclusive.
+
+---
+
+Q: Can you extract the date of birth from a BIS number?
+
+A: Yes, by subtracting 20 or 40 from the birth month.
+
+Note:
+* The BIS number is generally much less accurate than the National Register Number and is not corrected.
+
+---
+
+Q: Can you extract the gender from the National Register Number?
+
+A: Yes, by looking at the sequence number. Persons who officially change their gender receive a new National Register Number.
+
+Note:
+* This can be a very sensitive matter for some individuals.
+
+---
+
+Q: Can you extract the gender from a BIS number?
+
+A: Yes, but only if the birth month falls between 41 and 52 (birth month + 40).
+
+Note:
+* The BIS number is generally much less accurate than the National Register Number and is not corrected.
+
+---
+
+## Sources (in Dutch)
+[https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf](https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf)    
+[https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers](https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers)

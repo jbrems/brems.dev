@@ -25,6 +25,11 @@ export function completeNrn(value: string): string | null {
   return addCheckSum(completeBirthCounter(completeDate(value)))
 }
 
+export function isValidNrn(value: string): boolean {
+  const uglyNrn = uglifyNrn(value)
+  return uglyNrn === completeNrn(uglyNrn.substring(0, 9))
+}
+
 function determineCentury(value: string): '19' | '20' {
   const year = value.substring(0, 2)
   return year > new Date().getFullYear().toString().substring(2, 4) ? '19' : '20'
@@ -108,4 +113,27 @@ function completeDay(value: string): string {
   if (!isValidDate(mergedValue) && !isValidBisDate(mergedValue)) return completeDay(value)
 
   return mergedValue + value.substring(6)
+}
+
+export function parseNrn(value: string) {
+  const uglyNrn = uglifyNrn(value)
+
+  const validChecksum = isValidNrn(uglyNrn)
+  const validNrn = isValidDate(uglyNrn.substring(0, 6)) && validChecksum
+  const validBis = !isValidDate(uglyNrn.substring(0, 6)) && isValidBisDate(uglyNrn.substring(0, 6)) && validChecksum
+  const validSsn = validNrn || validBis
+  const gender = Number(uglyNrn.substring(6, 9)) % 2 === 0 ? 'F' : 'M'
+  const unknownGender = ['2', '3'].includes(uglyNrn.at(2)!)
+
+  let month = uglyNrn.substring(2, 4)
+  if (['2', '4'].includes(uglyNrn.at(2)!)) month = '0' + month.at(-1)
+  if (['3', '5'].includes(uglyNrn.at(2)!)) month = '1' + month.at(-1)
+
+  return {
+    validSsn,
+    validNrn,
+    validBis,
+    dateOfBirth: determineCentury(uglyNrn) + uglyNrn.substring(0, 2) + '-' + month + '-' + uglyNrn.substring(4, 6),
+    gender: unknownGender ? 'U' : gender,
+  }
 }

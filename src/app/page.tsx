@@ -13,7 +13,7 @@ export default async function HomePage() {
   const articles = await getArticles();
 
   return <>
-    <section className="flex flex-col md:flex-row items-center gap-8 mt-8">
+    <section className="flex flex-col md:flex-row items-center gap-8">
       <img src="/this-is-me.png" alt="This is me" className="w-48 h-48 rounded-full scale-x-[-1]" />
       <div>
         <h1>Jonas Brems - Web developer @ De Lijn</h1>

@@ -2,9 +2,8 @@
 title: Het Belgisch Rijksregisternummer (Dutch)
 description: Een volledige beschrijving van de opmaak en structuur van het Belgisch Rijksregisternummer.
 created: 2025-12-07
-updated: 2026-01-09
-topic: RRN
-rank: 2
+updated: 2026-01-14
+topic: NRN
 ---
 
 # Het Belgisch Rijksregisternummer
@@ -15,7 +14,7 @@ Het Belgisch Rijksregisternummer bestaat uit 11 cijfers verdeeld in 3 groepen (`
 * De laatste groep van 2 cijfers is het controlegetal.
 
 
-## Geboortedatum (YYMMDD ___ __)
+## Geboortedatum (`YYMMDD ___ __`)
 
 Wanneer de dag van de geboorte niet gekend is wordt als dag `00` ingevuld (`YYMM00`).  
 Wanneer ook de maand niet gekend is wordt die eveneens vervangen door `00` (`YY0000`).  
@@ -24,16 +23,16 @@ Wanneer de volledige geboortedatum niet bekend is wordt de fictieve datum `01/00
 _Dit zijn de offiële specificaties sinds 2016. Voordien was het gebruikelijk om bij ongekende geboortedatums `01` te gebruiken in plaats van `00` en indien nodig te gokken naar het geboortejaar._
 
 
-## Volgnummer (______ VVV __)
+## Volgnummer (`______ VVV __`)
 
 Het volgnummer is een oplopend nummer van `001` tot `998` dat even is voor vrouwen en oneven voor mannen.
 
-Wanneer alle volgnummers voor een dag uitgeput zijn - dit gebeurt enkel voor rijksregisternummers waarvoor de geboortedag en/of maand niet gekends is - wordt de fictieve geboortedag (`00`) verhoogd met 1 (`01`), wanneer ook die uitgeput is wordt er opnieuw verhoogd met 1 (`02`, `03`, `04`, ...) tot een vrije dag wordt gevonden.
+Wanneer alle volgnummers voor een dag uitgeput zijn - dit gebeurt enkel voor rijksregisternummers waarvoor de geboortedag en/of maand niet gekends is - wordt de geboortedag  verhoogd met 1, wanneer ook die uitgeput is wordt er opnieuw verhoogd met 1 tot een vrije dag wordt gevonden.
 
 _Gemiddeld worden in België 296 kinderen per dag geboren, met pieken in de zomermaanden tot iets meer dan 450 kinderen per dag._
 
 
-## Controlegetal (______ ___ CC)
+## Controlegetal (`______ ___ CC`)
 
 Het controlegetal wordt gebruikt om een Rijksregisternummer te valideren en invoerfouten tegen te gaan.  
 Het wordt ook gebruikt om na te gaan of de geboortedatum in de 21ste eeuw _(2000-2099)_ of de 19de of 20ste eeuw valt.
@@ -64,7 +63,7 @@ Het BIS-nummer wordt op een gelijkaardige manier opgebouwd als het Rijksregister
 * Het BIS-nummer wordt opgemaakt met de gegevens die bij aanmaak gekend zijn en wordt niet aangepast wanneer meer gegevens bekend worden of wijzigen.
 * De geboortemaand (3de en 4de cijfer) wordt verhoogd met 40 wanneer het geslacht gekend is of 20 wanneer het geslacht niet gekend is.
 * Het volgnummer is oneven wanneer het geslacht niet gekend is.
-* Wanneer de geboortedag niet gekend is wordt soms een getal groter dan 31 ingegeven.
+* Wanneer de geboortedag niet gekend is wordt soms een getal groter dan 31 gebruikt.
 
 
 ## Q & A
@@ -109,5 +108,5 @@ Let op:
 ---
 
 ## Bronnen
-[https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf]()  
-[https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers]()
+[https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf](https://www.ibz.rrn.fgov.be/sites/default/files/documents/nl/rijksregister/onderrichtingen/IT-lijst/IT000_Rijksregisternummer.pdf)    
+[https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers](https://www.ksz-bcss.fgov.be/nl/project/rijksregisterksz-registers)

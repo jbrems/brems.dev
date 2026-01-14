@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'National Registration Generation',
-  description: 'Generates and completes Belgian national registration numbers.',
+  description: 'Generates and completes Belgian national registration and social security identification numbers.',
 }
 
 export default function NationalRegistrationNumberPage() {
