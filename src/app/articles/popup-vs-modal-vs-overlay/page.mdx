@@ -2,7 +2,7 @@
 title: Popup vs modal vs overlay
 description: A quick explanation of the different UX/UI overlay elements and how to correctly name them.
 created: 2024-11-07
-updated: 2025-11-28
+updated: 2026-02-04
 topic: UI
 rank: 2
 ---
@@ -12,38 +12,65 @@ import { MousePointer } from '@/components/icons/mouse-pointer/MousePointer'
 
 # Popup vs modal vs overlay
 
-The terms `popup`, `modal`, and `overlay` are often used interchangeably but refer to different UI elements with distinct behaviors and purposes.
-
-Here's a quick overview of the differences between these terms.
-
 ## Overlay
-An `overlay` is any element that is rendered over the main content of the UI and is usually a temporary addition to the view.
+**Popovers**, **modals**, and **tooltips** are all kinds of **overlays** since they are rendered on top of (or overlay) the main content.  
 
-`Modals`, `popups`, and `tooltips` are all different kinds of `overlays`. 
+**Popup** can also be used to describe any element that pops up on the screen but it does carry a negative conotation since the era of annoying popup ads.
 
-## Modal
-A `modal` is an `overlay` that blocks interaction with the main content of the UI until the `modal` is closed.
+Sometimes the term **overlay** is used to refer to the semi-transparent **backdrop** between a **modal** and the main content.
 
-Important actions or information that should not be ignored can be shown in a `modal`. 
+There are 2 main categories of **overlays**:
+* **Modal overlays** - block user interaction with the main content
+* **Non-modal overlays** - do not block interaction with the main content
+
+## Modal vs non-modal overlays
+Any **overlay** can be a **modal overlay** as long as it prevents the user from interacting with the main content until the overlay is dismissed.
+In practice **dialogs** and **alerts** are almost always **modal overlays** while **toasts** and **snackbars** are mostly **non-modal overlays**. 
+
+**Modal overlays** are often called **interruptive** while **non-modal overlays** can be described as **ambient**, **contextual**, or **informative**.
+
+**Modal overlays** can use a **backdrop** and a **focus trap** to prevent the user from interacting with the main content.
 
 <Overlay>
   <Modal />
 </Overlay>
 
-## Popup
-A `popup` is an `overlay` that does not block interactions with the main content. It usually disappears after a short time or when dismissed by the user.
+## Drawers & sheets
+**Drawers** (side sheets) and **bottom sheets** are overlays that slide into the view from the edges of the screen.
 
-`Toasts` and `snackbars` are examples of good `popups`. `Popups` are also often used for intrusive ads.
+* **Drawers** are often used on bigger screens where there is plenty of horizontal space.
+* **Bottom sheets** are mostly used on mobile screens where they are easy to reach with your thumb.
+
+**Drawers** and **bottom sheets** can either be modal or non-modal overlays depending on whether they block main content interaction or not.
+
+In responsive design, non-modal **drawers** on desktop often collapse to modal bottom sheets on mobile.
+
+<div className="flex flex-wrap gap-8">
+  <Overlay>
+    <Drawer />
+  </Overlay>
+
+  <PhoneOverlay>
+    <Sheet />
+  </PhoneOverlay>
+</div>
+
+## Toasts & snackbars
+Toasts and snackbars are brief, non-modal overlays used to provide feedback about an operation.
+
+They are designed to be "fire-and-forget" and usually disappear automatically after a few seconds.
+
 <Overlay>
   <Snackbar />
   <Toast />
 </Overlay>
 
+
 ## Tooltip
 
-A `tooltip` is a small `overlay` that appears when the user hovers over an element and usually disappears when the cursor moves away.
+A **tooltip** is a small **overlay** that appears when the user hovers over an element and usually disappears when the cursor moves away.
 
-`Tooltips` typically contain short unstyled text.
+**Tooltips** typically contain short unstyled text.
 
 <Overlay>
   <Tooltip />
@@ -51,28 +78,10 @@ A `tooltip` is a small `overlay` that appears when the user hovers over an eleme
 
 ## Popover
 
-A `popover` is similar to a `tooltip`, but it is generally larger and can contain more complex content, such as images, buttons, or forms.
+A **popover** is similar to a **tooltip**, but it is generally larger and can contain more complex content, such as images, buttons, or forms.
 
-`Popovers` are often triggered by clicking an element and generally have to be closed.
+**Popovers** are often triggered by clicking an element and are dismissed by clicking or interacting outside of the popover.
 
 <Overlay>
   <Popover />
 </Overlay>
-
-## Drawer
-A `drawer` is an `overlay` that enters the page from the left or right side of the screen.
-
-`Drawers` are often used for navigation menus or for additional options like filtering and sorting.
-
-<Overlay>
-  <Drawer />
-</Overlay>
-
-## Top/bottom sheet
-`Top sheets` and `bottom sheets` are `overlays` that enter the page from the top or bottom of the screen.
-
-`Top and bottom sheets` are often used on mobile devices.
-
-<PhoneOverlay>
-  <Sheet />
-</PhoneOverlay>
