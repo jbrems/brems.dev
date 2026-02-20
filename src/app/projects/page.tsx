@@ -18,13 +18,13 @@ export default function ProjectsPage() {
         <p>A simple client side tool to encode and decode Base64 values.</p>
         <p>Also supports Base64url encoding.</p>
       </Project>
+      <Project path="/projects/smileybook" title="The Smileybook">
+        <p>The Smileybook is a collection of all emojis in the Unicode standard.</p>
+        <p>Currently contains all v17.0 emojis.</p>
+      </Project>
       <Project path="/projects/whos-that-pocemon" title="Who's that POCemon?">
         <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
         <p>Test your generation 1 POCemon knowledge with this fun little game.</p>
-      </Project>
-      <Project path="/projects/smileybook" title="Smileybook">
-        <p>Smileybook is a collection of all emojis in the Unicode standard.</p>
-        <p>Currently contains all v17.0 emojis.</p>
       </Project>
       <Project path="/projects/form-validation" title="Form validation">
         <p>A proof of concept project that implements Angular style form validation in React.</p>

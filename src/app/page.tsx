@@ -42,9 +42,9 @@ export default async function HomePage() {
         </Project>
       </li>
       <li>
-        <Project path="/projects/whos-that-pocemon" title="Who's that POCemon?">
-          <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
-          <p>Test your generation 1 POCemon knowledge with this fun little game.</p>
+        <Project path="/projects/smileybook" title="The Smileybook">
+          <p>The Smileybook is a collection of all emojis in the Unicode standard.</p>
+          <p>Currently contains all v17.0 emojis.</p>
         </Project>
       </li>
     </ul>

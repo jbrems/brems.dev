@@ -85,7 +85,7 @@ export default function SmileybookPage() {
 
   return (
     <main className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-2xl font-semibold mb-4">Smileybook</h1>
+      <h1 className="text-2xl font-semibold mb-4">The Smileybook</h1>
 
       {loading && <div className="text-sm text-gray-500">Loading emojis…</div>}
       {error && <div className="text-sm text-red-600">Error: {error}</div>}
