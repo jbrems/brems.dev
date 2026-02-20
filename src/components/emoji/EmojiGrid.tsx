@@ -1,10 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import type { EmojiGroup } from "../../lib/emoji.utils";
 
 export default function EmojiGrid({ groups }: { groups: EmojiGroup[] }) {
   const [copied, setCopied] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return groups;
+    return groups
+      .map((g) => ({
+        ...g, list: g.list.filter((e) => {
+          const ds = `${e.description} v${e.version} ${e.glyph}`.toLowerCase();
+          return ds.includes(q);
+        })
+      }))
+      .filter((g) => g.list.length > 0);
+  }, [groups, query]);
 
   async function copyToClipboard(s: string) {
     try {
@@ -28,7 +42,18 @@ export default function EmojiGrid({ groups }: { groups: EmojiGroup[] }) {
 
   return (
     <div className="space-y-6">
-      {groups.map((g) => (
+      <div>
+        <label className="sr-only">Search emojis</label>
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search by description or version"
+          className="w-full p-2 border rounded mb-4"
+          aria-label="Search emojis"
+        />
+      </div>
+
+      {filtered.map((g) => (
         <section key={g.group || "Other"}>
           <h2 className="text-lg font-medium mb-2">{g.group || "Other"}</h2>
           <div className="grid grid-cols-8 sm:grid-cols-12 gap-2">
