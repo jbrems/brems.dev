@@ -26,6 +26,10 @@ export default function ProjectsPage() {
         <p>What started as a proof of concept about Next.js caching turned into a standalone project.</p>
         <p>Test your generation 1 POCemon knowledge with this fun little game.</p>
       </Project>
+      <Project path="/projects/iv-calculator" title="FRLG IV Calculator">
+        <p>A FireRed and LeafGreen styled IV calculator for the original 151 Pokemon.</p>
+        <p>Track defeated Pokemon to estimate EVs while narrowing down IV ranges.</p>
+      </Project>
       <Project path="/projects/form-validation" title="Form validation">
         <p>A proof of concept project that implements Angular style form validation in React.</p>
       </Project>
