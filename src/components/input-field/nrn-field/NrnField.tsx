@@ -61,21 +61,12 @@ export function NrnField({ className = '' }: { className?: string }) {
         <button onClick={copyValue} className={`button iconButton ${copied && styles.activated}`} title="Copy value"><CopyIcon color="#dddddd" /></button>
       </div>
     </div>
-    <p className="pt-24 text-sm">
-      <CheckMark valid={parsed.validNrn || parsed.validBis} /> {parsed.validSsn ? 'Valid' : 'Invalid'} Social Security Identification Number (SSIN / INSZ / NISS)
-      <br />
-      {parsed.validNrn && <><CheckMark valid={true} /> Valid National Register Number (NRN / RNR)</>}
-      {parsed.validBis && <><CheckMark valid={parsed.validBis} /> Valid BIS number</>}
-      {parsed.validSsn && <>
-        <br />
-        <br />
-        Date of birth: <span className="font-bold">{parsed.dateOfBirth}</span>
-        <br />
-        Gender: <Gender value={parsed.gender} />
-        <br />
-        <br />
-        <Link href="/articles/the-belgian-national-register-number">Information about the Belgian National Register Number</Link>
-      </>}
+    {parsed.validSsn && <p className="pt-8">
+      Date of birth: <span className="font-bold">{parsed.dateOfBirth}</span>
+      <br />Gender: <Gender value={parsed.gender} />
+    </p>}
+    <p className="pt-8">
+      <Link href="/articles/the-belgian-national-register-number">Information about the Belgian National Register Number</Link>
     </p>
   </>
 }
